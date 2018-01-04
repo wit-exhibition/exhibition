@@ -18,7 +18,7 @@ import Environment from './components/Environment';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {color: 'red', currentRoom: "firstRoom"};
+    this.state = {color: 'red', currentRoom: "navRoom"};
   }
 
   handleClick = (destination) => {
