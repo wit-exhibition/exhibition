@@ -8,7 +8,7 @@
     "aframe-htmltexture-component": "^0.2.1",
     "aframe-particle-system-component": "^1.0.8",
     "aframe-react": "^4.3.0",
-    "babel-polyfill": "^6.3.14",
+    "babel-polyfill": "^6.26.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "react-scripts": "0.9.5"
@@ -24,17 +24,6 @@
     "type": "git",
     "url": ""
   },
-  "keywords": [
-    "aframe",
-    "react",
-    "vr",
-    "boilerplate",
-    "a-frame",
-    "mozvr",
-    "reactvr",
-    "aframe-react",
-    "webvr"
-  ],
   "author": "WIT Exhibition",
   "license": "MIT",
   "bugs": {
