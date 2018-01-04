@@ -31,7 +31,18 @@ class App extends React.Component {
   //"rooms" is a way to group components, pure js
   rooms = {
     navRoom: [
-      <ExhibitionBox src={ "#ada" } position={ "-1.5 3 -4"} sound="on: click; src: #click-sound"/>,
+      <ExhibitionBox
+        src={ "#welcome" }
+        position={ "-1 2.5 -2.5"}
+        scale={"1.3 1.3 0"}
+        shader={"flat"}
+        transparent={"true"}
+        sound="on: click; src: #click-sound"/>,
+      <Entity
+         text={{ value: "Click me", align: 'center', wrapCount: "4" }}
+         position={{ x: 2.4, y: 3.78, z: -4.12 }}
+
+       />,
       <TeleportationElement
         material={{ color: "white"}}
         position={"1.5 2 -4"}
@@ -83,6 +94,7 @@ class App extends React.Component {
           <img id="skyTexture" src="https://ucarecdn.com/23d47526-e465-49a9-8477-91b8036f42e3/"/>
           <img id="ada" src="https://ucarecdn.com/b021b66f-ef4f-46c2-bfa6-233f1deee719/"/>
           <img id="grace" src="https://ucarecdn.com/b60483ac-60bb-4e55-8429-328695dfffde/"/>
+          <img id="welcome" src="https://ucarecdn.com/e47455a4-94e4-41df-a48f-385b54502fd1/"/>
           <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
         </a-assets>
 
