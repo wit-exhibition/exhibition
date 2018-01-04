@@ -9,8 +9,9 @@ npm install
 npm start
 ```
 
-To publish to GitHub Pages:
+To build the project:
 
 ```bash
-npm run publish
+npm run build
 ```
+Then upload to zeit.
