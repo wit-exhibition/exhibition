@@ -29,9 +29,11 @@ class App extends React.Component {
 
   //"rooms" is a way to group components, pure js
   rooms = {
-    navRoom: [ <TeleportationElement
-                  material={{ color: "red"}}
-                  position={ "1 3 -4"}
+    navRoom: [ <ExhibitionBox src={ "#ada" } position={ "-1.5 3 -4"} sound="on: click; src: #click-sound"/>,
+               <TeleportationElement
+                  material={{ color: "white"}}
+                  position={"1.5 2 -4"}
+                  scale={"0.5 4 0.5"}
                   handleClick={ this.handleClick}
                   destination="firstRoom"/> ],
     firstRoom: [ <ExhibitionBox src={ "#ada" } position={ "1 1 -5"} sound="on: click; src: #click-sound"/>,
@@ -49,8 +51,8 @@ class App extends React.Component {
     return (
       <Scene>
         <a-assets>
-          <img id="groundTexture" src="https://ucarecdn.com/d4cf04b0-95e0-4b03-a005-f96040b1ad2f/"/>
-          <img id="skyTexture" src="https://ucarecdn.com/7e11b7c7-0e1d-4720-88c9-ea40ef4f3be0/"/>
+          <img id="groundTexture" src="https://ucarecdn.com/b2ac6e1e-b44b-48ab-adfc-a3d595e07d1b/"/>
+          <img id="skyTexture" src="https://ucarecdn.com/23d47526-e465-49a9-8477-91b8036f42e3/"/>
           <img id="ada" src="https://ucarecdn.com/b021b66f-ef4f-46c2-bfa6-233f1deee719/"/>
           <audio id="click-sound" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
         </a-assets>
