@@ -9,7 +9,6 @@ export default class ExhibitionBox extends React.Component {
         id="e-box"
         primitive="a-box"
         {...this.props}
-        sound="on: click; src: #click-sound"
       />
     )
   }
