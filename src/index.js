@@ -110,7 +110,7 @@ class App extends React.Component {
           <audio id="ada-audio" crossorigin="anonymous" src="https://ucarecdn.com/59427ee4-49d5-4983-b79b-410ec846f5f9/"></audio>
         </a-assets>
 
-        <a-sound src="src: url(http://freesound.org/data/previews/144/144549_2580695-lq.mp3)" autoplay="true" loop="true" position="0 2 5"></a-sound>
+        <a-sound src="src: url(https://freesound.org/data/previews/144/144549_2580695-lq.mp3)" autoplay="true" loop="true" position="0 2 5"></a-sound>
 
         { this.rooms[this.state.currentRoom] }
 
