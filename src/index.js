@@ -1,6 +1,5 @@
 import AFRAME from 'aframe';
 import 'aframe-animation-component';
-import 'aframe-particle-system-component';
 import 'babel-polyfill';
 import {Entity, Scene} from 'aframe-react';
 import React from 'react';
@@ -14,6 +13,8 @@ import ExhibitionBox from './components/ExhibitionBox';
 import Camera from './components/Camera';
 import TeleportationElement from './components/TeleportationElement';
 import Environment from './components/Environment';
+import UpDownAnimation from './components/UpDownAnimation';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -38,11 +39,9 @@ class App extends React.Component {
         shader={"flat"}
         transparent={"true"}
         sound="on: click; src: #click-sound"/>,
-      <Entity
-         text={{ value: "Click me", align: 'center', wrapCount: "4" }}
-         position={{ x: 2.4, y: 3.78, z: -4.12 }}
-
-       />,
+      <Entity text={{ value: "Click me", align: 'center', wrapCount: "4" }}>
+         <UpDownAnimation position={{ x: 2.4, y: 3.78, z: -4.12 }}/>
+      </Entity>,
       <TeleportationElement
         material={{ color: "white"}}
         position={"1.5 2 -4"}
