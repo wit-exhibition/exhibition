@@ -7,6 +7,8 @@ import ReactDOM from 'react-dom';
 import 'aframe-htmltexture-component';
 
 import ExhibitionBox from './components/ExhibitionBox';
+import ExhibitionBox2 from './components/ExhibitionBox2';
+
 import Camera from './components/Camera';
 import TeleportationElement from './components/TeleportationElement';
 import Environment from './components/Environment';
@@ -31,6 +33,14 @@ class App extends React.Component {
   //"rooms" is a way to group components, pure js
   rooms = {
     navRoom: [
+      <ExhibitionBox2
+        src={ "#grace" }
+        position={ "1 2.5 -1.8"}
+        rotation={"0 10 0"}
+        scale={"1.3 1.3 1.3"}
+        shader={"flat"}
+        transparent={"true"}
+        sound="on: click; src: #ada-audio"/>,
       <HintText rotation={{ y: 0 }} hint={"Click on Ada"} position={{ x: 0.1, y: 3.2, z: -2.5 }} wrapCount={10}/>,
       <ExhibitionBox
         src={ "#welcome" }
