@@ -13,6 +13,8 @@ import Camera from './components/Camera';
 import TeleportationElement from './components/TeleportationElement';
 import Environment from './components/Environment';
 import HintText from './components/HintText';
+import NavRoom from './components/NavRoom';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -33,32 +35,7 @@ class App extends React.Component {
   //"rooms" is a way to group components, pure js
   rooms = {
     navRoom: [
-      <ExhibitionBox2
-        src={ "#grace" }
-        position={ "1 2.5 -1.8"}
-        rotation={"0 10 0"}
-        scale={"1.3 1.3 1.3"}
-        shader={"flat"}
-        transparent={"true"}
-        sound="on: click; src: #ada-audio"/>,
-      <HintText rotation={{ y: 0 }} hint={"Click on Ada"} position={{ x: 0.1, y: 3.2, z: -2.5 }} wrapCount={10}/>,
-      <ExhibitionBox
-        src={ "#welcome" }
-        position={ "-1 2.5 -1.8"}
-        rotation={"0 10 0"}
-        scale={"1.3 1.3 0"}
-        shader={"flat"}
-        transparent={"true"}
-        sound="on: click; src: #ada-audio"
-      />,
-    <HintText rotation={{ y: -20 }} hint={"Click this white box"} position={{ x: 2.4, y: 3.78, z: -4.12 }} wrapCount={8}/>,
-      <TeleportationElement
-        material={{ color: "white"}}
-        position={"1.5 2 -4"}
-        scale={"0.5 4 0.5"}
-        handleClick={ this.handleClick}
-        destination="firstRoom"
-        />],
+      ],
     firstRoom: [
       <ExhibitionBox src={ "#ada" } position={ "-2 3 -4"} sound="on: click; src: #ada-audio"/>,
       <ExhibitionBox src={ "#ada" } position={ "0.5 2 -4.3"} sound="on: click; src: #ada-audio"/>,
@@ -103,6 +80,15 @@ class App extends React.Component {
     ]
   }
 
+  renderRoom(room) {
+    switch(room) {
+     case 'navRoom':
+         return <NavRoom />
+     default :
+        return <NavRoom />
+   }
+  }
+
   render () {
 
     return (
@@ -117,7 +103,7 @@ class App extends React.Component {
           <audio id="ada-audio" crossorigin="anonymous" src="https://ucarecdn.com/59427ee4-49d5-4983-b79b-410ec846f5f9/"></audio>
         </a-assets>
 
-        { this.rooms[this.state.currentRoom] }
+        { this.renderRoom(this.state.currentRoom) }
 
         <Environment />
         <Camera />
