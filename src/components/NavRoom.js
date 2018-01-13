@@ -44,7 +44,6 @@ export default class NavRoom extends React.Component {
           position={"1.205 1.753 -1.154"}
           scale={"1.200 0.400 0.200"}
           rotation={"0 -30 0"}
-          handleClick={ this.handleClick}
           destination="firstRoom"
           store={ this.store }
           />

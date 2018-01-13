@@ -19,6 +19,15 @@ class App extends React.Component {
     this.store = this.props.store;
   }
 
+  componentDidMount() {
+    if (this.store.getState().mode === "vr") {
+      var scene = document.querySelector('a-scene')
+      var camera = document.querySelector('a-camera')
+      camera.setAttribute('camera', 'userHeight', 0.5);
+      scene.enterVR()
+    }
+  }
+
   renderRoom(room) {
     switch(room) {
       case 'navRoom':
