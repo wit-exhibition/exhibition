@@ -14,20 +14,10 @@ import FirstRoom from './components/FirstRoom';
 import SecondRoom from './components/SecondRoom';
 
 class App extends React.Component {
+
   constructor(props) {
     super(props);
-    //this.state = {color: 'red', currentRoom: "navRoom"};
     this.store = this.props.store;
-  }
-
-  handleClick = (destination) => {
-    var audio = new Audio('https://freesound.org/data/previews/162/162479_311243-lq.mp3');
-    audio.play();
-    setTimeout(
-      () => {
-        this.setState({currentRoom: destination })
-      }, 1000
-    )
   }
 
   renderRoom(room) {
@@ -61,7 +51,6 @@ class App extends React.Component {
         </a-assets>
 
         { this.renderRoom(this.props.store.getState().currentRoom) }
-        {console.log("state room: " + this.props.store.getState().currentRoom)}
 
         <Environment />
         <Camera />
