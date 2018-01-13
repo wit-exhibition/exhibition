@@ -2,6 +2,20 @@ import aframe from 'aframe';
 import React from 'react';
 import { Entity } from 'aframe-react';
 
+
+// Call it like this:
+
+/*
+<ExhibitionBox2
+  src={ "#grace" }
+  position={ "1 2.5 -3.8"}
+  rotation={"0 200 0"}
+  scale={"1.3 1.3 1.3"}
+  shader={"flat"}
+  transparent={"true"}
+  sound="on: click; src: #ada-audio"/>
+*/
+
 export default class ExhibitionBox2 extends React.Component {
 
   componentDidMount(){
@@ -25,7 +39,12 @@ export default class ExhibitionBox2 extends React.Component {
 
   render() {
     return (
-      <a-entity id="benj" material="src:https://cdn.hyperdev.com/click-me.svg?1477239469954" geometry="primitive: box" position="0 0 -5" />
+      <Entity
+        id="benj"
+        material="src:https://cdn.hyperdev.com/click-me.svg?1477239469954"
+        geometry="primitive: box"
+        {...this.props}
+      />
     )
   }
 }

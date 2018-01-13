@@ -7,15 +7,11 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import 'aframe-htmltexture-component';
 
-import ExhibitionBox from './components/ExhibitionBox';
-import ExhibitionBox2 from './components/ExhibitionBox2';
-
 import Camera from './components/Camera';
-import TeleportationElement from './components/TeleportationElement';
 import Environment from './components/Environment';
-import HintText from './components/HintText';
 import NavRoom from './components/NavRoom';
 import FirstRoom from './components/FirstRoom';
+import SecondRoom from './components/SecondRoom';
 
 class App extends React.Component {
   constructor(props) {
@@ -34,35 +30,6 @@ class App extends React.Component {
     )
   }
 
-  //"rooms" is a way to group components, pure js
-  rooms = {
-    navRoom: [
-      ],
-    firstRoom: [
-    ],
-    secondRoom: [
-      <ExhibitionBox src={ "#grace" } position={ "-2 2.2 -4"} />,
-      <ExhibitionBox src={ "#grace" } position={ "0.5 3 -4.3"} />,
-      <ExhibitionBox src={ "#grace" } position={ "3 2 -4.3"} />,
-
-      <HintText rotation={{ y: 50 }} hint={"Exit"} position={{ x: -2.8, y: 1, z: -3 }} wrapCount={8}/>,
-      <TeleportationElement
-        material={{ color: "#01ff26"}}
-        position={ "-3 0.5 -3"}
-        scale={"0.5 0.5 1"}
-        handleClick={ this.handleClick}
-        destination="navRoom"/>,
-
-      <HintText rotation={{ y: -50 }} hint={"Next room"} position={{ x: 3, y: 1, z: -3 }} wrapCount={8}/>,
-      <TeleportationElement
-        material={{ color: "#d800f0"}}
-        position={ "3 0.5 -3"}
-        scale={"0.5 0.5 1"}
-        handleClick={ this.handleClick}
-        destination="firstRoom"/>
-    ]
-  }
-
   renderRoom(room) {
     switch(room) {
       case 'navRoom':
@@ -70,6 +37,9 @@ class App extends React.Component {
       case 'firstRoom':
         console.log(" called first room");
         return <FirstRoom store={ this.store } />
+      case 'secondRoom':
+        console.log(" called first room");
+        return <SecondRoom store={ this.store } />
       default :
         console.log("default called");
         return <NavRoom store={ this.store }/>
