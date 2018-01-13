@@ -20,7 +20,7 @@ export default class ExhibitionBox2 extends React.Component {
         boringMaterial1,
         boringMaterial2
       ]
-    }, 100)
+    }, 1000)
   }
 
   render() {
