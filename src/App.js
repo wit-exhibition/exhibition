@@ -3,7 +3,6 @@ import 'aframe-animation-component';
 import 'babel-polyfill';
 import { Scene } from 'aframe-react';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import 'aframe-htmltexture-component';
 

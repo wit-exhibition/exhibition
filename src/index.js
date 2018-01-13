@@ -8,7 +8,7 @@ let store = createStore(myReducer);
 
 function render() {
   ReactDOM.render(
-    <div className="container">
+    <div className="container" style={{position: "absolute", height: "100%", width: "100%"}}>
       <App store={store}/>
     </div>
     ,
