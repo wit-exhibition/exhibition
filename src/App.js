@@ -20,10 +20,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    if (this.store.getState().mode === "vr") {
+    if (this.store.getState().mode === "carboard") {
       var scene = document.querySelector('a-scene')
       var camera = document.querySelector('a-camera')
-      camera.setAttribute('camera', 'userHeight', 0.5);
+      camera.setAttribute('camera', 'userHeight', 1);
       scene.enterVR()
     }
   }
