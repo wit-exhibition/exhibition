@@ -15,7 +15,7 @@ export default class TeleportationElement extends React.Component {
         id="teleport-box"
         primitive="a-box"
         {...this.props}
-        events={{ click: () => this.store.dispatch({ type: "CHANGE_ROOM"}) }}
+        events={{ click: () => this.store.dispatch({ type: "CHANGE_ROOM", room: destination }) }}
       />
     )
   }

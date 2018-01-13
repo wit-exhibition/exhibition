@@ -7,7 +7,7 @@ export default (state = initialState, action) => {
     case 'CHANGE_ROOM':
       console.log("room changed" )
       return Object.assign({}, state, {
-          currentRoom: "firstRoom"
+          currentRoom: action.room
       })
     default:
       return state
