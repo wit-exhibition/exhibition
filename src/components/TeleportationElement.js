@@ -10,7 +10,6 @@ export default class TeleportationElement extends React.Component {
 
   render() {
     const { destination, handleClick, ...rest} = this.props
-
     return (
       <Entity
         id="teleport-box"

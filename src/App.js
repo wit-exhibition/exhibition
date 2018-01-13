@@ -4,6 +4,7 @@ import 'babel-polyfill';
 import { Scene } from 'aframe-react';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
 import 'aframe-htmltexture-component';
 
 import ExhibitionBox from './components/ExhibitionBox';
@@ -14,12 +15,12 @@ import TeleportationElement from './components/TeleportationElement';
 import Environment from './components/Environment';
 import HintText from './components/HintText';
 import NavRoom from './components/NavRoom';
-
+import FirstRoom from './components/FirstRoom';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {color: 'red', currentRoom: "navRoom"};
+    //this.state = {color: 'red', currentRoom: "navRoom"};
     this.store = this.props.store;
   }
 
@@ -38,25 +39,6 @@ class App extends React.Component {
     navRoom: [
       ],
     firstRoom: [
-      <ExhibitionBox src={ "#ada" } position={ "-2 3 -4"} sound="on: click; src: #ada-audio"/>,
-      <ExhibitionBox src={ "#ada" } position={ "0.5 2 -4.3"} sound="on: click; src: #ada-audio"/>,
-      <ExhibitionBox src={ "#ada" } position={ "3 2.3 -4.3"} sound="on: click; src: #ada-audio"/>,
-
-      <HintText rotation={{ y: 50 }} hint={"Exit"} position={{ x: -2.8, y: 1, z: -3 }} wrapCount={8}/>,
-      <TeleportationElement
-        material={{ color: "#01ff26"}}
-        position={ "-3 0.5 -3"}
-        scale={"0.5 0.5 1"}
-        handleClick={ this.handleClick}
-        destination="navRoom"/>,
-
-      <HintText rotation={{ y: -50 }} hint={"Next room"} position={{ x: 3, y: 1, z: -3 }} wrapCount={8}/>,
-      <TeleportationElement
-        material={{ color: "#d800f0"}}
-        position={ "3 0.5 -3"}
-        scale={"0.5 0.5 1"}
-        handleClick={ this.handleClick}
-        destination="secondRoom"/>
     ],
     secondRoom: [
       <ExhibitionBox src={ "#grace" } position={ "-2 2.2 -4"} />,
@@ -86,9 +68,10 @@ class App extends React.Component {
       case 'navRoom':
         return <NavRoom store={ this.store } />
       case 'firstRoom':
-        console.log("first room");
-        return <NavRoom store={ this.store } />
+        console.log(" called first room");
+        return <FirstRoom store={ this.store } />
       default :
+        console.log("default called");
         return <NavRoom store={ this.store }/>
    }
   }
@@ -108,6 +91,7 @@ class App extends React.Component {
         </a-assets>
 
         { this.renderRoom(this.props.store.getState().currentRoom) }
+        {console.log("state room: " + this.props.store.getState().currentRoom)}
 
         <Environment />
         <Camera />
@@ -116,5 +100,12 @@ class App extends React.Component {
   }
 }
 
-//ReactDOM.render(<App/>, document.querySelector('#sceneContainer'));
-export default App;
+const mapStateToProps = state => {
+  return {
+    currentRoom: state.currentRoom
+  }
+}
+
+const connectedApp = connect( mapStateToProps )(App)
+
+export default connectedApp;
