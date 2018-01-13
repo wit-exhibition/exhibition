@@ -9,6 +9,11 @@ import TeleportationElement from './TeleportationElement';
 
 export default class NavRoom extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.store = this.props.store;
+  }
+
   render() {
     return (
       <Entity>
@@ -45,6 +50,7 @@ export default class NavRoom extends React.Component {
           scale={"0.5 4 0.5"}
           handleClick={ this.handleClick}
           destination="firstRoom"
+          store={ this.store }
           />
       </Entity>
     )

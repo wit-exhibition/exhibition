@@ -1,15 +1,15 @@
 const initialState = {
-    lemongrab: 0
+  currentRoom: "navRoom"
 }
 
 export default (state = initialState, action) => {
-    switch (action.type) {
-        case 'VOTE_LEMONGRAB':
-            console.log("vote Lemongrab" )
-            return Object.assign({}, state, {
-                lemongrab: state.lemongrab + 1
-            })
-        default:
-            return state
-    }
+  switch (action.type) {
+    case 'CHANGE_ROOM':
+      console.log("room changed" )
+      return Object.assign({}, state, {
+          currentRoom: "firstRoom"
+      })
+    default:
+      return state
+  }
 }

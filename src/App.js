@@ -20,6 +20,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {color: 'red', currentRoom: "navRoom"};
+    this.store = this.props.store;
   }
 
   handleClick = (destination) => {
@@ -82,10 +83,13 @@ class App extends React.Component {
 
   renderRoom(room) {
     switch(room) {
-     case 'navRoom':
-         return <NavRoom />
-     default :
-        return <NavRoom />
+      case 'navRoom':
+        return <NavRoom store={ this.store } />
+      case 'firstRoom':
+        console.log("first room");
+        return <NavRoom store={ this.store } />
+      default :
+        return <NavRoom store={ this.store }/>
    }
   }
 
@@ -103,7 +107,7 @@ class App extends React.Component {
           <audio id="ada-audio" crossOrigin="anonymous" src="https://ucarecdn.com/59427ee4-49d5-4983-b79b-410ec846f5f9/"></audio>
         </a-assets>
 
-        { this.renderRoom(this.state.currentRoom) }
+        { this.renderRoom(this.props.store.getState().currentRoom) }
 
         <Environment />
         <Camera />
