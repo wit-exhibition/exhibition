@@ -17,7 +17,7 @@ export default class Environment extends React.Component {
                     src:#groundTexture"
           />
         <Entity primitive="a-light" type="ambient" color="#3e4138"/>
-        <Entity primitive="a-light" type="point" intensity="1" color="#eef3ff" position="2 6.5 0"/>
+        <Entity primitive="a-light" type="point" intensity="1" color="#eef3ff" position="2 6.5 5"/>
         <Entity primitive="a-sky" height="2048" radius="30" material="color:black" width="2048"/>
       </Entity>
     );
