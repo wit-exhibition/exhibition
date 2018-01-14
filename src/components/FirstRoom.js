@@ -19,13 +19,14 @@ export default class FirstRoom extends React.Component {
     return (
       <Entity>
         <ExhibitionBox
-          src={ "#ada" }
-          position={ "-2 3 -4"}
-          sound="on: click; src: #ada-audio"/>
-        <ExhibitionBox
-          src={ "#ada" }
-          position={ "0.5 2 -4.3"}
-          sound="on: click; src: #ada-audio"/>
+          src={ "#gracePortrait" }
+          position={ "0 2.1 -1.4"}
+          rotation={"0 0 0"}
+          scale={"1.3 1.65 0"}
+          shader={"flat"}
+          transparent={"true"}
+          sound="on: click; src: #ada-audio"
+        />
         <ExhibitionBox
           src={ "#ada" }
           position={ "3 2.3 -4.3"}

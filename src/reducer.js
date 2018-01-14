@@ -1,6 +1,6 @@
 const initialState = {
-  mode: "start",
-  currentRoom: "navRoom"
+  mode: "desktop",
+  currentRoom: "firstRoom"
 }
 
 export default (state = initialState, action) => {
