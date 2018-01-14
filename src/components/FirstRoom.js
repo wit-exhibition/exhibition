@@ -2,7 +2,7 @@ import React from 'react';
 import { Entity } from 'aframe-react';
 
 import ExhibitionBox from './ExhibitionBox';
-import ExhibitionBox2 from './ExhibitionBox2';
+import LightSwitch from './LightSwitch';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
 
@@ -18,6 +18,9 @@ export default class FirstRoom extends React.Component {
     console.log("first room rendered");
     return (
       <Entity>
+        <LightSwitch
+          position={"0 0.974 -2.110"}
+          scale={"0.3 0.3 0.3"}/>
         <ExhibitionBox
           src={ "#gracePortrait" }
           position={ "0 2.1 -2.3"}
