@@ -17,7 +17,6 @@ class FirstRoom extends React.Component {
   }
 
   renderGrace() {
-    console.log(this.store.getState().graceElementVisible)
     if (this.store.getState().graceElementVisible === true) {
       return (
         <ExhibitionBox
@@ -41,10 +40,20 @@ class FirstRoom extends React.Component {
       <Entity>
         <LightSwitch
           position={"0 0.974 -2.110"}
-          scale={"0.3 0.3 0.3"}
+          scale={"0.2 0.2 0.2"}
           store={ this.store } />
 
         { this.renderGrace() }
+
+        <LightSwitch
+          position={"0.5 0.974 -2.110"}
+          scale={"0.2 0.2 0.2"}
+          store={ this.store } />
+
+        <LightSwitch
+          position={"-0.5 0.974 -2.110"}
+          scale={"0.2 0.2 0.2"}
+          store={ this.store } />
 
         <ExhibitionBox
           src={ "#welcome" }
