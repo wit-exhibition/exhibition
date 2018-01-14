@@ -77,7 +77,11 @@ class FirstRoom extends React.Component {
           person={"ada"}
           store={ this.store } />
 
-        { this.renderAda() }
+        { this.renderPortrait(this.store.getState().adaElementVisible,
+                              "#welcome",
+                              "-2 2.1 -2",
+                              "0 50 0",
+                              "1.3 1.3 0") }
 
         <LightSwitch
           position={"0 0.974 -2.110"}
@@ -97,7 +101,11 @@ class FirstRoom extends React.Component {
           person={"joanna"}
           store={ this.store } />
 
-        { this.renderJoanna() }
+        { this.renderPortrait(this.store.getState().joannaElementVisible,
+                              "#joanna",
+                              "2 2.1 -2",
+                              "0 -50 0",
+                              "1.3 1.3 0") }
 
         <HintText
           rotation={{ y: 50 }}
