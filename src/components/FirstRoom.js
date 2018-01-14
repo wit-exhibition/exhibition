@@ -34,10 +34,56 @@ class FirstRoom extends React.Component {
     }
   }
 
+  renderAda() {
+    console.log("Ada visible" + this.store.getState().adaElementVisible)
+    if (this.store.getState().adaElementVisible === true) {
+      return (
+        <ExhibitionBox
+          src={ "#welcome" }
+          position={"-2 2.1 -2"}
+          rotation={"0 50 0"}
+          scale={"1.3 1.3 0"}
+          shader={"flat"}
+          transparent={"true"}
+          sound="on: click; src: #ada-audio"
+        />)
+    }
+    else {
+      console.log("else case")
+    }
+  }
+
+  renderJoanna() {
+    console.log("Joanna visible" + this.store.getState().joannaElementVisible)
+    if (this.store.getState().joannaElementVisible === true) {
+      return (
+        <ExhibitionBox
+          src={ "#joanna" }
+          position={ "2 2.1 -2"}
+          rotation={"0 -50 0"}
+          scale={"1.3 1.3 0"}
+          shader={"flat"}
+          transparent={"true"}
+          sound="on: click; src: #ada-audio"
+        />)
+    }
+    else {
+      console.log("else case")
+    }
+  }
+
   render() {
     console.log("first room rendered");
     return (
       <Entity>
+        <LightSwitch
+          position={"-0.5 0.974 -2.110"}
+          scale={"0.2 0.2 0.2"}
+          person={"ada"}
+          store={ this.store } />
+
+        { this.renderAda() }
+
         <LightSwitch
           position={"0 0.974 -2.110"}
           scale={"0.2 0.2 0.2"}
@@ -49,34 +95,10 @@ class FirstRoom extends React.Component {
         <LightSwitch
           position={"0.5 0.974 -2.110"}
           scale={"0.2 0.2 0.2"}
-          person={"TODO: fill person name"}
+          person={"joanna"}
           store={ this.store } />
 
-        <LightSwitch
-          position={"-0.5 0.974 -2.110"}
-          scale={"0.2 0.2 0.2"}
-          person={"TODO: fill person name"}
-          store={ this.store } />
-
-        <ExhibitionBox
-          src={ "#welcome" }
-          position={ "-2 2.1 -2"}
-          rotation={"0 50 0"}
-          scale={"1.3 1.3 0"}
-          shader={"flat"}
-          transparent={"true"}
-          sound="on: click; src: #ada-audio"
-        />
-
-        <ExhibitionBox
-          src={ "#joanna" }
-          position={ "2 2.1 -2"}
-          rotation={"0 -50 0"}
-          scale={"1.3 1.3 0"}
-          shader={"flat"}
-          transparent={"true"}
-          sound="on: click; src: #ada-audio"
-        />
+        { this.renderJoanna() }  
 
         <HintText
           rotation={{ y: 50 }}
@@ -107,7 +129,9 @@ class FirstRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    graceElementVisible: state.graceElementVisible
+    graceElementVisible: state.graceElementVisible,
+    adaElementVisible: state.adaElementVisible,
+    joannaElementVisible: state.joannaElementVisible
   }
 }
 

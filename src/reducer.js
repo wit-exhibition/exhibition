@@ -23,6 +23,16 @@ export default (state = initialState, action) => {
             graceElementVisible: true
         })
       }
+      else if (action.person === "ada") {
+        return Object.assign({}, state, {
+            adaElementVisible: true
+        })
+      }
+      else if (action.person === "joanna") {
+        return Object.assign({}, state, {
+            joannaElementVisible: true
+        })
+      }
 
     default:
       return state
