@@ -20,17 +20,33 @@ export default class FirstRoom extends React.Component {
       <Entity>
         <ExhibitionBox
           src={ "#gracePortrait" }
-          position={ "0 2.1 -1.4"}
+          position={ "0 2.1 -2.3"}
           rotation={"0 0 0"}
           scale={"1.3 1.65 0"}
           shader={"flat"}
           transparent={"true"}
           sound="on: click; src: #ada-audio"
         />
+
         <ExhibitionBox
-          src={ "#ada" }
-          position={ "3 2.3 -4.3"}
-          sound="on: click; src: #ada-audio"/>
+          src={ "#welcome" }
+          position={ "-2 2.1 -2"}
+          rotation={"0 50 0"}
+          scale={"1.3 1.3 0"}
+          shader={"flat"}
+          transparent={"true"}
+          sound="on: click; src: #ada-audio"
+        />
+
+        <ExhibitionBox
+          src={ "#joanna" }
+          position={ "2 2.1 -2"}
+          rotation={"0 -50 0"}
+          scale={"1.3 1.3 0"}
+          shader={"flat"}
+          transparent={"true"}
+          sound="on: click; src: #ada-audio"
+        />
 
         <HintText
           rotation={{ y: 50 }}
