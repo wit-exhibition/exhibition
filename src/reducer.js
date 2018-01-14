@@ -1,6 +1,6 @@
 const initialState = {
   mode: "start",
-  currentRoom: "firstRoom",
+  currentRoom: "navRoom",
   graceElementVisible: false,
   adaElementVisible: false
 }
