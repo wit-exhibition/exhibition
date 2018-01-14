@@ -1,6 +1,7 @@
 const initialState = {
   mode: "start",
-  currentRoom: "firstRoom"
+  currentRoom: "firstRoom",
+  graceElementVisible: false
 }
 
 export default (state = initialState, action) => {

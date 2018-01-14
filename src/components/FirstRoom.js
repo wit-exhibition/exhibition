@@ -14,6 +14,25 @@ export default class FirstRoom extends React.Component {
     this.store = this.props.store;
   }
 
+  renderGrace() {
+    console.log(this.store.getState().graceElementVisible)
+    if (this.store.getState().graceElementVisible === true) {
+      return (
+        <ExhibitionBox
+        src={ "#gracePortrait" }
+        position={ "0 2.1 -2.3"}
+        rotation={"0 0 0"}
+        scale={"1.3 1.65 0"}
+        shader={"flat"}
+        transparent={"true"}
+        sound="on: click; src: #ada-audio"
+      />)
+    }
+    else {
+      console.log("else case")
+    }
+  }
+
   render() {
     console.log("first room rendered");
     return (
@@ -21,15 +40,8 @@ export default class FirstRoom extends React.Component {
         <LightSwitch
           position={"0 0.974 -2.110"}
           scale={"0.3 0.3 0.3"}/>
-        <ExhibitionBox
-          src={ "#gracePortrait" }
-          position={ "0 2.1 -2.3"}
-          rotation={"0 0 0"}
-          scale={"1.3 1.65 0"}
-          shader={"flat"}
-          transparent={"true"}
-          sound="on: click; src: #ada-audio"
-        />
+
+        { this.renderGrace() }
 
         <ExhibitionBox
           src={ "#welcome" }
