@@ -41,6 +41,7 @@ class FirstRoom extends React.Component {
         <LightSwitch
           position={"0 0.974 -2.110"}
           scale={"0.2 0.2 0.2"}
+          person={"grace"}
           store={ this.store } />
 
         { this.renderGrace() }
@@ -48,11 +49,13 @@ class FirstRoom extends React.Component {
         <LightSwitch
           position={"0.5 0.974 -2.110"}
           scale={"0.2 0.2 0.2"}
+          person={"TODO: fill person name"}
           store={ this.store } />
 
         <LightSwitch
           position={"-0.5 0.974 -2.110"}
           scale={"0.2 0.2 0.2"}
+          person={"TODO: fill person name"}
           store={ this.store } />
 
         <ExhibitionBox

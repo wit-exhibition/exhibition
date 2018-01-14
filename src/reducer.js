@@ -1,7 +1,8 @@
 const initialState = {
   mode: "start",
   currentRoom: "firstRoom",
-  graceElementVisible: false
+  graceElementVisible: false,
+  adaElementVisible: false
 }
 
 export default (state = initialState, action) => {
@@ -17,10 +18,12 @@ export default (state = initialState, action) => {
           mode: action.mode
       })
     case 'SPOTLIGHT_ON':
-      console.log("spotlight on" )
-      return Object.assign({}, state, {
-          graceElementVisible: true
-      })
+      if (action.person === "grace") {
+        return Object.assign({}, state, {
+            graceElementVisible: true
+        })
+      }
+
     default:
       return state
   }
