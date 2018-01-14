@@ -16,26 +16,22 @@ class FirstRoom extends React.Component {
     this.store = this.props.store;
   }
 
-  renderGrace() {
-    if (this.store.getState().graceElementVisible === true) {
+  renderPortrait(isVisible, srcID, positionData, rotationData, scaleData) {
+    if (isVisible === true) {
       return (
         <ExhibitionBox
-        src={ "#gracePortrait" }
-        position={ "0 2.1 -2.3"}
-        rotation={"0 0 0"}
-        scale={"1.3 1.65 0"}
+        src={ srcID }
+        position={ positionData }
+        rotation={rotationData}
+        scale={scaleData}
         shader={"flat"}
         transparent={"true"}
         sound="on: click; src: #ada-audio"
       />)
     }
-    else {
-      console.log("else case")
-    }
   }
 
   renderAda() {
-    console.log("Ada visible" + this.store.getState().adaElementVisible)
     if (this.store.getState().adaElementVisible === true) {
       return (
         <ExhibitionBox
@@ -54,7 +50,6 @@ class FirstRoom extends React.Component {
   }
 
   renderJoanna() {
-    console.log("Joanna visible" + this.store.getState().joannaElementVisible)
     if (this.store.getState().joannaElementVisible === true) {
       return (
         <ExhibitionBox
@@ -90,7 +85,11 @@ class FirstRoom extends React.Component {
           person={"grace"}
           store={ this.store } />
 
-        { this.renderGrace() }
+        { this.renderPortrait(this.store.getState().graceElementVisible,
+                              "#gracePortrait",
+                              "0 2.1 -2.3",
+                              "0 0 0",
+                              "1.3 1.65 0") }
 
         <LightSwitch
           position={"0.5 0.974 -2.110"}
@@ -98,7 +97,7 @@ class FirstRoom extends React.Component {
           person={"joanna"}
           store={ this.store } />
 
-        { this.renderJoanna() }  
+        { this.renderJoanna() }
 
         <HintText
           rotation={{ y: 50 }}
