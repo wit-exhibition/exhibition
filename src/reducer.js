@@ -16,6 +16,11 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, {
           mode: action.mode
       })
+    case 'SPOTLIGHT_ON':
+      console.log("spotlight on" )
+      return Object.assign({}, state, {
+          graceElementVisible: true
+      })
     default:
       return state
   }

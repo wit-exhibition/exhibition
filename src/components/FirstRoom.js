@@ -1,5 +1,6 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
+import { connect } from 'react-redux';
 
 import ExhibitionBox from './ExhibitionBox';
 import LightSwitch from './LightSwitch';
@@ -7,7 +8,8 @@ import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
 
 
-export default class FirstRoom extends React.Component {
+
+class FirstRoom extends React.Component {
 
   constructor(props) {
     super(props);
@@ -39,7 +41,8 @@ export default class FirstRoom extends React.Component {
       <Entity>
         <LightSwitch
           position={"0 0.974 -2.110"}
-          scale={"0.3 0.3 0.3"}/>
+          scale={"0.3 0.3 0.3"}
+          store={ this.store } />
 
         { this.renderGrace() }
 
@@ -88,5 +91,14 @@ export default class FirstRoom extends React.Component {
       </Entity>
     )
   }
-
 }
+
+const mapStateToProps = state => {
+  return {
+    graceElementVisible: state.graceElementVisible
+  }
+}
+
+const firstRoom = connect( mapStateToProps )(FirstRoom)
+
+export default firstRoom;
