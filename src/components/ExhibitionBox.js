@@ -7,7 +7,9 @@ export default class ExhibitionBox extends React.Component {
     return (
       <Entity
         id="e-box"
-        primitive="a-box"
+        primitive={ "a-box" }
+        shader={ "flat" }
+        transparent={ "true" }
         {...this.props}
       />
     )

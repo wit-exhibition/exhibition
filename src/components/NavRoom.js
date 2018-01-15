@@ -32,21 +32,28 @@ export default class NavRoom extends React.Component {
           sound="on: click; src: #ada-audio"
         />
 
-        <HintText
-          rotation={{ y: -20 }}
-          hint={"Click this white box"}
-          position={{ x: 2.4, y: 2.5, z: -1.5 }}
-          wrapCount={14}/>
-
         <TeleportationElement
-          src={ "#activistinPanel" }
+          src={ "#firstRoomSign" }
           material={{ color: "white"}}
-          position={"1.205 1.753 -1.154"}
-          scale={"1.200 0.400 0.200"}
-          rotation={"0 -30 0"}
+          position={"-0.8 1.753 -1.154"}
+          scale={"0.400 0.400 0"}
+          transparent={ "true" }
+          rotation={"0 20 0"}
           destination="firstRoom"
           store={ this.store }
-          />
+        />
+
+        <TeleportationElement
+          src={ "#secondRoomSign" }
+          material={{ color: "white"}}
+          position={"0.8 1.753 -1.154"}
+          scale={"0.400 0.400 0"}
+          transparent={ "true" }
+          rotation={"0 -20 0"}
+          destination="secondRoom"
+          store={ this.store }
+        />
+
       </Entity>
     )
   }

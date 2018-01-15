@@ -16,59 +16,40 @@ class FirstRoom extends React.Component {
     this.store = this.props.store;
   }
 
-  renderPortrait(isVisible, srcID, positionData, rotationData, scaleData) {
-    if (isVisible === true) {
-      return (
-        <ExhibitionBox
-        src={ srcID }
-        position={ positionData }
-        rotation={rotationData}
-        scale={scaleData}
-        shader={"flat"}
-        transparent={"true"}
-        sound="on: click; src: #ada-audio"
-      />)
-    }
+  renderAda() {
+    return (
+      <ExhibitionBox
+      src={ "#welcome" }
+      position={ "-2 2.1 -2" }
+      rotation={ "0 50 0" }
+      scale={"1.3 1.3 0"}
+      sound="on: click; src: #ada-audio"
+    />)
   }
 
-  renderAda() {
-    if (this.store.getState().adaElementVisible === true) {
-      return (
-        <ExhibitionBox
-          src={ "#welcome" }
-          position={"-2 2.1 -2"}
-          rotation={"0 50 0"}
-          scale={"1.3 1.3 0"}
-          shader={"flat"}
-          transparent={"true"}
-          sound="on: click; src: #ada-audio"
-        />)
-    }
-    else {
-      console.log("else case")
-    }
+  renderGrace() {
+    return (
+      <ExhibitionBox
+      src={ "#gracePortrait" }
+      position={ "0 2.1 -2.3" }
+      rotation={ "0 0 0" }
+      scale={ "1.3 1.65 0" }
+      sound="on: click; src: #ada-audio"
+    />)
   }
 
   renderJoanna() {
-    if (this.store.getState().joannaElementVisible === true) {
-      return (
-        <ExhibitionBox
-          src={ "#joanna" }
-          position={ "2 2.1 -2"}
-          rotation={"0 -50 0"}
-          scale={"1.3 1.3 0"}
-          shader={"flat"}
-          transparent={"true"}
-          sound="on: click; src: #ada-audio"
-        />)
-    }
-    else {
-      console.log("else case")
-    }
+    return (
+      <ExhibitionBox
+      src={ "#joanna" }
+      position={ "2 2.1 -2" }
+      rotation={ "0 -50 0" }
+      scale={ "1.3 1.3 0" }
+      sound="on: click; src: #ada-audio"
+    />)
   }
 
   render() {
-    console.log("first room rendered");
     return (
       <Entity>
         <LightSwitch
@@ -77,11 +58,7 @@ class FirstRoom extends React.Component {
           person={"ada"}
           store={ this.store } />
 
-        { this.renderPortrait(this.store.getState().adaElementVisible,
-                              "#welcome",
-                              "-2 2.1 -2",
-                              "0 50 0",
-                              "1.3 1.3 0") }
+        { this.props.adaElementVisible && this.renderAda() }
 
         <LightSwitch
           position={"0 0.974 -2.110"}
@@ -89,11 +66,7 @@ class FirstRoom extends React.Component {
           person={"grace"}
           store={ this.store } />
 
-        { this.renderPortrait(this.store.getState().graceElementVisible,
-                              "#gracePortrait",
-                              "0 2.1 -2.3",
-                              "0 0 0",
-                              "1.3 1.65 0") }
+        { this.props.graceElementVisible && this.renderGrace() }
 
         <LightSwitch
           position={"0.5 0.974 -2.110"}
@@ -101,11 +74,7 @@ class FirstRoom extends React.Component {
           person={"joanna"}
           store={ this.store } />
 
-        { this.renderPortrait(this.store.getState().joannaElementVisible,
-                              "#joanna",
-                              "2 2.1 -2",
-                              "0 -50 0",
-                              "1.3 1.3 0") }
+        { this.props.joannaElementVisible && this.renderJoanna() }
 
         <HintText
           rotation={{ y: 50 }}

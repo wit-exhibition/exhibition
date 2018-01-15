@@ -1,5 +1,5 @@
 const initialState = {
-  mode: "start",
+  mode: "desktop",
   currentRoom: "navRoom",
   graceElementVisible: false,
   adaElementVisible: false
