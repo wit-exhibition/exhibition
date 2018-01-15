@@ -7,8 +7,6 @@ import LightSwitch from './LightSwitch';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
 
-
-
 class FirstRoom extends React.Component {
 
   constructor(props) {

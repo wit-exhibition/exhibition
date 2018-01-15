@@ -2,11 +2,18 @@ const initialState = {
   mode: "desktop",
   currentRoom: "navRoom",
   graceElementVisible: false,
-  adaElementVisible: false
+  adaElementVisible: false,
+  joannaElementVisible: false,
+  welcomeClicked: false
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case 'WELCOME_CLICK':
+      console.log("welcome clicked" )
+      return Object.assign({}, state, {
+          welcomeClicked: true
+      })
     case 'CHANGE_ROOM':
       console.log("room changed" )
       return Object.assign({}, state, {
