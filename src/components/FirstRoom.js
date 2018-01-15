@@ -47,15 +47,22 @@ class FirstRoom extends React.Component {
     />)
   }
 
+  renderLightSwitchHint() {
+    return (
+      <HintText
+        rotation={{ y: 20 }}
+        hint={"Klick auf die Lichtschalter!"}
+        position={{ x: -0.5, y: 1.6, z: -1.4 }}
+        wrapCount={20}
+      />
+    )
+  }
+
   render() {
     return (
       <Entity>
-        <HintText
-          rotation={{ y: 20 }}
-          hint={"Klick auf die Lichtschalter!"}
-          position={{ x: -0.5, y: 1.6, z: -1.4 }}
-          wrapCount={20}
-        />
+
+        { !this.props.anyLightSwitchClicked && this.renderLightSwitchHint() }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
@@ -112,7 +119,8 @@ const mapStateToProps = state => {
   return {
     graceElementVisible: state.graceElementVisible,
     adaElementVisible: state.adaElementVisible,
-    joannaElementVisible: state.joannaElementVisible
+    joannaElementVisible: state.joannaElementVisible,
+    anyLightSwitchClicked: state.anyLightSwitchClicked
   }
 }
 

@@ -1,14 +1,20 @@
 const initialState = {
   mode: "desktop",
-  currentRoom: "navRoom",
+  currentRoom: "firstRoom",
   graceElementVisible: false,
   adaElementVisible: false,
   joannaElementVisible: false,
-  welcomeClicked: false
+  welcomeClicked: false,
+  anyLightSwitchClicked: false
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case 'CHOOSE_DEVICE':
+      console.log("device chosen" )
+      return Object.assign({}, state, {
+          mode: action.mode
+      })
     case 'WELCOME_CLICK':
       console.log("welcome clicked" )
       return Object.assign({}, state, {
@@ -19,10 +25,10 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, {
           currentRoom: action.room
       })
-    case 'CHOOSE_DEVICE':
-      console.log("device chosen" )
+    case 'SWITCH':
+      console.log("switch clicked" )
       return Object.assign({}, state, {
-          mode: action.mode
+          anyLightSwitchClicked: true
       })
     case 'SPOTLIGHT_ON':
       if (action.person === "grace") {

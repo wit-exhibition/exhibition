@@ -14,7 +14,11 @@ export default class LightSwitch extends React.Component {
         id="light-switch"
         primitive="a-box"
         {...this.props}
-        events={{ click: () => this.store.dispatch({ type: "SPOTLIGHT_ON", person: this.props.person }) }}
+        events={{ click: () => {
+          this.store.dispatch({ type: "SPOTLIGHT_ON", person: this.props.person }),
+          this.store.dispatch({ type: "SWITCH" })
+          }
+        }}
       />
     )
   }
