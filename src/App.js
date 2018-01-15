@@ -58,9 +58,10 @@ class App extends React.Component {
           <img id="secondRoomSign" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/7ad18b89-5920-4b06-b4e8-cd226a0967d4/"/>
           <img id="gracePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/2e428e4f-98e9-4ee3-9a04-67362b4b36c4/"/>
           <img id="joanna" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/1944984a-1faf-4cea-840b-e0eb6a5761d5/"/>
+          <audio id="welcome-audio" crossOrigin="anonymous" src="https://ucarecdn.com/cc9bcebd-2586-4cf3-978c-235a92b2cc8c/"></audio>
           <audio id="click-sound" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
           <audio id="ada-audio" crossOrigin="anonymous" src="https://ucarecdn.com/59427ee4-49d5-4983-b79b-410ec846f5f9/"></audio>
-          <audio id="welcome-audio" crossOrigin="anonymous" src="https://ucarecdn.com/cc9bcebd-2586-4cf3-978c-235a92b2cc8c/"></audio>
+          <audio id="grace-audio" crossOrigin="anonymous" src="https://ucarecdn.com/e8a6d5dd-4241-44ce-8770-426bb8b36911/"></audio>
       </a-assets>
 
         { this.renderRoom(this.props.currentRoom) }

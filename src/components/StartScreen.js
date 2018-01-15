@@ -18,7 +18,7 @@ export default class StartScreen extends React.Component {
 
   render() {
     return (
-      <div className="ui inverted segment">
+      <div className="ui inverted segment" style={{ height: '720px', textAlign: 'center'}}>
         <h1>Choose your device:</h1>
         <button onClick={this.handleClick('desktop')} className="ui violet inverted button" role="button">Desktop</button>
         <button onClick={this.handleClick('carboard')} className="ui purple inverted button" role="button">CardBoard</button>

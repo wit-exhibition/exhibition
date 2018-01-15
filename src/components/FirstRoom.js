@@ -32,7 +32,7 @@ class FirstRoom extends React.Component {
       position={ "0 2.5 -2.9" }
       rotation={ "0 0 0" }
       scale={ "1.3 1.65 0" }
-      sound="on: click; src: #ada-audio"
+      sound="on: click; src: #grace-audio"
     />)
   }
 
