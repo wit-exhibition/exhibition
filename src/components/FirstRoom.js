@@ -18,7 +18,7 @@ class FirstRoom extends React.Component {
     return (
       <ExhibitionBox
       src={ "#welcome" }
-      position={ "-2 2.1 -2" }
+      position={ "-2 2.2 -2" }
       rotation={ "0 50 0" }
       scale={"1.3 1.3 0"}
       sound="on: click; src: #ada-audio"
@@ -29,7 +29,7 @@ class FirstRoom extends React.Component {
     return (
       <ExhibitionBox
       src={ "#gracePortrait" }
-      position={ "0 2.1 -2.3" }
+      position={ "0 2.5 -2.9" }
       rotation={ "0 0 0" }
       scale={ "1.3 1.65 0" }
       sound="on: click; src: #ada-audio"
@@ -40,7 +40,7 @@ class FirstRoom extends React.Component {
     return (
       <ExhibitionBox
       src={ "#joanna" }
-      position={ "2 2.1 -2" }
+      position={ "2 2.2 -2" }
       rotation={ "0 -50 0" }
       scale={ "1.3 1.3 0" }
       sound="on: click; src: #ada-audio"
@@ -50,8 +50,15 @@ class FirstRoom extends React.Component {
   render() {
     return (
       <Entity>
+        <HintText
+          rotation={{ y: 20 }}
+          hint={"Klick auf die Lichtschalter!"}
+          position={{ x: -0.5, y: 1.6, z: -1.4 }}
+          wrapCount={20}
+        />
+
         <LightSwitch
-          position={"-0.5 0.974 -2.110"}
+          position={"-0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"ada"}
           store={ this.store } />
@@ -59,7 +66,7 @@ class FirstRoom extends React.Component {
         { this.props.adaElementVisible && this.renderAda() }
 
         <LightSwitch
-          position={"0 0.974 -2.110"}
+          position={"0 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"grace"}
           store={ this.store } />
@@ -67,7 +74,7 @@ class FirstRoom extends React.Component {
         { this.props.graceElementVisible && this.renderGrace() }
 
         <LightSwitch
-          position={"0.5 0.974 -2.110"}
+          position={"0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"joanna"}
           store={ this.store } />
@@ -77,22 +84,22 @@ class FirstRoom extends React.Component {
         <HintText
           rotation={{ y: 50 }}
           hint={"Exit"}
-          position={{ x: -2.8, y: 1, z: -3 }}
+          position={{ x: -2.8, y: 1, z: -2 }}
           wrapCount={8}/>
         <TeleportationElement
           material={{ color: "#01ff26"}}
-          position={ "-3 0.5 -3"}
+          position={ "-3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="navRoom"
           store={ this.store } />
         <HintText
           rotation={{ y: -50 }}
           hint={"Next room"}
-          position={{ x: 3, y: 1, z: -3 }}
+          position={{ x: 3, y: 1, z: -2 }}
           wrapCount={8}/>
         <TeleportationElement
           material={{ color: "#d800f0"}}
-          position={ "3 0.5 -3"}
+          position={ "3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="secondRoom"
           store={ this.store }/>

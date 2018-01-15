@@ -24,24 +24,24 @@ export default class SecondRoom extends React.Component {
         <HintText
           rotation={{ y: 50 }}
           hint={"Exit"}
-          position={{ x: -2.8, y: 1, z: -3 }}
+          position={{ x: -2.8, y: 1, z: -2 }}
           wrapCount={8}/>
 
         <TeleportationElement
           material={{ color: "#01ff26"}}
-          position={ "-3 0.5 -3"}
+          position={ "-3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="navRoom"
           store={ this.store }/>,
 
         <HintText rotation={{ y: -50 }}
           hint={"Next room"}
-          position={{ x: 3, y: 1, z: -3 }}
+          position={{ x: 3, y: 1, z: -2 }}
           wrapCount={8}/>
 
         <TeleportationElement
           material={{ color: "#d800f0"}}
-          position={ "3 0.5 -3"}
+          position={ "3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="firstRoom"
           store={ this.store }/>

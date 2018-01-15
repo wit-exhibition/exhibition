@@ -9,7 +9,7 @@ export default class UpDownAnimation extends React.Component {
       <a-animation
          attribute="position"
          from={position.x + " " + position.y + " " + position.z}
-         to={position.x + " " + (position.y + 0.15) + " " + position.z}
+         to={position.x + " " + (position.y + 0.08) + " " + position.z}
          repeat="indefinite"
          dur="1200"
          direction="alternate">

@@ -10,6 +10,7 @@ export default class TeleportationElement extends React.Component {
 
   teleport = (destination) => {
     var audio = new Audio('https://freesound.org/data/previews/162/162479_311243-lq.mp3');
+    audio.volume = 0.1;
     audio.play();
     setTimeout(
       () => {

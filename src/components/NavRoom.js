@@ -16,7 +16,7 @@ class NavRoom extends React.Component {
   componentDidMount() {
     const box = document.getElementById('abc')
     box.setAttribute('sound', 'on', 'click');
-    box.setAttribute('sound', 'src', '#ada-audio');
+    box.setAttribute('sound', 'src', '#welcome-audio');
   }
 
   showHintText() {
