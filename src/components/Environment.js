@@ -17,7 +17,7 @@ export default class Environment extends React.Component {
           type="point"
           intensity="1"
           color="#eef3ff"
-          position="0 6.5 7"/>
+          position="0 15.686 9.615"/>
         <Entity primitive="a-sky" height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"/>
       </Entity>
     );
