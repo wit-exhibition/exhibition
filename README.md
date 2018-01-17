@@ -23,6 +23,6 @@ Then you can access the app in the browser with localhost:3000.
 To build the project:
 
 ```bash
-npm run build
+npm run deploy
 ```
-Then upload to zeit.
+Then it gets deployed to [https://wit-exhibition.github.io/exhibition/](https://wit-exhibition.github.io/exhibition/)
