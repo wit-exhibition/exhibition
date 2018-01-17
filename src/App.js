@@ -49,8 +49,8 @@ class App extends React.Component {
     return (
       <Scene>
         <a-assets>
-          <img id="groundTexture" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/b2ac6e1e-b44b-48ab-adfc-a3d595e07d1b/"/>
-          <img id="skyTexture" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/23d47526-e465-49a9-8477-91b8036f42e3/"/>
+          <img id="skyTexture" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/99bb7a07-6a39-4253-8c25-6c4b6de1dde3/"/>
+          <img id="groundTexture" src="https://ucarecdn.com/c2ecbc8a-4d90-46b1-a148-d6c3594e45a3/"/>
           <img id="ada" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/b021b66f-ef4f-46c2-bfa6-233f1deee719/"/>
           <img id="grace" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/b60483ac-60bb-4e55-8429-328695dfffde/"/>
           <img id="welcome" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/e47455a4-94e4-41df-a48f-385b54502fd1/"/>
