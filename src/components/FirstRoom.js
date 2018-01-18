@@ -28,13 +28,19 @@ class FirstRoom extends React.Component {
 
   renderGrace() {
     return (
-      <ExhibitionBox
-      src={ "#gracePortrait" }
-      position={ "0 2.5 -2.9" }
-      rotation={ "0 0 0" }
-      scale={ "1.3 1.65 0" }
-      sound="on: click; src: #grace-audio"
-    />)
+      <Entity>
+        <ExhibitionBox
+        src={ "#gracePortrait" }
+        position={ "0 2.5 -2.9" }
+        rotation={ "0 0 0" }
+        scale={ "1.3 1.65 0" }
+        sound="on: click; src: #grace-audio"/>
+
+        <PlayElement
+          position={ "-0.981 1.893 -2.915" }/>
+
+      </Entity>
+    )
   }
 
   renderJoanna() {
@@ -62,7 +68,8 @@ class FirstRoom extends React.Component {
   render() {
     return (
       <Entity>
-        <PlayElement/>
+
+
 
         { !this.props.anyLightSwitchClicked && this.renderLightSwitchHint() }
 
