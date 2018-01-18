@@ -38,7 +38,7 @@ class NavRoom extends React.Component {
     return (
       <Entity>
         <TeleportationElement
-          src={ "#firstRoomSign" }
+          src={ "#milestone" }
           material={{ color: "white"}}
           position={"-0.8 1.753 -1.154"}
           scale={"0.400 0.400 0"}
@@ -49,9 +49,31 @@ class NavRoom extends React.Component {
         />
 
         <TeleportationElement
-          src={ "#secondRoomSign" }
+          src={ "#activist" }
           material={{ color: "white"}}
           position={"0.8 1.753 -1.154"}
+          scale={"0.400 0.400 0"}
+          transparent={ "true" }
+          rotation={"0 -20 0"}
+          destination="secondRoom"
+          store={ this.store }
+        />
+
+        <TeleportationElement
+          src={ "#racket" }
+          material={{ color: "white"}}
+          position={"-0.8 2.3 -1.154"}
+          scale={"0.400 0.400 0"}
+          transparent={ "true" }
+          rotation={"0 20 0"}
+          destination="secondRoom"
+          store={ this.store }
+        />
+
+        <TeleportationElement
+          src={ "#rails" }
+          material={{ color: "white"}}
+          position={"0.8 2.3 -1.154"}
           scale={"0.400 0.400 0"}
           transparent={ "true" }
           rotation={"0 -20 0"}
