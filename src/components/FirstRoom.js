@@ -6,6 +6,7 @@ import ExhibitionBox from './ExhibitionBox';
 import LightSwitch from './LightSwitch';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
+import PlayElement from './PlayElement'
 
 class FirstRoom extends React.Component {
 
@@ -61,6 +62,7 @@ class FirstRoom extends React.Component {
   render() {
     return (
       <Entity>
+        <PlayElement/>
 
         { !this.props.anyLightSwitchClicked && this.renderLightSwitchHint() }
 
