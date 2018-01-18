@@ -58,6 +58,28 @@ class NavRoom extends React.Component {
           destination="secondRoom"
           store={ this.store }
         />
+
+        <TeleportationElement
+          src={ "#secondRoomSign" }
+          material={{ color: "white"}}
+          position={"-0.8 2.3 -1.154"}
+          scale={"0.400 0.400 0"}
+          transparent={ "true" }
+          rotation={"0 20 0"}
+          destination="secondRoom"
+          store={ this.store }
+        />
+
+        <TeleportationElement
+          src={ "#secondRoomSign" }
+          material={{ color: "white"}}
+          position={"0.8 2.3 -1.154"}
+          scale={"0.400 0.400 0"}
+          transparent={ "true" }
+          rotation={"0 -20 0"}
+          destination="secondRoom"
+          store={ this.store }
+        />
       </Entity>
     )
   }
