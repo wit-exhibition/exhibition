@@ -25,7 +25,7 @@ class NavRoom extends React.Component {
     return (
       <HintText
         rotation={{ y: 0 }}
-        hint={"Click on Ada"}
+        hint={"Click on play"}
         position={{ x: -1, y: 2.5, z: -1.5 }}
         wrapCount={16}
       />
@@ -33,6 +33,7 @@ class NavRoom extends React.Component {
   }
 
   welcomeClicked() {
+    console.log("inside welcome clicked")
     this.store.dispatch({ type: "WELCOME_CLICK"})
   }
 
@@ -91,32 +92,31 @@ class NavRoom extends React.Component {
   }
 
   render() {
+    console.log(this.props.welcomeClicked)
     return (
       <Entity>
 
         { !this.props.welcomeClicked && this.showHintText() }
 
         <ExhibitionBox
-          id="abc"
+
           src={ "#welcome" }
           position={ "0 2.1 -2"}
           rotation={"0 0 0"}
           scale={"1.3 1.3 0"}
           shader={"flat"}
-          transparent={"true"}
-          events={{ click: () => this.welcomeClicked() }}
-        />
+          transparent={"true"}/>
 
-        <PlayElement geometry="primitive: plane; height: 0.2; width: 0.5"
+        <PlayElement id="abc"
+          geometry="primitive: plane; height: 0.2; width: 0.5"
           position= { "-0.002 1.362 -2.007" }
-          />
+          events={{ click: () => this.welcomeClicked() }}/>
 
         { this.props.welcomeClicked && this.renderNavElements() }
 
       </Entity>
     )
   }
-
 }
 
 const mapStateToProps = state => {
