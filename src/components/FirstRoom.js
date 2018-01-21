@@ -23,11 +23,12 @@ class FirstRoom extends React.Component {
         src={ "#gracePortrait" }
         position={ "0 2.6 -2.9" }
         rotation={ "0 0 0" }
-        scale={ "1.3 1.65 0" }
-        sound="on: click; src: #grace-audio"/>
+        scale={ "1.3 1.65 0" }/>
 
-        <PlayElement geometry="primitive: plane; height: 0.2; width: 0.5"
-          position={ "-0.002 1.6 -2.912" }/>
+        <PlayElement
+          src={ "#play-icon" }
+          position={ "-0.002 1.6 -2.912" }
+          sound="on: click; src: #grace-audio"/>
       </Entity>
     )
   }
@@ -39,12 +40,13 @@ class FirstRoom extends React.Component {
         src={ "#joanna" }
         position={ "2 2.5 -2" }
         rotation={ "0 -50 0" }
-        scale={ "1.3 1.3 0" }
-        sound="on: click; src: #ada-audio"/>
+        scale={ "1.3 1.3 0" }/>
 
-      <PlayElement geometry="primitive: plane; height: 0.2; width: 0.5"
+      <PlayElement
+        src={ "#play-icon" }
         position={ "2 1.7 -1.989" }
-        rotation={ "0 -50 0" }/>
+        rotation={ "0 -50 0" }
+        sound="on: click; src: #joanna-audio"/>
       </Entity>
     )
   }

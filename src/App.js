@@ -61,7 +61,9 @@ class App extends React.Component {
           <img id="racket" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/dbd59dfe-4419-4ce7-a10f-d12ec0319100/"/>
           <img id="rails" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/01809f99-0a91-4483-a82d-3f3f90692c2e/"/>
           <img id="gracePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/2e428e4f-98e9-4ee3-9a04-67362b4b36c4/"/>
+
           <img id="joanna" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/1944984a-1faf-4cea-840b-e0eb6a5761d5/"/>
+          <audio id="joanna-audio" crossOrigin="anonymous" src="https://ucarecdn.com/d029d427-5d11-4cdb-821b-9adac7cb50a4/"></audio>
 
           <img id="chelseaPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/67bc265e-f5cd-4157-be63-85f43427d63e/"/>
           <audio id="chelsea-audio" crossOrigin="anonymous" src="https://ucarecdn.com/1974f904-e95d-43a8-850e-a53fdaf74d5b/"></audio>
