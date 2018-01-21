@@ -47,7 +47,7 @@ class NavRoom extends React.Component {
           rotation={"0 20 0"}
           destination="firstRoom"
           store={ this.store }>
-          <HoverAnimation />
+          <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
         </TeleportationElement>
 
         <TeleportationElement

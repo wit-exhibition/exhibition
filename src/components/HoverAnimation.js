@@ -4,14 +4,19 @@ import { Entity } from 'aframe-react';
 export default class HoverAnimation extends React.Component {
 
   render() {
-    console.log("IT IS BROKEN");
+
+    const { scale } = this.props
+
     return (
       <a-animation
         begin="mouseenter"
         end="mouseleave"
         attribute="scale"
-        from="0.400 0.400 0" to="0.450 0.450 0"
-        easing="linear" dur="100" fill="both">
+        from={scale.x + " " + scale.y + " " + scale.z}
+        to={(scale.x + 0.04) + " " + (scale.y + 0.04) + " " + scale.z}
+        easing="linear"
+        dur="200"
+        fill="backwards">
       </a-animation>
     )
   }
