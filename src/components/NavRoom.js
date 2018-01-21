@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import ExhibitionBox from './ExhibitionBox';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
-import PlayElement from './PlayElement'
+import PlayElement from './PlayElement';
 import HoverAnimation from './HoverAnimation';
 
 class NavRoom extends React.Component {
@@ -98,15 +98,12 @@ class NavRoom extends React.Component {
         { !this.props.welcomeClicked && this.showHintText() }
 
         <ExhibitionBox
-
           src={ "#welcome" }
           position={ "0 2.1 -2"}
           rotation={"0 0 0"}
           scale={"1.3 1.3 0"}
           shader={"flat"}
-          transparent={"true"}
-
-          />
+          transparent={"true"}/>
 
         <PlayElement
           id="play-element"
