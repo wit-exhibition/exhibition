@@ -6,32 +6,14 @@ import ExhibitionBox from './ExhibitionBox';
 import LightSwitch from './LightSwitch';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
-import PlayElement from './PlayElement'
+import PlayElement from './PlayElement';
+import HoverAnimation from './HoverAnimation';
 
 class FirstRoom extends React.Component {
 
   constructor(props) {
     super(props);
     this.store = this.props.store;
-  }
-
-  renderAda() {
-    return (
-      <Entity>
-        <ExhibitionBox
-        src={ "#welcome" }
-        position={ "-2 2.5 -2" }
-        rotation={ "0 50 0" }
-        scale={"1.3 1.3 0"}
-        sound="on: click; src: #ada-audio"
-        />
-
-      <PlayElement geometry="primitive: plane; height: 0.2; width: 0.5"
-        position={ "-2.044 1.718 -1.939" }
-        rotation={ "0 50 0" }
-        />
-    </Entity>
-  )
   }
 
   renderGrace() {
@@ -82,17 +64,7 @@ class FirstRoom extends React.Component {
     return (
       <Entity>
 
-
-
-        { !this.props.anyLightSwitchClicked && this.renderLightSwitchHint() }
-
-        <LightSwitch
-          position={"-0.5 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
-          person={"ada"}
-          store={ this.store } />
-
-        { this.props.adaElementVisible && this.renderAda() }
+      { !this.props.anyLightSwitchClicked && this.renderLightSwitchHint() }
 
         <LightSwitch
           position={"0 1.35 -1.4"}
