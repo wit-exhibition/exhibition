@@ -51,7 +51,7 @@ class NavRoom extends React.Component {
         <TeleportationElement
           src={ "#activist" }
           material={{ color: "white"}}
-          position={"0.8 1.753 -1.154"}
+          position={"0.8 1.753 -1.2"}
           scale={"0.400 0.400 0"}
           transparent={ "true" }
           rotation={"0 -20 0"}
@@ -62,7 +62,7 @@ class NavRoom extends React.Component {
         <TeleportationElement
           src={ "#racket" }
           material={{ color: "white"}}
-          position={"-0.8 2.3 -1.154"}
+          position={"-0.8 2.3 -1.2"}
           scale={"0.400 0.400 0"}
           transparent={ "true" }
           rotation={"0 20 0"}
@@ -73,7 +73,7 @@ class NavRoom extends React.Component {
         <TeleportationElement
           src={ "#rails" }
           material={{ color: "white"}}
-          position={"0.8 2.3 -1.154"}
+          position={"0.8 2.3 -1.2"}
           scale={"0.400 0.400 0"}
           transparent={ "true" }
           rotation={"0 -20 0"}
@@ -93,7 +93,7 @@ class NavRoom extends React.Component {
         <ExhibitionBox
           id="abc"
           src={ "#welcome" }
-          position={ "0 2.1 -1.4"}
+          position={ "0 2.1 -2"}
           rotation={"0 0 0"}
           scale={"1.3 1.3 0"}
           shader={"flat"}
