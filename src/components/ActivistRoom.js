@@ -8,18 +8,18 @@ import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement'
 
-class FirstRoom extends React.Component {
+class ActivistRoom extends React.Component {
 
   constructor(props) {
     super(props);
     this.store = this.props.store;
   }
 
-  renderAda() {
+  renderChelsea() {
     return (
       <Entity>
         <ExhibitionBox
-        src={ "#welcome" }
+        src={ "#chelseaPortrait" }
         position={ "-2 2.5 -2" }
         rotation={ "0 50 0" }
         scale={"1.3 1.3 0"}
@@ -34,11 +34,11 @@ class FirstRoom extends React.Component {
   )
   }
 
-  renderGrace() {
+  renderConstanze() {
     return (
       <Entity>
         <ExhibitionBox
-        src={ "#gracePortrait" }
+        src={ "#constanzePortrait" }
         position={ "0 2.6 -2.9" }
         rotation={ "0 0 0" }
         scale={ "1.3 1.65 0" }
@@ -50,11 +50,11 @@ class FirstRoom extends React.Component {
     )
   }
 
-  renderJoanna() {
+  renderAudrey() {
     return (
       <Entity>
         <ExhibitionBox
-        src={ "#joanna" }
+        src={ "#audreyPortrait" }
         position={ "2 2.5 -2" }
         rotation={ "0 -50 0" }
         scale={ "1.3 1.3 0" }
@@ -81,34 +81,31 @@ class FirstRoom extends React.Component {
   render() {
     return (
       <Entity>
-
-
-
         { !this.props.anyLightSwitchClicked && this.renderLightSwitchHint() }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
-          person={"ada"}
+          person={"chelsea"}
           store={ this.store } />
 
-        { this.props.adaElementVisible && this.renderAda() }
+        { this.props.chelseaElementVisible && this.renderChelsea() }
 
         <LightSwitch
           position={"0 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
-          person={"grace"}
+          person={"constanze"}
           store={ this.store } />
 
-        { this.props.graceElementVisible && this.renderGrace() }
+        { this.props.constanzeElementVisible && this.renderConstanze() }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
-          person={"joanna"}
+          person={"audrey"}
           store={ this.store } />
 
-        { this.props.joannaElementVisible && this.renderJoanna() }
+        { this.props.audreyElementVisible && this.renderAudrey() }
 
         <HintText
           rotation={{ y: 50 }}
@@ -139,13 +136,13 @@ class FirstRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    graceElementVisible: state.graceElementVisible,
-    adaElementVisible: state.adaElementVisible,
-    joannaElementVisible: state.joannaElementVisible,
+    chelseaElementVisible: state.chelseaElementVisible,
+    constanzeElementVisible: state.constanzeElementVisible,
+    audreyElementVisible: state.audreyElementVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked
   }
 }
 
-const firstRoom = connect( mapStateToProps )(FirstRoom)
+const activistRoom = connect( mapStateToProps )(ActivistRoom)
 
-export default firstRoom;
+export default activistRoom;

@@ -1,11 +1,14 @@
 const initialState = {
   mode: "desktop",
-  currentRoom: "navRoom",
+  currentRoom: "activistRoom",
+  welcomeClicked: false,
+  anyLightSwitchClicked: false,
   graceElementVisible: false,
   adaElementVisible: false,
   joannaElementVisible: false,
-  welcomeClicked: false,
-  anyLightSwitchClicked: false
+  chelseaElementVisible: false,
+  constanzeElementVisible: false,
+  audreyElementVisible: false
 }
 
 export default (state = initialState, action) => {
@@ -44,6 +47,21 @@ export default (state = initialState, action) => {
       else if (action.person === "joanna") {
         return Object.assign({}, state, {
             joannaElementVisible: true
+        })
+      }
+      else if (action.person === "chelsea") {
+        return Object.assign({}, state, {
+            chelseaElementVisible: true
+        })
+      }
+      else if (action.person === "constanze") {
+        return Object.assign({}, state, {
+            constanzeElementVisible: true
+        })
+      }
+      else if (action.person === "audrey") {
+        return Object.assign({}, state, {
+            audreyElementVisible: true
         })
       }
 

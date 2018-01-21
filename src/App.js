@@ -10,7 +10,7 @@ import Camera from './components/Camera';
 import Environment from './components/Environment';
 import NavRoom from './components/NavRoom';
 import FirstRoom from './components/FirstRoom';
-import SecondRoom from './components/SecondRoom';
+import ActivistRoom from './components/ActivistRoom';
 
 class App extends React.Component {
 
@@ -35,9 +35,9 @@ class App extends React.Component {
       case 'firstRoom':
         console.log(" called first room");
         return <FirstRoom store={ this.store } />
-      case 'secondRoom':
+      case 'activistRoom':
         console.log(" called first room");
-        return <SecondRoom store={ this.store } />
+        return <ActivistRoom store={ this.store } />
       default :
         console.log("default called");
         return <NavRoom store={ this.store }/>
@@ -60,11 +60,16 @@ class App extends React.Component {
           <img id="rails" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/01809f99-0a91-4483-a82d-3f3f90692c2e/"/>
           <img id="gracePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/2e428e4f-98e9-4ee3-9a04-67362b4b36c4/"/>
           <img id="joanna" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/1944984a-1faf-4cea-840b-e0eb6a5761d5/"/>
+
+          <img id="chelseaPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/67bc265e-f5cd-4157-be63-85f43427d63e/"/>
+          <img id="constanzePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/b8d41339-9269-4284-9cab-e0de06bb9e42/"/>
+          <img id="audreyPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/70ac4230-ca40-4c04-b097-2f9e87fb5e49/"/>
+
           <audio id="welcome-audio" crossOrigin="anonymous" src="https://ucarecdn.com/cc9bcebd-2586-4cf3-978c-235a92b2cc8c/"></audio>
           <audio id="click-sound" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
           <audio id="ada-audio" crossOrigin="anonymous" src="https://ucarecdn.com/59427ee4-49d5-4983-b79b-410ec846f5f9/"></audio>
           <audio id="grace-audio" crossOrigin="anonymous" src="https://ucarecdn.com/e8a6d5dd-4241-44ce-8770-426bb8b36911/"></audio>
-      </a-assets>
+        </a-assets>
 
         { this.renderRoom(this.props.currentRoom) }
 
