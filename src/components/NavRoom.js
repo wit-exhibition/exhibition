@@ -110,7 +110,7 @@ class NavRoom extends React.Component {
 
         <PlayElement
           id="play-element"
-          geometry="primitive: plane; height: 0.2; width: 0.5"
+          src={ "#play-icon" }
           position= { "-0.002 1.362 -2.007" }
           events={{ click: () => this.welcomeClicked() }}
           />
