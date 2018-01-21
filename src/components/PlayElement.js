@@ -5,9 +5,8 @@ export default class PlayElement extends React.Component {
 
   render() {
     return (
-      <a-entity geometry="primitive: cylinder; radius: 0.2; height: 0.05"
-        material="color: #da517d"
-        rotation="90 0 0"
+      <a-entity
+        material="side: double; color: #77ff03"
         {...this.props}>
       </a-entity>
     )

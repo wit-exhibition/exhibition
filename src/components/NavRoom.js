@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import ExhibitionBox from './ExhibitionBox';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
+import PlayElement from './PlayElement'
 
 class NavRoom extends React.Component {
 
@@ -100,6 +101,10 @@ class NavRoom extends React.Component {
           transparent={"true"}
           events={{ click: () => this.welcomeClicked() }}
         />
+
+        <PlayElement geometry="primitive: plane; height: 0.2; width: 1.1"
+          position= { "0 1.389 -1.397" }
+          />
 
         { this.props.welcomeClicked && this.renderNavElements() }
 

@@ -17,13 +17,21 @@ class FirstRoom extends React.Component {
 
   renderAda() {
     return (
-      <ExhibitionBox
-      src={ "#welcome" }
-      position={ "-2 2.2 -2" }
-      rotation={ "0 50 0" }
-      scale={"1.3 1.3 0"}
-      sound="on: click; src: #ada-audio"
-    />)
+      <Entity>
+        <ExhibitionBox
+        src={ "#welcome" }
+        position={ "-2 2.2 -2" }
+        rotation={ "0 50 0" }
+        scale={"1.3 1.3 0"}
+        sound="on: click; src: #ada-audio"
+        />
+
+      <PlayElement geometry="primitive: plane; height: 0.2; width: 1.1"
+        position={ "-2.044 1.418 -1.939" }
+        rotation={ "0 50 0" }
+        />
+    </Entity>
+  )
   }
 
   renderGrace() {
@@ -31,14 +39,13 @@ class FirstRoom extends React.Component {
       <Entity>
         <ExhibitionBox
         src={ "#gracePortrait" }
-        position={ "0 2.5 -2.9" }
+        position={ "0 2.6 -2.9" }
         rotation={ "0 0 0" }
         scale={ "1.3 1.65 0" }
         sound="on: click; src: #grace-audio"/>
 
-        <PlayElement
-          position={ "-0.981 1.893 -2.915" }/>
-
+        <PlayElement geometry="primitive: plane; height: 0.2; width: 1.250"
+          position={ "-0.002 1.6 -2.912" }/>
       </Entity>
     )
   }
