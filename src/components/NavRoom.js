@@ -107,8 +107,8 @@ class NavRoom extends React.Component {
           events={{ click: () => this.welcomeClicked() }}
         />
 
-        <PlayElement geometry="primitive: plane; height: 0.2; width: 1.1"
-          position= { "0 1.389 -1.397" }
+        <PlayElement geometry="primitive: plane; height: 0.2; width: 0.5"
+          position= { "-0.002 1.362 -2.007" }
           />
 
         { this.props.welcomeClicked && this.renderNavElements() }

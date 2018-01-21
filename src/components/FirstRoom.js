@@ -20,14 +20,14 @@ class FirstRoom extends React.Component {
       <Entity>
         <ExhibitionBox
         src={ "#welcome" }
-        position={ "-2 2.2 -2" }
+        position={ "-2 2.5 -2" }
         rotation={ "0 50 0" }
         scale={"1.3 1.3 0"}
         sound="on: click; src: #ada-audio"
         />
 
-      <PlayElement geometry="primitive: plane; height: 0.2; width: 1.1"
-        position={ "-2.044 1.418 -1.939" }
+      <PlayElement geometry="primitive: plane; height: 0.2; width: 0.5"
+        position={ "-2.044 1.718 -1.939" }
         rotation={ "0 50 0" }
         />
     </Entity>
@@ -44,7 +44,7 @@ class FirstRoom extends React.Component {
         scale={ "1.3 1.65 0" }
         sound="on: click; src: #grace-audio"/>
 
-        <PlayElement geometry="primitive: plane; height: 0.2; width: 1.250"
+        <PlayElement geometry="primitive: plane; height: 0.2; width: 0.5"
           position={ "-0.002 1.6 -2.912" }/>
       </Entity>
     )
@@ -52,13 +52,19 @@ class FirstRoom extends React.Component {
 
   renderJoanna() {
     return (
-      <ExhibitionBox
-      src={ "#joanna" }
-      position={ "2 2.2 -2" }
-      rotation={ "0 -50 0" }
-      scale={ "1.3 1.3 0" }
-      sound="on: click; src: #ada-audio"
-    />)
+      <Entity>
+        <ExhibitionBox
+        src={ "#joanna" }
+        position={ "2 2.5 -2" }
+        rotation={ "0 -50 0" }
+        scale={ "1.3 1.3 0" }
+        sound="on: click; src: #ada-audio"/>
+
+      <PlayElement geometry="primitive: plane; height: 0.2; width: 0.5"
+        position={ "2 1.7 -1.989" }
+        rotation={ "0 -50 0" }/>
+      </Entity>
+    )
   }
 
   renderLightSwitchHint() {
