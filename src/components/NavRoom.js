@@ -58,8 +58,9 @@ class NavRoom extends React.Component {
           transparent={ "true" }
           rotation={"0 -20 0"}
           destination="secondRoom"
-          store={ this.store }
-        />
+          store={ this.store }>
+          <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
+        </TeleportationElement>
 
         <TeleportationElement
           src={ "#racket" }
@@ -69,8 +70,9 @@ class NavRoom extends React.Component {
           transparent={ "true" }
           rotation={"0 20 0"}
           destination="secondRoom"
-          store={ this.store }
-        />
+          store={ this.store }>
+          <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
+        </TeleportationElement>
 
         <TeleportationElement
           src={ "#rails" }
@@ -80,8 +82,9 @@ class NavRoom extends React.Component {
           transparent={ "true" }
           rotation={"0 -20 0"}
           destination="secondRoom"
-          store={ this.store }
-        />
+          store={ this.store }>
+          <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
+        </TeleportationElement>
       </Entity>
     )
   }
