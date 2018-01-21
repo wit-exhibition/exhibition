@@ -6,7 +6,8 @@ export default class PlayElement extends React.Component {
   render() {
     return (
       <Entity
-        material="side: double; color: #77ff03"
+        primitive={ "a-box" }
+        scale={ "0.5 0.2 0" }
         {...this.props}>
       </Entity>
     )
