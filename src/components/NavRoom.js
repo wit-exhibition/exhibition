@@ -17,8 +17,8 @@ class NavRoom extends React.Component {
 
   componentDidMount() {
     const box = document.getElementById('play-element')
-    box.setAttribute('sound', 'on', 'click');
-    box.setAttribute('sound', 'src', '#welcome-audio');
+    box.setAttribute('sound', 'on', 'click')
+    box.setAttribute('sound', 'src', '#welcome-audio')
   }
 
   showHintText() {
@@ -26,14 +26,26 @@ class NavRoom extends React.Component {
       <HintText
         rotation={{ y: 0 }}
         hint={"Click on play"}
-        position={{ x: -1, y: 2.5, z: -1.5 }}
+        position={{ x: -0.85, y: 1.4, z: -1.5 }}
         wrapCount={16}
       />
     )
   }
 
   welcomeClicked() {
-    this.store.dispatch({ type: "WELCOME_CLICK"})
+    if (!this.props.welcomeClicked) {
+      this.store.dispatch({ type: "WELCOME_CLICK"})
+    }
+
+    const playElement = document.getElementById('play-element')
+
+    if (playElement.getAttribute('src') === "#play-icon") {
+      playElement.setAttribute('src', '#stop-icon')
+      playElement.components.sound.playSound()
+    } else {
+      playElement.setAttribute('src', '#play-icon')
+      playElement.components.sound.stopSound()
+    }
   }
 
   renderNavElements() {
@@ -91,7 +103,6 @@ class NavRoom extends React.Component {
   }
 
   render() {
-    console.log(this.props.welcomeClicked)
     return (
       <Entity>
 
