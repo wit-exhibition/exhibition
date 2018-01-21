@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import ExhibitionBox from './ExhibitionBox';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
+import HoverAnimation from './HoverAnimation';
 
 class NavRoom extends React.Component {
 
@@ -45,8 +46,9 @@ class NavRoom extends React.Component {
           transparent={ "true" }
           rotation={"0 20 0"}
           destination="firstRoom"
-          store={ this.store }
-        />
+          store={ this.store }>
+          <HoverAnimation />
+        </TeleportationElement>
 
         <TeleportationElement
           src={ "#activist" }
