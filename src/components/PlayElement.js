@@ -5,10 +5,10 @@ export default class PlayElement extends React.Component {
 
   render() {
     return (
-      <a-entity
+      <Entity
         material="side: double; color: #77ff03"
         {...this.props}>
-      </a-entity>
+      </Entity>
     )
   }
 }

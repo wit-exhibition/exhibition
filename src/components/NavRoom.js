@@ -16,7 +16,7 @@ class NavRoom extends React.Component {
   }
 
   componentDidMount() {
-    const box = document.getElementById('abc')
+    const box = document.getElementById('play-element')
     box.setAttribute('sound', 'on', 'click');
     box.setAttribute('sound', 'src', '#welcome-audio');
   }
@@ -33,7 +33,6 @@ class NavRoom extends React.Component {
   }
 
   welcomeClicked() {
-    console.log("inside welcome clicked")
     this.store.dispatch({ type: "WELCOME_CLICK"})
   }
 
@@ -105,12 +104,16 @@ class NavRoom extends React.Component {
           rotation={"0 0 0"}
           scale={"1.3 1.3 0"}
           shader={"flat"}
-          transparent={"true"}/>
+          transparent={"true"}
 
-        <PlayElement id="abc"
+          />
+
+        <PlayElement
+          id="play-element"
           geometry="primitive: plane; height: 0.2; width: 0.5"
           position= { "-0.002 1.362 -2.007" }
-          events={{ click: () => this.welcomeClicked() }}/>
+          events={{ click: () => this.welcomeClicked() }}
+          />
 
         { this.props.welcomeClicked && this.renderNavElements() }
 
