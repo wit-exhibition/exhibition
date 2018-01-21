@@ -6,6 +6,7 @@ import ExhibitionBox from './ExhibitionBox';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement'
+import HoverAnimation from './HoverAnimation';
 
 class NavRoom extends React.Component {
 
@@ -46,41 +47,45 @@ class NavRoom extends React.Component {
           transparent={ "true" }
           rotation={"0 20 0"}
           destination="firstRoom"
-          store={ this.store }
-        />
+          store={ this.store }>
+          <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
+        </TeleportationElement>
 
         <TeleportationElement
           src={ "#activist" }
           material={{ color: "white"}}
-          position={"0.8 1.753 -1.154"}
+          position={"0.8 1.753 -1.2"}
           scale={"0.400 0.400 0"}
           transparent={ "true" }
           rotation={"0 -20 0"}
           destination="secondRoom"
-          store={ this.store }
-        />
+          store={ this.store }>
+          <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
+        </TeleportationElement>
 
         <TeleportationElement
           src={ "#racket" }
           material={{ color: "white"}}
-          position={"-0.8 2.3 -1.154"}
+          position={"-0.8 2.3 -1.2"}
           scale={"0.400 0.400 0"}
           transparent={ "true" }
           rotation={"0 20 0"}
           destination="secondRoom"
-          store={ this.store }
-        />
+          store={ this.store }>
+          <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
+        </TeleportationElement>
 
         <TeleportationElement
           src={ "#rails" }
           material={{ color: "white"}}
-          position={"0.8 2.3 -1.154"}
+          position={"0.8 2.3 -1.2"}
           scale={"0.400 0.400 0"}
           transparent={ "true" }
           rotation={"0 -20 0"}
           destination="secondRoom"
-          store={ this.store }
-        />
+          store={ this.store }>
+          <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
+        </TeleportationElement>
       </Entity>
     )
   }
@@ -94,7 +99,7 @@ class NavRoom extends React.Component {
         <ExhibitionBox
           id="abc"
           src={ "#welcome" }
-          position={ "0 2.1 -1.4"}
+          position={ "0 2.1 -2"}
           rotation={"0 0 0"}
           scale={"1.3 1.3 0"}
           shader={"flat"}
