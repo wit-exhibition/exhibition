@@ -9,7 +9,7 @@ import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
 import HoverAnimation from './HoverAnimation';
 
-class FirstRoom extends React.Component {
+class MilestoneRoom extends React.Component {
 
   constructor(props) {
     super(props);
@@ -120,6 +120,6 @@ const mapStateToProps = state => {
   }
 }
 
-const firstRoom = connect( mapStateToProps )(FirstRoom)
+const milestoneRoom = connect( mapStateToProps )(MilestoneRoom)
 
-export default firstRoom;
+export default milestoneRoom;

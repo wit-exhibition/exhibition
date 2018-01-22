@@ -9,7 +9,7 @@ import 'aframe-htmltexture-component';
 import Camera from './components/Camera';
 import Environment from './components/Environment';
 import NavRoom from './components/NavRoom';
-import FirstRoom from './components/FirstRoom';
+import MilestoneRoom from './components/MilestoneRoom';
 import ActivistRoom from './components/ActivistRoom';
 
 class App extends React.Component {
@@ -32,9 +32,9 @@ class App extends React.Component {
     switch(room) {
       case 'navRoom':
         return <NavRoom store={ this.store } />
-      case 'firstRoom':
+      case 'milestoneRoom':
         console.log(" called first room");
-        return <FirstRoom store={ this.store } />
+        return <MilestoneRoom store={ this.store } />
       case 'activistRoom':
         console.log(" called first room");
         return <ActivistRoom store={ this.store } />
