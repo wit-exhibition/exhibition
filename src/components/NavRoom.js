@@ -52,7 +52,7 @@ class NavRoom extends React.Component {
     return (
       <Entity>
         <TeleportationElement
-          src={ "#milestone" }
+          src={ "#milestone-portal" }
           material={{ color: "white"}}
           position={"-0.8 1.753 -1.154"}
           scale={"0.400 0.400 0"}
@@ -64,7 +64,7 @@ class NavRoom extends React.Component {
         </TeleportationElement>
 
         <TeleportationElement
-          src={ "#activist" }
+          src={ "#activist-portal" }
           material={{ color: "white"}}
           position={"0.8 1.753 -1.2"}
           scale={"0.400 0.400 0"}
@@ -76,7 +76,7 @@ class NavRoom extends React.Component {
         </TeleportationElement>
 
         <TeleportationElement
-          src={ "#rocket" }
+          src={ "#space-portal" }
           material={{ color: "white"}}
           position={"-0.8 2.3 -1.2"}
           scale={"0.400 0.400 0"}
@@ -88,7 +88,7 @@ class NavRoom extends React.Component {
         </TeleportationElement>
 
         <TeleportationElement
-          src={ "#rails" }
+          src={ "#rails-portal" }
           material={{ color: "white"}}
           position={"0.8 2.3 -1.2"}
           scale={"0.400 0.400 0"}
