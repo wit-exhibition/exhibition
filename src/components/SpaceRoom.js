@@ -8,6 +8,7 @@ import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
 import HoverAnimation from './HoverAnimation';
+import FloorIndicator from './FloorIndicator';
 
 class SpaceRoom extends React.Component {
 
@@ -57,6 +58,8 @@ class SpaceRoom extends React.Component {
           store={ this.store } />
 
         { this.props.graceElementVisible && this.renderGrace() }
+
+        <FloorIndicator src={ "#space-floor" }/>
 
         <HintText
           rotation={{ y: 50 }}
