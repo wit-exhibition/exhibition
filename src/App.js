@@ -54,17 +54,17 @@ class App extends React.Component {
           <img id="play-icon" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/c31fd691-2b9c-4c8c-a9c3-533d12231093/"/>
           <img id="stop-icon" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/3062e209-32e0-40e4-81eb-7f4945dea1f1/"/>
           <img id="activist-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/ad8cdab7-b590-4e1e-8ba5-4766c98e1147/"/>
-          <img id="rocket-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/a2710603-30a6-4672-8dce-bf83b3a4483e/"/>
+          <img id="space-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/a2710603-30a6-4672-8dce-bf83b3a4483e/"/>
           <img id="milestone-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/616e813e-cd5c-4332-a703-752a4b27072a/"/>
           <img id="rails-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/a2290a00-23bf-484c-8235-8b2b0915f85d/"/>
 
           <img id="ada" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/b021b66f-ef4f-46c2-bfa6-233f1deee719/"/>
           <img id="grace" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/b60483ac-60bb-4e55-8429-328695dfffde/"/>
           <img id="welcome" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/e47455a4-94e4-41df-a48f-385b54502fd1/"/>
-          <img id="milestone" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/2716c01f-3ce1-43bb-a1a8-a2a727744274/"/>
-          <img id="activist" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/674bca06-10f9-4c39-b358-8e8953da31a8/"/>
-          <img id="rocket" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/dbd59dfe-4419-4ce7-a10f-d12ec0319100/"/>
-          <img id="rails" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/01809f99-0a91-4483-a82d-3f3f90692c2e/"/>
+          <img id="milestone-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/2716c01f-3ce1-43bb-a1a8-a2a727744274/"/>
+          <img id="activist-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/674bca06-10f9-4c39-b358-8e8953da31a8/"/>
+          <img id="space-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/dbd59dfe-4419-4ce7-a10f-d12ec0319100/"/>
+          <img id="rails-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/01809f99-0a91-4483-a82d-3f3f90692c2e/"/>
           <img id="gracePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/2e428e4f-98e9-4ee3-9a04-67362b4b36c4/"/>
 
           <img id="joanna" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/1944984a-1faf-4cea-840b-e0eb6a5761d5/"/>
