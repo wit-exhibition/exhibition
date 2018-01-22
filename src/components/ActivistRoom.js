@@ -114,6 +114,16 @@ class ActivistRoom extends React.Component {
 
         { this.props.audreyElementVisible && this.renderAudrey() }
 
+        <Entity
+          src={ "#activist-floor" }
+          primitive={ "a-box" }
+          shader={ "flat" }
+          transparent={ "true" }
+          position={"0 0.1 -1.5"}
+          scale={"1.5 1.5 0"}
+          rotation={"-90 0 0"}
+          />
+
         <HintText
           rotation={{ y: 50 }}
           hint={"Exit"}

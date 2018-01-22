@@ -53,6 +53,7 @@ class App extends React.Component {
           <img id="groundTexture" src="https://ucarecdn.com/c2ecbc8a-4d90-46b1-a148-d6c3594e45a3/"/>
           <img id="play-icon" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/c31fd691-2b9c-4c8c-a9c3-533d12231093/"/>
           <img id="stop-icon" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/3062e209-32e0-40e4-81eb-7f4945dea1f1/"/>
+          <img id="activist-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/30b0de40-90b6-48c5-a66d-965871abe1b1/"/>
 
           <img id="ada" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/b021b66f-ef4f-46c2-bfa6-233f1deee719/"/>
           <img id="grace" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/b60483ac-60bb-4e55-8429-328695dfffde/"/>
