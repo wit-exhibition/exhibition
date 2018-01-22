@@ -72,7 +72,7 @@ class App extends React.Component {
           <img id="milestone-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/2716c01f-3ce1-43bb-a1a8-a2a727744274/"/>
           <img id="activist-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/674bca06-10f9-4c39-b358-8e8953da31a8/"/>
           <img id="space-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/dbd59dfe-4419-4ce7-a10f-d12ec0319100/"/>
-          <img id="rails-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/01809f99-0a91-4483-a82d-3f3f90692c2e/"/>
+          <img id="rails-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/04ec2fb2-6823-4e47-b895-da7b1b3aab40/"/>
           <img id="gracePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/2e428e4f-98e9-4ee3-9a04-67362b4b36c4/"/>
 
           <img id="joanna" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/1944984a-1faf-4cea-840b-e0eb6a5761d5/"/>

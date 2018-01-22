@@ -8,6 +8,7 @@ import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
 import HoverAnimation from './HoverAnimation';
+import FloorIndicator from './FloorIndicator';
 
 class NewWaysRoom extends React.Component {
 
@@ -57,6 +58,8 @@ class NewWaysRoom extends React.Component {
           store={ this.store } />
 
         { this.props.graceElementVisible && this.renderGrace() }
+
+        <FloorIndicator src={ "#rails-floor" }/>
 
         <HintText
           rotation={{ y: 50 }}
