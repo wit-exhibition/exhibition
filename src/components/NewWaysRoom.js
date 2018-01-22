@@ -81,7 +81,7 @@ class NewWaysRoom extends React.Component {
           material={{ color: "#d800f0"}}
           position={ "3 0.5 -2"}
           scale={"0.5 0.5 1"}
-          destination="activistRoom"
+          destination="milestoneRoom"
           store={ this.store }/>
       </Entity>
     )

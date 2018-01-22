@@ -137,7 +137,7 @@ class ActivistRoom extends React.Component {
           material={{ color: "#d800f0"}}
           position={ "3 0.5 -2"}
           scale={"0.5 0.5 1"}
-          destination="milestoneRoom"
+          destination="newWaysRoom"
           store={ this.store }/>
       </Entity>
     )
