@@ -6,7 +6,8 @@ import ExhibitionBox from './ExhibitionBox';
 import LightSwitch from './LightSwitch';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
-import PlayElement from './PlayElement'
+import PlayElement from './PlayElement';
+import FloorIndicator from './FloorIndicator';
 
 class ActivistRoom extends React.Component {
 
@@ -114,15 +115,7 @@ class ActivistRoom extends React.Component {
 
         { this.props.audreyElementVisible && this.renderAudrey() }
 
-        <Entity
-          src={ "#activist-floor" }
-          primitive={ "a-box" }
-          shader={ "flat" }
-          transparent={ "true" }
-          position={"0 0.1 -1.5"}
-          scale={"1.5 1.5 0"}
-          rotation={"-90 0 0"}
-          />
+        <FloorIndicator src={ "#activist-floor" }/>
 
         <HintText
           rotation={{ y: 50 }}

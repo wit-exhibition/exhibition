@@ -76,7 +76,7 @@ class NavRoom extends React.Component {
         </TeleportationElement>
 
         <TeleportationElement
-          src={ "#racket" }
+          src={ "#rocket" }
           material={{ color: "white"}}
           position={"-0.8 2.3 -1.2"}
           scale={"0.400 0.400 0"}
