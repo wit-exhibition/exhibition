@@ -8,9 +8,8 @@ import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
 import HoverAnimation from './HoverAnimation';
-import FloorIndicator from './FloorIndicator';
 
-class MilestoneRoom extends React.Component {
+class FirstRoom extends React.Component {
 
   constructor(props) {
     super(props);
@@ -85,8 +84,6 @@ class MilestoneRoom extends React.Component {
 
         { this.props.joannaElementVisible && this.renderJoanna() }
 
-        <FloorIndicator src={ "#milestone-floor" }/>
-
         <HintText
           rotation={{ y: 50 }}
           hint={"Exit"}
@@ -123,6 +120,6 @@ const mapStateToProps = state => {
   }
 }
 
-const milestoneRoom = connect( mapStateToProps )(MilestoneRoom)
+const firstRoom = connect( mapStateToProps )(FirstRoom)
 
-export default milestoneRoom;
+export default firstRoom;
