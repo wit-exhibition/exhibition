@@ -12,6 +12,7 @@ import NavRoom from './components/NavRoom';
 import MilestoneRoom from './components/MilestoneRoom';
 import ActivistRoom from './components/ActivistRoom';
 import SpaceRoom from './components/SpaceRoom';
+import NewWaysRoom from './components/NewWaysRoom';
 
 class App extends React.Component {
 
@@ -42,6 +43,9 @@ class App extends React.Component {
       case 'spaceRoom':
         console.log(" called first room");
         return <SpaceRoom store={ this.store } />
+      case 'newWaysRoom':
+        console.log(" called first room");
+        return <NewWaysRoom store={ this.store } />
       default :
         console.log("default called");
         return <NavRoom store={ this.store }/>
