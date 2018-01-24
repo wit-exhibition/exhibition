@@ -8,25 +8,35 @@ export default class TeleportationElement extends React.Component {
     this.store = this.props.store;
   }
 
-  teleport = (destination) => {
-    var audio = new Audio('https://freesound.org/data/previews/162/162479_311243-lq.mp3');
-    //audio.volume = 0.1;
-    audio.play();
-    setTimeout(
-      () => {
-        this.store.dispatch({ type: "CHANGE_ROOM", room: destination })
-      }, 800
-    )
+  componentDidMount() {
+    const boxes = document.getElementsByClassName('teleport-box')
+    for (let i = 0; i < boxes.length; i++) {
+      boxes[i].setAttribute('sound', 'on', 'click')
+      boxes[i].setAttribute('sound', 'src', '#teleport')
+    }
+  }
+
+  teleport = (destination, teleportSound) => {
+    if (teleportSound) {
+      setTimeout(
+        () => {
+          this.store.dispatch({ type: "CHANGE_ROOM", room: destination })
+        }, 2500
+      )
+    } else {
+      this.store.dispatch({ type: "CHANGE_ROOM", room: destination })
+    }
+
   }
 
   render() {
     const { destination, handleClick, ...rest} = this.props
     return (
       <Entity
-        id="teleport-box"
+        class="teleport-box"
         primitive="a-box"
         {...this.props}
-        events={{ click: () => this.teleport(destination) }}
+        events={{ click: () => this.teleport(destination, this.props.teleportSound) }}
       />
     )
   }

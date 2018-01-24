@@ -86,8 +86,6 @@ class App extends React.Component {
           <img id="conTrojaner" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/9583c74f-effa-4902-93fb-bff1243c36a9/"/>
           <audio id="constanze-audio" crossOrigin="anonymous" src="https://ucarecdn.com/40886a23-0bc3-4ea1-843a-99645292f3c9/"></audio>
 
-
-
           <img id="audreyPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/70ac4230-ca40-4c04-b097-2f9e87fb5e49/"/>
           <audio id="audrey-audio" crossOrigin="anonymous" src="https://ucarecdn.com/0e44319b-d444-45b3-b09d-27e6e07ead90/"></audio>
 
@@ -95,7 +93,11 @@ class App extends React.Component {
           <audio id="click-sound" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
           <audio id="ada-audio" crossOrigin="anonymous" src="https://ucarecdn.com/59427ee4-49d5-4983-b79b-410ec846f5f9/"></audio>
           <audio id="grace-audio" crossOrigin="anonymous" src="https://ucarecdn.com/e8a6d5dd-4241-44ce-8770-426bb8b36911/"></audio>
-        </a-assets>
+          <audio id="teleport" crossOrigin="anonymous" src="https://freesound.org/data/previews/162/162479_311243-lq.mp3"></audio>
+          //TODO Mention in Readme: Sound by jobro from https://freesound.org/people/jobro/sounds/75637/
+          <audio id="switch-sound" crossOrigin="anonymous" src="https://freesound.org/data/previews/75/75637_35187-lq.mp3"></audio>
+
+      </a-assets>
 
         { this.renderRoom(this.props.currentRoom) }
 

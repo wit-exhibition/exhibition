@@ -170,6 +170,7 @@ class ActivistRoom extends React.Component {
           position={{ x: -2.8, y: 1, z: -2 }}
           wrapCount={8}/>
         <TeleportationElement
+          teleportSound={true}
           material={{ color: "#01ff26"}}
           position={ "-3 0.5 -2"}
           scale={"0.5 0.5 1"}
@@ -181,10 +182,12 @@ class ActivistRoom extends React.Component {
           position={{ x: 3, y: 1, z: -2 }}
           wrapCount={8}/>
         <TeleportationElement
+          teleportSound={true}
           material={{ color: "#d800f0"}}
           position={ "3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="newWaysRoom"
+          time={ 2300 }
           store={ this.store }/>
       </Entity>
     )
