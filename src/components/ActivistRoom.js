@@ -45,29 +45,33 @@ class ActivistRoom extends React.Component {
     )
   }
 
-  renderConstanzeNoLight() {
+  renderBlackBulb(position) {
     return (
       <a-sphere
-        position="0 4 -2.8"
+        position={position}
         material="color: black; shader: flat;"
         radius="0.15"
       ></a-sphere>
     )
   }
 
-  renderConstanze() {
+  renderLightBulb(position) {
+    return (
+      <a-sphere
+        position={position}
+        rotation="-70 0 0"
+        material="color: white; shader: flat;"
+        light="type: spot;angle: 25"
+        radius="0.15"
+        ></a-sphere>
+    )
+  }
 
+  renderConstanze() {
     return (
       <Entity>
-        <a-sphere
-          position="0 4 -2.8"
-          rotation="-70 0 0"
-          material="color: white; shader: flat;"
-          light="type: spot;angle: 25"
-          radius="0.15"
-          >
-        </a-sphere>
 
+        { this.renderLightBulb("0 4 -2.8") }
         <ExhibitionBox
           id="constanze"
           src={ "#constanzePortrait" }
@@ -138,7 +142,7 @@ class ActivistRoom extends React.Component {
 
 
         <Lamp position="-2 4.2 -2"/>
-        { this.props.chelseaElementVisible && this.renderChelsea() }
+        { this.props.chelseaElementVisible ? this.renderChelsea() : this.renderBlackBulb("-2 4 -2") }
 
         <LightSwitch
           position={"0 1.35 -1.4"}
@@ -147,7 +151,7 @@ class ActivistRoom extends React.Component {
           store={ this.store } />
 
         <Lamp position="0 4.2 -2.8"/>
-        { this.props.constanzeElementVisible ? this.renderConstanze() : this.renderConstanzeNoLight()}
+        { this.props.constanzeElementVisible ? this.renderConstanze() : this.renderBlackBulb("0 4 -2.8")}
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
@@ -156,7 +160,7 @@ class ActivistRoom extends React.Component {
           store={ this.store } />
 
         <Lamp position="2 4.2 -2"/>
-        { this.props.audreyElementVisible && this.renderAudrey() }
+        { this.props.audreyElementVisible ? this.renderAudrey() : this.renderBlackBulb("2 4 -2") }
 
         <FloorIndicator src={ "#activist-floor" }/>
 
