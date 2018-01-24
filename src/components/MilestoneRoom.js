@@ -97,6 +97,7 @@ class MilestoneRoom extends React.Component {
           position={ "-3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="navRoom"
+          teleportSound={true}
           store={ this.store } />
         <HintText
           rotation={{ y: -50 }}
@@ -108,6 +109,7 @@ class MilestoneRoom extends React.Component {
           position={ "3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="spaceRoom"
+          teleportSound={true}
           store={ this.store }/>
       </Entity>
     )
