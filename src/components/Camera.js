@@ -8,7 +8,7 @@ export default class Camera extends React.Component {
       <Entity primitive="a-camera">
         <Entity
           primitive="a-cursor"
-          geometry={{ primitive: 'ring' }}
+          geometry={{ primitive: 'ring', radiusInner: '0.02', radiusOuter: '0.03' }}
           material={{ color: 'white', shader: 'flat' }}/>
       </Entity>
     );

@@ -15,10 +15,10 @@ export default class Lamp extends React.Component {
           material="color: #680ebb; shader: flat"
         >
           <a-cone
-            height="3"
+            height="1.3"
             radius-top="0.001"
             radius-bottom="0.02"
-            position="0 1.4 0"
+            position="0 0.4 0"
             material="color: #680ebb">
           </a-cone>
         </a-cone>
