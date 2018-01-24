@@ -8,6 +8,7 @@ import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
 import FloorIndicator from './FloorIndicator';
+import Lamp from './Lamp';
 
 class ActivistRoom extends React.Component {
 
@@ -19,6 +20,14 @@ class ActivistRoom extends React.Component {
   renderChelsea() {
     return (
       <Entity>
+        <a-sphere
+          position="-2 4 -2"
+          rotation="-70 0 0"
+          material="color: white; shader: flat;"
+          light="type: spot;angle: 25"
+          radius="0.15"
+          ></a-sphere>
+
         <ExhibitionBox
           src={ "#chelseaPortrait" }
           position={ "-2 2.5 -2" }
@@ -36,19 +45,40 @@ class ActivistRoom extends React.Component {
     )
   }
 
+  renderConstanzeNoLight() {
+    return (
+      <a-sphere
+        position="0 4 -2.8"
+        material="color: black; shader: flat;"
+        radius="0.15"
+      ></a-sphere>
+    )
+  }
+
   renderConstanze() {
+
     return (
       <Entity>
+        <a-sphere
+          position="0 4 -2.8"
+          rotation="-70 0 0"
+          material="color: white; shader: flat;"
+          light="type: spot;angle: 25"
+          radius="0.15"
+          >
+        </a-sphere>
+
         <ExhibitionBox
+          id="constanze"
           src={ "#constanzePortrait" }
-          position={ "0 2.6 -2.9" }
+          position={ "0 2.6 -2.8" }
           rotation={ "0 0 0" }
           scale={ "1.3 1.65 0" }
         />
 
         <PlayElement
           src={ "#play-icon" }
-          position={ "-0.002 1.6 -2.912" }
+          position={ "-0.002 1.6 -2.8" }
           sound="on: click; src: #constanze-audio; volume: 8"
         />
       </Entity>
@@ -58,6 +88,15 @@ class ActivistRoom extends React.Component {
   renderAudrey() {
     return (
       <Entity>
+        <a-sphere
+          position="2 4 -2"
+          rotation="-70 0 0"
+          material="color: white; shader: flat;"
+          light="type: spot;angle: 25"
+          radius="0.15"
+          >
+        </a-sphere>
+
         <ExhibitionBox
           src={ "#audreyPortrait" }
           position={ "2 2.5 -2" }
@@ -97,6 +136,8 @@ class ActivistRoom extends React.Component {
           person={"chelsea"}
           store={ this.store } />
 
+
+        <Lamp position="-2 4.2 -2"/>
         { this.props.chelseaElementVisible && this.renderChelsea() }
 
         <LightSwitch
@@ -105,7 +146,8 @@ class ActivistRoom extends React.Component {
           person={"constanze"}
           store={ this.store } />
 
-        { this.props.constanzeElementVisible && this.renderConstanze() }
+        <Lamp position="0 4.2 -2.8"/>
+        { this.props.constanzeElementVisible ? this.renderConstanze() : this.renderConstanzeNoLight()}
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
@@ -113,6 +155,7 @@ class ActivistRoom extends React.Component {
           person={"audrey"}
           store={ this.store } />
 
+        <Lamp position="2 4.2 -2"/>
         { this.props.audreyElementVisible && this.renderAudrey() }
 
         <FloorIndicator src={ "#activist-floor" }/>

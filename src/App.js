@@ -82,7 +82,11 @@ class App extends React.Component {
           <audio id="chelsea-audio" crossOrigin="anonymous" src="https://ucarecdn.com/1974f904-e95d-43a8-850e-a53fdaf74d5b/"></audio>
 
           <img id="constanzePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/b8d41339-9269-4284-9cab-e0de06bb9e42/"/>
+          <img id="conNoLight" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/9a4da925-68ca-4122-96e9-34809754211b/"/>
+          <img id="conTrojaner" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/9583c74f-effa-4902-93fb-bff1243c36a9/"/>
           <audio id="constanze-audio" crossOrigin="anonymous" src="https://ucarecdn.com/40886a23-0bc3-4ea1-843a-99645292f3c9/"></audio>
+
+
 
           <img id="audreyPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/70ac4230-ca40-4c04-b097-2f9e87fb5e49/"/>
           <audio id="audrey-audio" crossOrigin="anonymous" src="https://ucarecdn.com/0e44319b-d444-45b3-b09d-27e6e07ead90/"></audio>
