@@ -1,6 +1,6 @@
 const initialState = {
   mode: "start",
-  currentRoom: "activistRoom",
+  currentRoom: "navRoom",
   welcomeClicked: false,
   anyLightSwitchClicked: false,
   graceElementVisible: false,
