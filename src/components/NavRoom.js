@@ -1,5 +1,4 @@
 import React from 'react';
-import aframe from 'aframe';
 import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
 
@@ -20,20 +19,6 @@ class NavRoom extends React.Component {
     const box = document.getElementById('play-element')
     box.setAttribute('sound', 'on', 'click')
     box.setAttribute('sound', 'src', '#welcome-audio')
-
-    aframe.registerComponent('cursor-listener', {
-      init: function () {
-        const cursor = document.getElementById('cursor')
-
-        this.el.addEventListener('mouseenter', function (evt) {
-          cursor.setAttribute('color', '#d800f0')
-        })
-
-        this.el.addEventListener('mouseleave', function (evt) {
-          cursor.setAttribute('color', 'white')
-        })
-      }
-    })
   }
 
   showHintText() {

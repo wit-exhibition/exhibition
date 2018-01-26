@@ -1,4 +1,5 @@
 import 'aframe';
+import aframe from 'aframe';
 import 'aframe-animation-component';
 import 'babel-polyfill';
 import { Scene } from 'aframe-react';
@@ -28,6 +29,20 @@ class App extends React.Component {
       camera.setAttribute('camera', 'userHeight', 1);
       scene.enterVR()
     }
+
+    aframe.registerComponent('cursor-listener', {
+      init: function () {
+        const cursor = document.getElementById('cursor')
+
+        this.el.addEventListener('mouseenter', function (evt) {
+          cursor.setAttribute('color', '#d800f0')
+        })
+
+        this.el.addEventListener('mouseleave', function (evt) {
+          cursor.setAttribute('color', 'white')
+        })
+      }
+    })
   }
 
   renderRoom(room) {

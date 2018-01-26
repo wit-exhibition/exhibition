@@ -40,6 +40,7 @@ class ActivistRoom extends React.Component {
           position={ "-1.900 1.570 -1.939" }
           rotation={ "0 50 0" }
           sound="on: click; src: #chelsea-audio"
+          cursor-listener
         />
       </Entity>
     )
@@ -84,6 +85,7 @@ class ActivistRoom extends React.Component {
           src={ "#play-icon" }
           position={ "-0.002 1.6 -2.8" }
           sound="on: click; src: #constanze-audio; volume: 8"
+          cursor-listener
         />
       </Entity>
     )
@@ -113,6 +115,7 @@ class ActivistRoom extends React.Component {
           position={ "2 1.7 -1.989" }
           rotation={ "0 -50 0" }
           sound="on: click; src: #audrey-audio"
+          cursor-listener
         />
       </Entity>
     )
@@ -138,8 +141,8 @@ class ActivistRoom extends React.Component {
           position={"-0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"chelsea"}
-          store={ this.store } />
-
+          store={ this.store }
+          cursor-listener />
 
         <Lamp position="-2 4.2 -2"/>
         { this.props.chelseaElementVisible ? this.renderChelsea() : this.renderBlackBulb("-2 4 -2") }
@@ -148,7 +151,8 @@ class ActivistRoom extends React.Component {
           position={"0 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"constanze"}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
 
         <Lamp position="0 4.2 -2.8"/>
         { this.props.constanzeElementVisible ? this.renderConstanze() : this.renderBlackBulb("0 4 -2.8")}
@@ -157,7 +161,8 @@ class ActivistRoom extends React.Component {
           position={"0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"audrey"}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
 
         <Lamp position="2 4.2 -2"/>
         { this.props.audreyElementVisible ? this.renderAudrey() : this.renderBlackBulb("2 4 -2") }
@@ -175,7 +180,8 @@ class ActivistRoom extends React.Component {
           position={ "-3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="navRoom"
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
         <HintText
           rotation={{ y: -50 }}
           hint={"Next room"}
@@ -188,7 +194,8 @@ class ActivistRoom extends React.Component {
           scale={"0.5 0.5 1"}
           destination="newWaysRoom"
           time={ 2300 }
-          store={ this.store }/>
+          store={ this.store }
+          cursor-listener />
       </Entity>
     )
   }
