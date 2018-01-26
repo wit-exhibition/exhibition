@@ -1,4 +1,5 @@
 import React from 'react';
+import aframe from 'aframe';
 import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
 
@@ -19,6 +20,20 @@ class NavRoom extends React.Component {
     const box = document.getElementById('play-element')
     box.setAttribute('sound', 'on', 'click')
     box.setAttribute('sound', 'src', '#welcome-audio')
+
+    aframe.registerComponent('cursor-listener', {
+      init: function () {
+        const cursor = document.getElementById('cursor')
+
+        this.el.addEventListener('mouseenter', function (evt) {
+          cursor.setAttribute('color', '#d800f0')
+        })
+
+        this.el.addEventListener('mouseleave', function (evt) {
+          cursor.setAttribute('color', 'white')
+        })
+      }
+    })
   }
 
   showHintText() {
@@ -59,6 +74,7 @@ class NavRoom extends React.Component {
           transparent={ "true" }
           rotation={"0 20 0"}
           destination="milestoneRoom"
+          cursor-listener
           store={ this.store }>
           <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
         </TeleportationElement>
@@ -71,6 +87,7 @@ class NavRoom extends React.Component {
           transparent={ "true" }
           rotation={"0 -20 0"}
           destination="activistRoom"
+          cursor-listener
           store={ this.store }>
           <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
         </TeleportationElement>
@@ -83,6 +100,7 @@ class NavRoom extends React.Component {
           transparent={ "true" }
           rotation={"0 20 0"}
           destination="spaceRoom"
+          cursor-listener
           store={ this.store }>
           <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
         </TeleportationElement>
@@ -95,6 +113,7 @@ class NavRoom extends React.Component {
           transparent={ "true" }
           rotation={"0 -20 0"}
           destination="newWaysRoom"
+          cursor-listener
           store={ this.store }>
           <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
         </TeleportationElement>
@@ -116,14 +135,15 @@ class NavRoom extends React.Component {
           shader={"flat"}
           transparent={"true"}/>
 
+        { this.props.welcomeClicked && this.renderNavElements() }
+
         <PlayElement
           id="play-element"
           src={ "#play-icon" }
           position= { "-0.002 1.362 -2.007" }
           events={{ click: () => this.welcomeClicked() }}
+          cursor-listener
           />
-
-        { this.props.welcomeClicked && this.renderNavElements() }
 
       </Entity>
     )
