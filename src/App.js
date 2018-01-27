@@ -96,6 +96,20 @@ class App extends React.Component {
           <img id="joanna" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/1944984a-1faf-4cea-840b-e0eb6a5761d5/"/>
           <audio id="joanna-audio" crossOrigin="anonymous" src="https://ucarecdn.com/2966637f-adb8-441d-81b1-43952b4a4166/"></audio>
 
+          <audio id="kamila-audio" crossOrigin="anonymous" src="https://ucarecdn.com/6e679228-b979-40af-927f-90a1b2d7ccd6/"></audio>
+
+          <audio id="barbara-audio" crossOrigin="anonymous" src="https://ucarecdn.com/7895f72a-1fa7-4b7d-aedc-326bff5d30d3/"></audio>
+
+          <audio id="anuradha-audio" crossOrigin="anonymous" src="https://ucarecdn.com/990a0c8d-a92f-4d2d-abe0-2d420738f64d/"></audio>
+
+          <audio id="dorothy-audio" crossOrigin="anonymous" src="https://ucarecdn.com/526762dc-99c0-4648-8287-f4383a52e83d/"></audio>
+
+          <audio id="evelyn-audio" crossOrigin="anonymous" src="https://ucarecdn.com/3dfffda0-dc6f-447d-a4ab-8e39b85046a8/"></audio>
+
+          <audio id="hedy-audio" crossOrigin="anonymous" src="https://ucarecdn.com/07cd06cc-4c07-4cd3-b209-37ccf06482f5/"></audio>
+
+          <audio id="margaret-audio" crossOrigin="anonymous" src="https://ucarecdn.com/1dbf45fc-923f-4a81-a8e2-890c6fbf3f18/"></audio>
+
           <img id="chelseaPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/67bc265e-f5cd-4157-be63-85f43427d63e/"/>
           <audio id="chelsea-audio" crossOrigin="anonymous" src="https://ucarecdn.com/c39fe27e-a86a-46b0-95ca-76ea74e61c19/"></audio>
 
@@ -106,7 +120,6 @@ class App extends React.Component {
 
           <img id="audreyPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/70ac4230-ca40-4c04-b097-2f9e87fb5e49/"/>
           <audio id="audrey-audio" crossOrigin="anonymous" src="https://ucarecdn.com/c079662b-ba18-4908-8eca-e7c72dd92d6a/"></audio>
-
 
           <audio id="click-sound" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio
           <audio id="teleport" crossOrigin="anonymous" src="https://freesound.org/data/previews/162/162479_311243-lq.mp3"></audio>
