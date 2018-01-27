@@ -9,6 +9,7 @@ import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
+import Lightbulb from './Lightbulb';
 
 class ActivistRoom extends React.Component {
 
@@ -20,13 +21,7 @@ class ActivistRoom extends React.Component {
   renderChelsea() {
     return (
       <Entity>
-        <a-sphere
-          position="-2 4 -2"
-          rotation="-70 0 0"
-          material="color: white; shader: flat;"
-          light="type: spot;angle: 25"
-          radius="0.15"
-          ></a-sphere>
+        <Lightbulb position="-2 4 -2"/>
 
         <ExhibitionBox
           src={ "#chelseaPortrait" }
@@ -46,33 +41,11 @@ class ActivistRoom extends React.Component {
     )
   }
 
-  renderBlackBulb(position) {
-    return (
-      <a-sphere
-        position={position}
-        material="color: black; shader: flat;"
-        radius="0.15"
-      ></a-sphere>
-    )
-  }
-
-  renderLightBulb(position) {
-    return (
-      <a-sphere
-        position={position}
-        rotation="-70 0 0"
-        material="color: white; shader: flat;"
-        light="type: spot;angle: 25"
-        radius="0.15"
-        ></a-sphere>
-    )
-  }
-
   renderConstanze() {
     return (
       <Entity>
+        <Lightbulb position="0 4 -2.8"/>
 
-        { this.renderLightBulb("0 4 -2.8") }
         <ExhibitionBox
           id="constanze"
           src={ "#constanzePortrait" }
@@ -94,14 +67,7 @@ class ActivistRoom extends React.Component {
   renderJoanna() {
     return (
       <Entity>
-        <a-sphere
-          position="2 4 -2"
-          rotation="-70 0 0"
-          material="color: white; shader: flat;"
-          light="type: spot;angle: 25"
-          radius="0.15"
-          >
-        </a-sphere>
+        <Lightbulb position="2 4 -2"/>
 
         <ExhibitionBox
           src={ "#joanna" }
@@ -145,7 +111,7 @@ class ActivistRoom extends React.Component {
           cursor-listener />
 
         <Lamp position="-2 4.2 -2"/>
-        { this.props.chelseaElementVisible ? this.renderChelsea() : this.renderBlackBulb("-2 4 -2") }
+        { this.props.chelseaElementVisible ? this.renderChelsea() : <Lightbulb position="-2 4 -2" off={true}/> }
 
         <LightSwitch
           position={"0 1.35 -1.4"}
@@ -155,7 +121,7 @@ class ActivistRoom extends React.Component {
           cursor-listener />
 
         <Lamp position="0 4.2 -2.8"/>
-        { this.props.constanzeElementVisible ? this.renderConstanze() : this.renderBlackBulb("0 4 -2.8")}
+        { this.props.constanzeElementVisible ? this.renderConstanze() : <Lightbulb position="0 4 -2.8" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
@@ -165,7 +131,7 @@ class ActivistRoom extends React.Component {
           cursor-listener />
 
         <Lamp position="2 4.2 -2"/>
-        { this.props.joannaElementVisible ? this.renderJoanna() : this.renderBlackBulb("2 4 -2") }
+        { this.props.joannaElementVisible ? this.renderJoanna() : <Lightbulb position="2 4 -2" off={true}/> }
 
         <FloorIndicator src={ "#activist-floor" }/>
 
