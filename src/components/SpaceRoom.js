@@ -27,9 +27,9 @@ class SpaceRoom extends React.Component {
         scale={ "1 1 0" }/>
 
         <PlayElement
-          src={ "#play-icon" }
+          id="margaret-play-element"
+          soundID={"#margaret-audio"}
           position={ "0 1.58 -2" }
-          sound="on: click; src: #margaret-audio"
           cursor-listener />
       </Entity>
     )
@@ -45,10 +45,10 @@ class SpaceRoom extends React.Component {
         scale={ "1 1 0" }/>
 
         <PlayElement
-          src={ "#play-icon" }
+          id="dorothy-play-element"
+          soundID={"#dorothy-audio"}
           position={ "-1.6 1.6 -1.6" }
           rotation={ "0 50 0" }
-          sound="on: click; src: #dorothy-audio"
           cursor-listener />
       </Entity>
     )
@@ -64,10 +64,10 @@ class SpaceRoom extends React.Component {
         scale={ "1 1 0" }/>
 
         <PlayElement
-          src={ "#play-icon" }
+          id="anuradha-play-element"
+          soundID={"#anuradha-audio"}
           position={ "1.6 1.6 -1.6" }
           rotation={ "0 -50 0" }
-          sound="on: click; src: #anuradha-audio"
           cursor-listener />
       </Entity>
     )
