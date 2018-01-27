@@ -17,19 +17,53 @@ class NewWaysRoom extends React.Component {
     this.store = this.props.store;
   }
 
-  renderGrace() {
+  renderEvelyn() {
     return (
       <Entity>
         <ExhibitionBox
-        src={ "#gracePortrait" }
-        position={ "0 2.6 -2.9" }
+        src={ "#evelynPortrait" }
+        position={ "0 2.6 -2" }
         rotation={ "0 0 0" }
-        scale={ "1.3 1.65 0" }/>
+        scale={ "1 1 0" }/>
 
         <PlayElement
           src={ "#play-icon" }
           position={ "-0.002 1.6 -2.912" }
-          sound="on: click; src: #grace-audio"/>
+          sound="on: click; src: #evelyn-audio"/>
+      </Entity>
+    )
+  }
+
+  renderHedy() {
+    return (
+      <Entity>
+        <ExhibitionBox
+        src={ "#hedyPortrait" }
+        position={ "-2 2.6 -2" }
+        rotation={ "0 50 0" }
+        scale={ "1 1 0" }/>
+
+        <PlayElement
+          src={ "#play-icon" }
+          position={ "-1.5 1.6 -2.912" }
+          sound="on: click; src: #hedy-audio"/>
+      </Entity>
+    )
+  }
+
+  renderKamila() {
+    return (
+      <Entity>
+        <ExhibitionBox
+        src={ "#kamilaPortrait" }
+        position={ "2 2.6 -2" }
+        rotation={ "0 -50 0" }
+        scale={ "1 1 0" }/>
+
+        <PlayElement
+          src={ "#play-icon" }
+          position={ "1.5 1.6 -2.912" }
+          sound="on: click; src: #kamila-audio"/>
       </Entity>
     )
   }
@@ -54,10 +88,26 @@ class NewWaysRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
-          person={"grace"}
+          person={"evelyn"}
           store={ this.store } />
 
-        { this.props.graceElementVisible && this.renderGrace() }
+        { this.props.evelynElementVisible && this.renderEvelyn() }
+
+        <LightSwitch
+          position={"-0.5 1.35 -1.4"}
+          scale={"0.2 0.2 0.2"}
+          person={"hedy"}
+          store={ this.store } />
+
+        { this.props.hedyElementVisible && this.renderHedy() }
+
+        <LightSwitch
+          position={"0.5 1.35 -1.4"}
+          scale={"0.2 0.2 0.2"}
+          person={"kamila"}
+          store={ this.store } />
+
+        { this.props.kamilaElementVisible && this.renderKamila() }
 
         <FloorIndicator src={ "#rails-floor" }/>
 
@@ -90,9 +140,9 @@ class NewWaysRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    graceElementVisible: state.graceElementVisible,
-    adaElementVisible: state.adaElementVisible,
-    joannaElementVisible: state.joannaElementVisible,
+    evelynElementVisible: state.evelynElementVisible,
+    hedyElementVisible: state.hedyElementVisible,
+    kamilaElementVisible: state.kamilaElementVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked
   }
 }

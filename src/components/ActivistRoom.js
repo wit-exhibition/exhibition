@@ -91,7 +91,7 @@ class ActivistRoom extends React.Component {
     )
   }
 
-  renderAudrey() {
+  renderJoanna() {
     return (
       <Entity>
         <a-sphere
@@ -104,7 +104,7 @@ class ActivistRoom extends React.Component {
         </a-sphere>
 
         <ExhibitionBox
-          src={ "#audreyPortrait" }
+          src={ "#joanna" }
           position={ "2 2.5 -2" }
           rotation={ "0 -50 0" }
           scale={ "1.6 1.3 0" }
@@ -114,7 +114,7 @@ class ActivistRoom extends React.Component {
           src={ "#play-icon" }
           position={ "2 1.7 -1.989" }
           rotation={ "0 -50 0" }
-          sound="on: click; src: #audrey-audio"
+          sound="on: click; src: #joanna-audio"
           cursor-listener
         />
       </Entity>
@@ -160,12 +160,12 @@ class ActivistRoom extends React.Component {
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
-          person={"audrey"}
+          person={"joanna"}
           store={ this.store }
           cursor-listener />
 
         <Lamp position="2 4.2 -2"/>
-        { this.props.audreyElementVisible ? this.renderAudrey() : this.renderBlackBulb("2 4 -2") }
+        { this.props.joannaElementVisible ? this.renderJoanna() : this.renderBlackBulb("2 4 -2") }
 
         <FloorIndicator src={ "#activist-floor" }/>
 
@@ -205,7 +205,7 @@ const mapStateToProps = state => {
   return {
     chelseaElementVisible: state.chelseaElementVisible,
     constanzeElementVisible: state.constanzeElementVisible,
-    audreyElementVisible: state.audreyElementVisible,
+    joannaElementVisible: state.joannaElementVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked
   }
 }

@@ -52,6 +52,24 @@ class MilestoneRoom extends React.Component {
     )
   }
 
+  renderAudrey() {
+    return (
+      <Entity>
+        <ExhibitionBox
+        src={ "#audreyPortrait" }
+        position={ "-2 2.5 -2.5" }
+        rotation={ "0 50 0" }
+        scale={ "1.3 1.65 0" }/>
+
+      <PlayElement
+        src={ "#play-icon" }
+        position={ "-2 1.7 -1.989" }
+        rotation={ "0 50 0" }
+        sound="on: click; src: #audrey-audio"/>
+      </Entity>
+    )
+  }
+
   renderLightSwitchHint() {
     return (
       <HintText
@@ -84,6 +102,14 @@ class MilestoneRoom extends React.Component {
           store={ this.store } />
 
         { this.props.graceElementVisible && this.renderGrace() }
+
+        <LightSwitch
+          position={"-0.5 1.35 -1.4"}
+          scale={"0.2 0.2 0.2"}
+          person={"audrey"}
+          store={ this.store } />
+
+        { this.props.audreyElementVisible && this.renderAudrey() }
 
         <FloorIndicator src={ "#milestone-floor" }/>
 
@@ -120,6 +146,7 @@ const mapStateToProps = state => {
   return {
     barbaraElementVisible: state.barbaraElementVisible,
     graceElementVisible: state.graceElementVisible,
+    audreyElementVisible: state.audreyElementVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked
 
   }
