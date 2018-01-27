@@ -27,9 +27,9 @@ class MilestoneRoom extends React.Component {
         scale={ "1 1 0" }/>
 
         <PlayElement
-          src={ "#play-icon" }
+          id="barbara-play-element"
+          soundID={"#barbara-audio"}
           position={ "-0.002 1.726 -2.029" }
-          sound="on: click; src: #barbara-audio"
           cursor-listener />
       </Entity>
     )
@@ -45,10 +45,10 @@ class MilestoneRoom extends React.Component {
         scale={ "1.3 1.65 0" }/>
 
       <PlayElement
-        src={ "#play-icon" }
+        id="grace-play-element"
+        soundID={"#grace-audio"}
         position={ "2 1.55 -1.989" }
         rotation={ "0 -50 0" }
-        sound="on: click; src: #grace-audio"
         cursor-listener />
       </Entity>
     )
@@ -64,10 +64,10 @@ class MilestoneRoom extends React.Component {
         scale={ "1.45 1.2 0" }/>
 
       <PlayElement
-        src={ "#play-icon" }
+        id="audrey-play-element"
+        soundID={"#audrey-audio"}
         position={ "-1.900 1.570 -1.939" }
         rotation={ "0 50 0" }
-        sound="on: click; src: #audrey-audio"
         cursor-listener />
       </Entity>
     )
