@@ -83,12 +83,15 @@ class App extends React.Component {
           <img id="rails-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/a2290a00-23bf-484c-8235-8b2b0915f85d/"/>
 
           <img id="welcome" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/cfd99b54-93c6-4067-9205-de46d54f0973/"/>
+          <audio id="welcome-audio" crossOrigin="anonymous" src="https://ucarecdn.com/04180e1f-3ab1-4586-bac1-8e7862368571/"></audio>
 
           <img id="milestone-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/2716c01f-3ce1-43bb-a1a8-a2a727744274/"/>
           <img id="activist-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/674bca06-10f9-4c39-b358-8e8953da31a8/"/>
           <img id="space-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/dbd59dfe-4419-4ce7-a10f-d12ec0319100/"/>
           <img id="rails-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/04ec2fb2-6823-4e47-b895-da7b1b3aab40/"/>
+
           <img id="gracePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/2e428e4f-98e9-4ee3-9a04-67362b4b36c4/"/>
+          <audio id="grace-audio" crossOrigin="anonymous" src="https://ucarecdn.com/c3b085cd-e327-44ee-8e84-30c3472d7216/"></audio>
 
           <img id="joanna" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/1944984a-1faf-4cea-840b-e0eb6a5761d5/"/>
           <audio id="joanna-audio" crossOrigin="anonymous" src="https://ucarecdn.com/2966637f-adb8-441d-81b1-43952b4a4166/"></audio>
@@ -104,10 +107,8 @@ class App extends React.Component {
           <img id="audreyPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/70ac4230-ca40-4c04-b097-2f9e87fb5e49/"/>
           <audio id="audrey-audio" crossOrigin="anonymous" src="https://ucarecdn.com/c079662b-ba18-4908-8eca-e7c72dd92d6a/"></audio>
 
-          <audio id="welcome-audio" crossOrigin="anonymous" src="https://ucarecdn.com/04180e1f-3ab1-4586-bac1-8e7862368571/"></audio>
-          <audio id="click-sound" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-          <audio id="ada-audio" crossOrigin="anonymous" src="https://ucarecdn.com/59427ee4-49d5-4983-b79b-410ec846f5f9/"></audio>
-          <audio id="grace-audio" crossOrigin="anonymous" src="https://ucarecdn.com/c3b085cd-e327-44ee-8e84-30c3472d7216/"></audio>
+
+          <audio id="click-sound" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio
           <audio id="teleport" crossOrigin="anonymous" src="https://freesound.org/data/previews/162/162479_311243-lq.mp3"></audio>
           //TODO Mention in Readme: Sound by jobro from https://freesound.org/people/jobro/sounds/75637/
           <audio id="switch-sound" crossOrigin="anonymous" src="https://freesound.org/data/previews/75/75637_35187-lq.mp3"></audio>
