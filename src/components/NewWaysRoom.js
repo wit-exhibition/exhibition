@@ -27,9 +27,9 @@ class NewWaysRoom extends React.Component {
         scale={ "1 1 0" }/>
 
         <PlayElement
-          src={ "#play-icon" }
+          id="evelyn-play-element"
+          soundID={"#evelyn-audio"}
           position={ "-0.002 1.653 -2.8" }
-          sound="on: click; src: #evelyn-audio"
           cursor-listener/>
 
         <Entity
@@ -51,10 +51,10 @@ class NewWaysRoom extends React.Component {
         scale={ "1 1 0" }/>
 
         <PlayElement
-          src={ "#play-icon" }
+          id="hedy-play-element"
+          soundID={"#hedy-audio"}
           position={ "-1.998 1.580 -2.014" }
           rotation={ "0 50 0" }
-          sound="on: click; src: #hedy-audio"
           cursor-listener/>
 
         <Entity
@@ -76,10 +76,10 @@ class NewWaysRoom extends React.Component {
         scale={ "1 1 0" }/>
 
         <PlayElement
-          src={ "#play-icon" }
+          id="kamila-play-element"
+          soundID={"#kamila-audio"}
           position={ "2 1.631 -1.989" }
           rotation={ "0 -50 0" }
-          sound="on: click; src: #kamila-audio"
           cursor-listener/>
 
         <Entity
