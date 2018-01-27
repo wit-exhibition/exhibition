@@ -9,6 +9,8 @@ import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
 import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
+import Lamp from './Lamp';
+import Lightbulb from './Lightbulb';
 
 class NewWaysRoom extends React.Component {
 
@@ -20,6 +22,8 @@ class NewWaysRoom extends React.Component {
   renderEvelyn() {
     return (
       <Entity>
+        <Lightbulb position="0 4 -2.8"/>
+
         <ExhibitionBox
         src={ "#evelynPortrait" }
         position={ "0 2.366 -2.8" }
@@ -44,6 +48,8 @@ class NewWaysRoom extends React.Component {
   renderHedy() {
     return (
       <Entity>
+         <Lightbulb position="-2 4 -2" />
+
         <ExhibitionBox
         src={ "#hedyPortrait" }
         position={ "-2 2.246 -2" }
@@ -69,6 +75,8 @@ class NewWaysRoom extends React.Component {
   renderKamila() {
     return (
       <Entity>
+        <Lightbulb position="2 4 -2"/>
+
         <ExhibitionBox
         src={ "#kamilaPortrait" }
         position={ "2 2.318 -2" }
@@ -115,7 +123,8 @@ class NewWaysRoom extends React.Component {
           store={ this.store }
           cursor-listener />
 
-        { this.props.evelynElementVisible && this.renderEvelyn() }
+        <Lamp position="0 4.2 -2.8"/>
+        { this.props.evelynElementVisible ? this.renderEvelyn() : <Lightbulb position="0 4 -2.8" off={true}/> }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
@@ -124,7 +133,8 @@ class NewWaysRoom extends React.Component {
           store={ this.store }
           cursor-listener />
 
-        { this.props.hedyElementVisible && this.renderHedy() }
+        <Lamp position="-2 4.2 -2"/>
+        { this.props.hedyElementVisible ? this.renderHedy() : <Lightbulb position="-2 4 -2" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
@@ -133,7 +143,8 @@ class NewWaysRoom extends React.Component {
           store={ this.store }
           cursor-listener />
 
-        { this.props.kamilaElementVisible && this.renderKamila() }
+        <Lamp position="2 4.2 -2"/>
+        { this.props.kamilaElementVisible ? this.renderKamila() : <Lightbulb position="2 4 -2" off={true}/> }
 
         <FloorIndicator src={ "#rails-floor" }/>
 
