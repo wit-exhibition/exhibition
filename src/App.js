@@ -98,6 +98,7 @@ class App extends React.Component {
 
           <audio id="kamila-audio" crossOrigin="anonymous" src="https://ucarecdn.com/6e679228-b979-40af-927f-90a1b2d7ccd6/"></audio>
 
+          <img id="barbaraPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/cfefb010-551e-4e3a-ab53-63c337d26de4/"/>
           <audio id="barbara-audio" crossOrigin="anonymous" src="https://ucarecdn.com/7895f72a-1fa7-4b7d-aedc-326bff5d30d3/"></audio>
 
           <audio id="anuradha-audio" crossOrigin="anonymous" src="https://ucarecdn.com/990a0c8d-a92f-4d2d-abe0-2d420738f64d/"></audio>
@@ -121,7 +122,7 @@ class App extends React.Component {
           <img id="audreyPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/70ac4230-ca40-4c04-b097-2f9e87fb5e49/"/>
           <audio id="audrey-audio" crossOrigin="anonymous" src="https://ucarecdn.com/c079662b-ba18-4908-8eca-e7c72dd92d6a/"></audio>
 
-          <audio id="click-sound" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio
+          <audio id="click-sound" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
           <audio id="teleport" crossOrigin="anonymous" src="https://freesound.org/data/previews/162/162479_311243-lq.mp3"></audio>
           //TODO Mention in Readme: Sound by jobro from https://freesound.org/people/jobro/sounds/75637/
           <audio id="switch-sound" crossOrigin="anonymous" src="https://freesound.org/data/previews/75/75637_35187-lq.mp3"></audio>

@@ -17,19 +17,19 @@ class MilestoneRoom extends React.Component {
     this.store = this.props.store;
   }
 
-  renderGrace() {
+  renderBarbara() {
     return (
       <Entity>
         <ExhibitionBox
-        src={ "#gracePortrait" }
+        src={ "#barbaraPortrait" }
         position={ "0 2.6 -2.9" }
         rotation={ "0 0 0" }
-        scale={ "1.3 1.65 0" }/>
+        scale={ "1 1 0" }/>
 
         <PlayElement
           src={ "#play-icon" }
           position={ "-0.002 1.6 -2.912" }
-          sound="on: click; src: #grace-audio"/>
+          sound="on: click; src: #barbara-audio"/>
       </Entity>
     )
   }
@@ -72,10 +72,10 @@ class MilestoneRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
-          person={"grace"}
+          person={"barbara"}
           store={ this.store } />
 
-        { this.props.graceElementVisible && this.renderGrace() }
+        { this.props.barbaraElementVisible && this.renderBarbara() }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
@@ -118,10 +118,11 @@ class MilestoneRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    graceElementVisible: state.graceElementVisible,
+    barbaraElementVisible: state.barbaraElementVisible,
     adaElementVisible: state.adaElementVisible,
     joannaElementVisible: state.joannaElementVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked
+
   }
 }
 

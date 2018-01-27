@@ -71,7 +71,6 @@ class NewWaysRoom extends React.Component {
           position={ "-3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="navRoom"
-          teleportSound={true}
           store={ this.store } />
         <HintText
           rotation={{ y: -50 }}
@@ -83,7 +82,6 @@ class NewWaysRoom extends React.Component {
           position={ "3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="milestoneRoom"
-          teleportSound={true}
           store={ this.store }/>
       </Entity>
     )
