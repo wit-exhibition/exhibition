@@ -9,7 +9,10 @@ const initialState = {
   chelseaElementVisible: false,
   constanzeElementVisible: false,
   audreyElementVisible: false,
-  barbaraElementVisible: false
+  barbaraElementVisible: false,
+  evelynElementVisible: false,
+  hedyElementVisible: false,
+  kamilaElementVisible: false
 }
 
 export default (state = initialState, action) => {
@@ -68,6 +71,21 @@ export default (state = initialState, action) => {
       else if (action.person === "barbara") {
         return Object.assign({}, state, {
             barbaraElementVisible: true
+        })
+      }
+      else if (action.person === "evelyn") {
+        return Object.assign({}, state, {
+            evelynElementVisible: true
+        })
+      }
+      else if (action.person === "hedy") {
+        return Object.assign({}, state, {
+            hedyElementVisible: true
+        })
+      }
+      else if (action.person === "kamila") {
+        return Object.assign({}, state, {
+            kamilaElementVisible: true
         })
       }
 
