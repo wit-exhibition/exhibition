@@ -29,7 +29,8 @@ class NewWaysRoom extends React.Component {
         <PlayElement
           src={ "#play-icon" }
           position={ "-0.002 1.6 -2.912" }
-          sound="on: click; src: #evelyn-audio"/>
+          sound="on: click; src: #evelyn-audio"
+          cursor-listener />
       </Entity>
     )
   }
@@ -46,7 +47,8 @@ class NewWaysRoom extends React.Component {
         <PlayElement
           src={ "#play-icon" }
           position={ "-1.5 1.6 -2.912" }
-          sound="on: click; src: #hedy-audio"/>
+          sound="on: click; src: #hedy-audio"
+          cursor-listener />
       </Entity>
     )
   }
@@ -63,7 +65,8 @@ class NewWaysRoom extends React.Component {
         <PlayElement
           src={ "#play-icon" }
           position={ "1.5 1.6 -2.912" }
-          sound="on: click; src: #kamila-audio"/>
+          sound="on: click; src: #kamila-audio"
+          cursor-listener />
       </Entity>
     )
   }
@@ -89,7 +92,8 @@ class NewWaysRoom extends React.Component {
           position={"0 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"evelyn"}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
 
         { this.props.evelynElementVisible && this.renderEvelyn() }
 
@@ -97,7 +101,8 @@ class NewWaysRoom extends React.Component {
           position={"-0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"hedy"}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
 
         { this.props.hedyElementVisible && this.renderHedy() }
 
@@ -105,7 +110,8 @@ class NewWaysRoom extends React.Component {
           position={"0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"kamila"}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
 
         { this.props.kamilaElementVisible && this.renderKamila() }
 
@@ -121,7 +127,8 @@ class NewWaysRoom extends React.Component {
           position={ "-3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="navRoom"
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
         <HintText
           rotation={{ y: -50 }}
           hint={"Next room"}
@@ -132,7 +139,8 @@ class NewWaysRoom extends React.Component {
           position={ "3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="milestoneRoom"
-          store={ this.store }/>
+          store={ this.store }
+          cursor-listener />
       </Entity>
     )
   }
