@@ -15,12 +15,6 @@ class NavRoom extends React.Component {
     this.store = this.props.store;
   }
 
-  componentDidMount() {
-    const box = document.getElementById('play-element')
-    box.setAttribute('sound', 'on', 'click')
-    box.setAttribute('sound', 'src', '#welcome-audio')
-  }
-
   showHintText() {
     return (
       <HintText
@@ -35,16 +29,6 @@ class NavRoom extends React.Component {
   welcomeClicked() {
     if (!this.props.welcomeClicked) {
       this.store.dispatch({ type: "WELCOME_CLICK"})
-    }
-
-    const playElement = document.getElementById('play-element')
-
-    if (playElement.getAttribute('src') === "#play-icon") {
-      playElement.setAttribute('src', '#stop-icon')
-      playElement.components.sound.playSound()
-    } else {
-      playElement.setAttribute('src', '#play-icon')
-      playElement.components.sound.stopSound()
     }
   }
 
@@ -120,13 +104,12 @@ class NavRoom extends React.Component {
           shader={"flat"}
           transparent={"true"}/>
 
-        { this.props.welcomeClicked && this.renderNavElements() }
+        { this.renderNavElements() }
 
         <PlayElement
-          id="play-element"
-          src={ "#play-icon" }
+          id="nav-play-element"
+          soundID={"#welcome-audio"}
           position= { "-0.002 1.3 -2.007" }
-          events={{ click: () => this.welcomeClicked() }}
           cursor-listener
           />
 

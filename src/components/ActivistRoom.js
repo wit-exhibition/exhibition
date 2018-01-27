@@ -36,10 +36,10 @@ class ActivistRoom extends React.Component {
         />
 
         <PlayElement
-          src={ "#play-icon" }
+          id="chelsea-play-element"
+          soundID={"#chelsea-audio"}
           position={ "-1.900 1.570 -1.939" }
           rotation={ "0 50 0" }
-          sound="on: click; src: #chelsea-audio"
           cursor-listener
         />
       </Entity>
@@ -82,9 +82,9 @@ class ActivistRoom extends React.Component {
         />
 
         <PlayElement
-          src={ "#play-icon" }
+          id="constanze-play-element"
+          soundID={"#constanze-audio"}
           position={ "-0.002 1.6 -2.8" }
-          sound="on: click; src: #constanze-audio; volume: 8"
           cursor-listener
         />
       </Entity>
@@ -111,10 +111,10 @@ class ActivistRoom extends React.Component {
         />
 
         <PlayElement
-          src={ "#play-icon" }
+          id="joanna-play-element"
+          soundID={"#joanna-audio"}
           position={ "2 1.7 -1.989" }
           rotation={ "0 -50 0" }
-          sound="on: click; src: #joanna-audio"
           cursor-listener
         />
       </Entity>
