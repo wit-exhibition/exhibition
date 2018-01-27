@@ -17,19 +17,37 @@ class SpaceRoom extends React.Component {
     this.store = this.props.store;
   }
 
-  renderGrace() {
+  renderMargaret() {
     return (
       <Entity>
         <ExhibitionBox
-        src={ "#gracePortrait" }
-        position={ "0 2.6 -2.9" }
+        src={ "#margaretPortrait" }
+        position={ "0 2.2 -2" }
         rotation={ "0 0 0" }
-        scale={ "1.3 1.65 0" }/>
+        scale={ "1 1 0" }/>
 
         <PlayElement
           src={ "#play-icon" }
-          position={ "-0.002 1.6 -2.912" }
-          sound="on: click; src: #grace-audio"/>
+          position={ "0 1.58 -2.2" }
+          sound="on: click; src: #margaret-audio"/>
+      </Entity>
+    )
+  }
+
+  renderDorothy() {
+    return (
+      <Entity>
+        <ExhibitionBox
+        src={ "#dorothyPortrait" }
+        position={ "-1.8 2.3 -1.8" }
+        rotation={ "0 50 0" }
+        scale={ "1 1 0" }/>
+
+        <PlayElement
+          src={ "#play-icon" }
+          position={ "-1.900 1.570 -1.939" }
+          rotation={ "0 50 0" }
+          sound="on: click; src: #dorothy-audio"/>
       </Entity>
     )
   }
@@ -54,10 +72,19 @@ class SpaceRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
-          person={"grace"}
+          person={"margaret"}
           store={ this.store } />
 
-        { this.props.graceElementVisible && this.renderGrace() }
+        { this.props.margaretElementVisible && this.renderMargaret() }
+
+        <LightSwitch
+          position={"-0.5 1.35 -1.4"}
+          scale={"0.2 0.2 0.2"}
+          person={"dorothy"}
+          store={ this.store } />
+
+        { this.props.dorothyElementVisible && this.renderDorothy() }
+
 
         <FloorIndicator src={ "#space-floor" }/>
 
@@ -92,9 +119,8 @@ class SpaceRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    graceElementVisible: state.graceElementVisible,
-    adaElementVisible: state.adaElementVisible,
-    joannaElementVisible: state.joannaElementVisible,
+    margaretElementVisible: state.margaretElementVisible,
+    dorothyElementVisible: state.dorothyElementVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked
   }
 }
