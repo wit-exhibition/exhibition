@@ -31,6 +31,12 @@ class NewWaysRoom extends React.Component {
           position={ "-0.002 1.653 -2.8" }
           sound="on: click; src: #evelyn-audio"
           cursor-listener/>
+
+        <Entity
+          rotation={{x: "0", y: "0", z: "0" }}
+          position= {{x: "0", y: "3.3", z: "-2.8"}}
+          text={{ value: "Evelyn Boyd Granville", align: 'center',
+          wrapCount: 8 }}/>
       </Entity>
     )
   }
@@ -50,6 +56,12 @@ class NewWaysRoom extends React.Component {
           rotation={ "0 50 0" }
           sound="on: click; src: #hedy-audio"
           cursor-listener/>
+
+        <Entity
+          rotation={{x: "0", y: "50", z: "0" }}
+          position= {{x: "-2", y: "3", z: "-2"}}
+          text={{ value: "Hedy Lamarr", align: 'center',
+          wrapCount: 8 }}/>
       </Entity>
     )
   }
@@ -69,6 +81,12 @@ class NewWaysRoom extends React.Component {
           rotation={ "0 -50 0" }
           sound="on: click; src: #kamila-audio"
           cursor-listener/>
+
+        <Entity
+          rotation={{x: "0", y: "-50", z: "0" }}
+          position= {{x: "2", y: "3.1", z: "-2"}}
+          text={{ value: "Kamila Sidor", align: 'center',
+          wrapCount: 8 }}/>
       </Entity>
     )
   }
