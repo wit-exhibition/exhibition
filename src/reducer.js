@@ -1,5 +1,5 @@
 const initialState = {
-  mode: "desktop",
+  mode: "start",
   currentRoom: "navRoom",
   welcomeClicked: false,
   anyLightSwitchClicked: false,
@@ -11,7 +11,8 @@ const initialState = {
   audreyElementVisible: false,
   barbaraElementVisible: false,
   margaretElementVisible: false,
-  dorothyElementVisible: false
+  dorothyElementVisible: false,
+  anuradhaElementVisible: false
 }
 
 export default (state = initialState, action) => {
@@ -82,7 +83,11 @@ export default (state = initialState, action) => {
             dorothyElementVisible: true
         })
       }
-
+      else if (action.person === "anuradha") {
+        return Object.assign({}, state, {
+            anuradhaElementVisible: true
+        })
+      }
     default:
       return state
   }

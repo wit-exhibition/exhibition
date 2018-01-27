@@ -52,6 +52,24 @@ class SpaceRoom extends React.Component {
     )
   }
 
+  renderAnuradha() {
+    return (
+      <Entity>
+        <ExhibitionBox
+        src={ "#anuradhaPortrait" }
+        position={ "2 2.5 -2" }
+        rotation={ "0 -50 0" }
+        scale={ "1 1 0" }/>
+
+        <PlayElement
+          src={ "#play-icon" }
+          position={ "2 1.7 -1.989" }
+          rotation={ "0 -50 0" }
+          sound="on: click; src: #anuradha-audio"/>
+      </Entity>
+    )
+  }
+
   renderLightSwitchHint() {
     return (
       <HintText
@@ -84,6 +102,14 @@ class SpaceRoom extends React.Component {
           store={ this.store } />
 
         { this.props.dorothyElementVisible && this.renderDorothy() }
+
+        <LightSwitch
+          position={"0.5 1.35 -1.4"}
+          scale={"0.2 0.2 0.2"}
+          person={"anuradha"}
+          store={ this.store } />
+
+        { this.props.anuradhaElementVisible && this.renderAnuradha() }
 
 
         <FloorIndicator src={ "#space-floor" }/>
@@ -121,6 +147,7 @@ const mapStateToProps = state => {
   return {
     margaretElementVisible: state.margaretElementVisible,
     dorothyElementVisible: state.dorothyElementVisible,
+    anuradhaElementVisible: state.anuradhaElementVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked
   }
 }
