@@ -39,14 +39,14 @@ class MilestoneRoom extends React.Component {
       <Entity>
         <ExhibitionBox
         src={ "#gracePortrait" }
-        position={ "2 2.5 -2.5" }
-        rotation={ "0 -50 0" }
+        position={ "2.578 2.5 -0.838" }
+        rotation={ "0 -70 0" }
         scale={ "1.3 1.65 0" }/>
 
       <PlayElement
         src={ "#play-icon" }
-        position={ "2 1.7 -1.989" }
-        rotation={ "0 -50 0" }
+        position={ "2.574 1.493 -0.836" }
+        rotation={ "0 -70 0" }
         sound="on: click; src: #grace-audio"/>
       </Entity>
     )
@@ -57,13 +57,13 @@ class MilestoneRoom extends React.Component {
       <Entity>
         <ExhibitionBox
         src={ "#audreyPortrait" }
-        position={ "-2 2.5 -2.5" }
+        position={ "-2.454 2.5 -0.865" }
         rotation={ "0 50 0" }
-        scale={ "1.3 1.65 0" }/>
+        scale={ "1.2 1.45 0" }/>
 
       <PlayElement
         src={ "#play-icon" }
-        position={ "-2 1.7 -1.989" }
+        position={ "-2.466 1.441 -0.915" }
         rotation={ "0 50 0" }
         sound="on: click; src: #audrey-audio"/>
       </Entity>
@@ -116,11 +116,11 @@ class MilestoneRoom extends React.Component {
         <HintText
           rotation={{ y: 50 }}
           hint={"Exit"}
-          position={{ x: -2.8, y: 1, z: -2 }}
+          position={{ x: -2.8, y: 1, z: 0.6 }}
           wrapCount={8}/>
         <TeleportationElement
           material={{ color: "#01ff26"}}
-          position={ "-3 0.5 -2"}
+          position={ "-3.000 0.500 0.634"}
           scale={"0.5 0.5 1"}
           destination="navRoom"
           teleportSound={true}
@@ -128,11 +128,11 @@ class MilestoneRoom extends React.Component {
         <HintText
           rotation={{ y: -50 }}
           hint={"Next room"}
-          position={{ x: 3, y: 1, z: -2 }}
+          position={{ x: 3, y: 1, z: 0.6 }}
           wrapCount={8}/>
         <TeleportationElement
           material={{ color: "#d800f0"}}
-          position={ "3 0.5 -2"}
+          position={ "3 0.5 0.631"}
           scale={"0.5 0.5 1"}
           destination="spaceRoom"
           teleportSound={true}
