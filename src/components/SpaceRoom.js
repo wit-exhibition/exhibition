@@ -9,6 +9,8 @@ import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
 import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
+import Lamp from './Lamp';
+import Lightbulb from './Lightbulb';
 
 class SpaceRoom extends React.Component {
 
@@ -20,6 +22,8 @@ class SpaceRoom extends React.Component {
   renderMargaret() {
     return (
       <Entity>
+        <Lightbulb position="0 3.5 -2"/>
+
         <ExhibitionBox
         src={ "#margaretPortrait" }
         position={ "0 2.25 -2" }
@@ -38,6 +42,8 @@ class SpaceRoom extends React.Component {
   renderDorothy() {
     return (
       <Entity>
+        <Lightbulb position="-1.6 3.5 -1.6"/>
+
         <ExhibitionBox
         src={ "#dorothyPortrait" }
         position={ "-1.6 2.3 -1.6" }
@@ -57,6 +63,8 @@ class SpaceRoom extends React.Component {
   renderAnuradha() {
     return (
       <Entity>
+        <Lightbulb position="1.6 3.5 -1.6"/>
+
         <ExhibitionBox
         src={ "#anuradhaPortrait" }
         position={ "1.6 2.3 -1.6" }
@@ -97,7 +105,8 @@ class SpaceRoom extends React.Component {
           store={ this.store }
           cursor-listener />
 
-        { this.props.margaretElementVisible && this.renderMargaret() }
+        <Lamp position="0 3.7 -2"/>
+        { this.props.margaretElementVisible ? this.renderMargaret() : <Lightbulb position="0 3.5 -2" off={true}/> }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
@@ -106,7 +115,8 @@ class SpaceRoom extends React.Component {
           store={ this.store }
           cursor-listener />
 
-        { this.props.dorothyElementVisible && this.renderDorothy() }
+        <Lamp position="-1.6 3.7 -1.6"/>
+        { this.props.dorothyElementVisible ? this.renderDorothy() : <Lightbulb position="-1.6 3.5 -1.6" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
@@ -115,7 +125,8 @@ class SpaceRoom extends React.Component {
           store={ this.store }
           cursor-listener />
 
-        { this.props.anuradhaElementVisible && this.renderAnuradha() }
+        <Lamp position="1.6 3.7 -1.6"/>
+        { this.props.anuradhaElementVisible ? this.renderAnuradha() : <Lightbulb position="1.6 3.5 -1.6" off={true}/> }
 
 
         <FloorIndicator src={ "#space-floor" }/>

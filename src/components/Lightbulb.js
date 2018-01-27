@@ -21,7 +21,7 @@ export default class Lightbulb extends React.Component {
       return (
         <a-sphere
           position={this.props.position}
-          rotation="-85 0 0"
+          rotation="-70 0 0"
           material={"color: white; shader: flat;"}
           light="type: spot;angle: 25"
           radius="0.15">
