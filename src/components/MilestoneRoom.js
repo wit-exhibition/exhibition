@@ -29,7 +29,8 @@ class MilestoneRoom extends React.Component {
         <PlayElement
           src={ "#play-icon" }
           position={ "-0.002 1.726 -2.029" }
-          sound="on: click; src: #barbara-audio"/>
+          sound="on: click; src: #barbara-audio"
+          cursor-listener />
       </Entity>
     )
   }
@@ -39,15 +40,16 @@ class MilestoneRoom extends React.Component {
       <Entity>
         <ExhibitionBox
         src={ "#gracePortrait" }
-        position={ "2.578 2.5 -0.838" }
-        rotation={ "0 -70 0" }
+        position={ "2 2.5 -2" }
+        rotation={ "0 -50 0" }
         scale={ "1.3 1.65 0" }/>
 
       <PlayElement
         src={ "#play-icon" }
-        position={ "2.574 1.493 -0.836" }
-        rotation={ "0 -70 0" }
-        sound="on: click; src: #grace-audio"/>
+        position={ "2 1.55 -1.989" }
+        rotation={ "0 -50 0" }
+        sound="on: click; src: #grace-audio"
+        cursor-listener />
       </Entity>
     )
   }
@@ -57,15 +59,16 @@ class MilestoneRoom extends React.Component {
       <Entity>
         <ExhibitionBox
         src={ "#audreyPortrait" }
-        position={ "-2.454 2.5 -0.865" }
+        position={ "-2 2.5 -2" }
         rotation={ "0 50 0" }
-        scale={ "1.2 1.45 0" }/>
+        scale={ "1.45 1.2 0" }/>
 
       <PlayElement
         src={ "#play-icon" }
-        position={ "-2.466 1.441 -0.915" }
+        position={ "-1.900 1.570 -1.939" }
         rotation={ "0 50 0" }
-        sound="on: click; src: #audrey-audio"/>
+        sound="on: click; src: #audrey-audio"
+        cursor-listener />
       </Entity>
     )
   }
@@ -91,7 +94,8 @@ class MilestoneRoom extends React.Component {
           position={"0 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"barbara"}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
 
         { this.props.barbaraElementVisible && this.renderBarbara() }
 
@@ -99,7 +103,8 @@ class MilestoneRoom extends React.Component {
           position={"0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"grace"}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
 
         { this.props.graceElementVisible && this.renderGrace() }
 
@@ -107,7 +112,8 @@ class MilestoneRoom extends React.Component {
           position={"-0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"audrey"}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
 
         { this.props.audreyElementVisible && this.renderAudrey() }
 
@@ -124,7 +130,8 @@ class MilestoneRoom extends React.Component {
           scale={"0.5 0.5 1"}
           destination="navRoom"
           teleportSound={true}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
         <HintText
           rotation={{ y: -50 }}
           hint={"Next room"}
@@ -136,7 +143,8 @@ class MilestoneRoom extends React.Component {
           scale={"0.5 0.5 1"}
           destination="spaceRoom"
           teleportSound={true}
-          store={ this.store }/>
+          store={ this.store }
+          cursor-listener />
       </Entity>
     )
   }

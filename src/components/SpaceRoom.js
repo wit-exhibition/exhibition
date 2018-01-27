@@ -29,7 +29,8 @@ class SpaceRoom extends React.Component {
         <PlayElement
           src={ "#play-icon" }
           position={ "0 1.58 -2" }
-          sound="on: click; src: #margaret-audio"/>
+          sound="on: click; src: #margaret-audio"
+          cursor-listener />
       </Entity>
     )
   }
@@ -47,7 +48,8 @@ class SpaceRoom extends React.Component {
           src={ "#play-icon" }
           position={ "-1.6 1.6 -1.6" }
           rotation={ "0 50 0" }
-          sound="on: click; src: #dorothy-audio"/>
+          sound="on: click; src: #dorothy-audio"
+          cursor-listener />
       </Entity>
     )
   }
@@ -65,7 +67,8 @@ class SpaceRoom extends React.Component {
           src={ "#play-icon" }
           position={ "1.6 1.6 -1.6" }
           rotation={ "0 -50 0" }
-          sound="on: click; src: #anuradha-audio"/>
+          sound="on: click; src: #anuradha-audio"
+          cursor-listener />
       </Entity>
     )
   }
@@ -91,7 +94,8 @@ class SpaceRoom extends React.Component {
           position={"0 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"margaret"}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
 
         { this.props.margaretElementVisible && this.renderMargaret() }
 
@@ -99,7 +103,8 @@ class SpaceRoom extends React.Component {
           position={"-0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"dorothy"}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
 
         { this.props.dorothyElementVisible && this.renderDorothy() }
 
@@ -107,7 +112,8 @@ class SpaceRoom extends React.Component {
           position={"0.5 1.35 -1.4"}
           scale={"0.2 0.2 0.2"}
           person={"anuradha"}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
 
         { this.props.anuradhaElementVisible && this.renderAnuradha() }
 
@@ -125,7 +131,8 @@ class SpaceRoom extends React.Component {
           scale={"0.5 0.5 1"}
           destination="navRoom"
           teleportSound={true}
-          store={ this.store } />
+          store={ this.store }
+          cursor-listener />
         <HintText
           rotation={{ y: -50 }}
           hint={"Next room"}
@@ -137,7 +144,8 @@ class SpaceRoom extends React.Component {
           scale={"0.5 0.5 1"}
           destination="activistRoom"
           teleportSound={true}
-          store={ this.store }/>
+          store={ this.store }
+          cursor-listener />
       </Entity>
     )
   }
