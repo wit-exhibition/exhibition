@@ -22,13 +22,13 @@ class SpaceRoom extends React.Component {
       <Entity>
         <ExhibitionBox
         src={ "#margaretPortrait" }
-        position={ "0 2.2 -2" }
+        position={ "0 2.25 -2" }
         rotation={ "0 0 0" }
         scale={ "1 1 0" }/>
 
         <PlayElement
           src={ "#play-icon" }
-          position={ "0 1.58 -2.2" }
+          position={ "0 1.58 -2" }
           sound="on: click; src: #margaret-audio"/>
       </Entity>
     )
@@ -39,13 +39,13 @@ class SpaceRoom extends React.Component {
       <Entity>
         <ExhibitionBox
         src={ "#dorothyPortrait" }
-        position={ "-1.8 2.3 -1.8" }
+        position={ "-1.6 2.3 -1.6" }
         rotation={ "0 50 0" }
         scale={ "1 1 0" }/>
 
         <PlayElement
           src={ "#play-icon" }
-          position={ "-1.900 1.570 -1.939" }
+          position={ "-1.6 1.6 -1.6" }
           rotation={ "0 50 0" }
           sound="on: click; src: #dorothy-audio"/>
       </Entity>
@@ -57,13 +57,13 @@ class SpaceRoom extends React.Component {
       <Entity>
         <ExhibitionBox
         src={ "#anuradhaPortrait" }
-        position={ "2 2.5 -2" }
+        position={ "1.6 2.3 -1.6" }
         rotation={ "0 -50 0" }
         scale={ "1 1 0" }/>
 
         <PlayElement
           src={ "#play-icon" }
-          position={ "2 1.7 -1.989" }
+          position={ "1.6 1.6 -1.6" }
           rotation={ "0 -50 0" }
           sound="on: click; src: #anuradha-audio"/>
       </Entity>
