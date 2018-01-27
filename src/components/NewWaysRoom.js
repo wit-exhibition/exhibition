@@ -22,13 +22,13 @@ class NewWaysRoom extends React.Component {
       <Entity>
         <ExhibitionBox
         src={ "#evelynPortrait" }
-        position={ "0 2.6 -2" }
+        position={ "0 2.366 -2.8" }
         rotation={ "0 0 0" }
         scale={ "1 1 0" }/>
 
         <PlayElement
           src={ "#play-icon" }
-          position={ "-0.002 1.6 -2.912" }
+          position={ "-0.002 1.653 -2.8" }
           sound="on: click; src: #evelyn-audio"/>
       </Entity>
     )
@@ -39,13 +39,14 @@ class NewWaysRoom extends React.Component {
       <Entity>
         <ExhibitionBox
         src={ "#hedyPortrait" }
-        position={ "-2 2.6 -2" }
+        position={ "-2 2.246 -2" }
         rotation={ "0 50 0" }
         scale={ "1 1 0" }/>
 
         <PlayElement
           src={ "#play-icon" }
-          position={ "-1.5 1.6 -2.912" }
+          position={ "-1.998 1.580 -2.014" }
+          rotation={ "0 50 0" }
           sound="on: click; src: #hedy-audio"/>
       </Entity>
     )
@@ -56,13 +57,14 @@ class NewWaysRoom extends React.Component {
       <Entity>
         <ExhibitionBox
         src={ "#kamilaPortrait" }
-        position={ "2 2.6 -2" }
+        position={ "2 2.318 -2" }
         rotation={ "0 -50 0" }
         scale={ "1 1 0" }/>
 
         <PlayElement
           src={ "#play-icon" }
-          position={ "1.5 1.6 -2.912" }
+          position={ "2 1.631 -1.989" }
+          rotation={ "0 -50 0" }
           sound="on: click; src: #kamila-audio"/>
       </Entity>
     )
@@ -114,22 +116,22 @@ class NewWaysRoom extends React.Component {
         <HintText
           rotation={{ y: 50 }}
           hint={"Exit"}
-          position={{ x: -2.8, y: 1, z: -2 }}
+          position={{ x: -2.8, y: 1, z: 0.6 }}
           wrapCount={8}/>
         <TeleportationElement
           material={{ color: "#01ff26"}}
-          position={ "-3 0.5 -2"}
+          position={ "-3.000 0.500 0.634"}
           scale={"0.5 0.5 1"}
           destination="navRoom"
           store={ this.store } />
         <HintText
           rotation={{ y: -50 }}
           hint={"Next room"}
-          position={{ x: 3, y: 1, z: -2 }}
+          position={{ x: 3, y: 1, z: 0.6 }}
           wrapCount={8}/>
         <TeleportationElement
           material={{ color: "#d800f0"}}
-          position={ "3 0.5 -2"}
+          position={ "3 0.5 0.631"}
           scale={"0.5 0.5 1"}
           destination="milestoneRoom"
           store={ this.store }/>
