@@ -9,6 +9,8 @@ import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
 import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
+import Lamp from './Lamp';
+import Lightbulb from './Lightbulb';
 
 class MilestoneRoom extends React.Component {
 
@@ -20,9 +22,11 @@ class MilestoneRoom extends React.Component {
   renderBarbara() {
     return (
       <Entity>
+        <Lightbulb position="0 3.7 -2"/>
+
         <ExhibitionBox
         src={ "#barbaraPortrait" }
-        position={ "0.000 2.400 -2" }
+        position={ "0 2.4 -2" }
         rotation={ "0 0 0" }
         scale={ "1 1 0" }/>
 
@@ -38,6 +42,8 @@ class MilestoneRoom extends React.Component {
   renderGrace() {
     return (
       <Entity>
+        <Lightbulb position="2 3.7 -2" />
+
         <ExhibitionBox
         src={ "#gracePortrait" }
         position={ "2 2.5 -2" }
@@ -57,6 +63,8 @@ class MilestoneRoom extends React.Component {
   renderAudrey() {
     return (
       <Entity>
+        <Lightbulb position="-2 3.7 -2" />
+
         <ExhibitionBox
         src={ "#audreyPortrait" }
         position={ "-2 2.5 -2" }
@@ -97,7 +105,8 @@ class MilestoneRoom extends React.Component {
           store={ this.store }
           cursor-listener />
 
-        { this.props.barbaraElementVisible && this.renderBarbara() }
+        <Lamp position="0 3.9 -2"/>
+        { this.props.barbaraElementVisible ? this.renderBarbara() : <Lightbulb position="0 3.7 -2" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
@@ -106,7 +115,8 @@ class MilestoneRoom extends React.Component {
           store={ this.store }
           cursor-listener />
 
-        { this.props.graceElementVisible && this.renderGrace() }
+        <Lamp position="2 3.9 -2"/>
+        { this.props.graceElementVisible ? this.renderGrace() : <Lightbulb position="2 3.7 -2" off={true}/> }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
@@ -115,7 +125,8 @@ class MilestoneRoom extends React.Component {
           store={ this.store }
           cursor-listener />
 
-        { this.props.audreyElementVisible && this.renderAudrey() }
+        <Lamp position="-2 3.9 -2"/>
+        { this.props.audreyElementVisible ? this.renderAudrey() : <Lightbulb position="-2 3.7 -2" off={true}/> }
 
         <FloorIndicator src={ "#milestone-floor" }/>
 

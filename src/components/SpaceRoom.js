@@ -128,7 +128,6 @@ class SpaceRoom extends React.Component {
         <Lamp position="1.6 3.7 -1.6"/>
         { this.props.anuradhaElementVisible ? this.renderAnuradha() : <Lightbulb position="1.6 3.5 -1.6" off={true}/> }
 
-
         <FloorIndicator src={ "#space-floor" }/>
 
         <HintText
