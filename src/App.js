@@ -96,19 +96,25 @@ class App extends React.Component {
           <img id="joanna" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/1944984a-1faf-4cea-840b-e0eb6a5761d5/"/>
           <audio id="joanna-audio" crossOrigin="anonymous" src="https://ucarecdn.com/2966637f-adb8-441d-81b1-43952b4a4166/"></audio>
 
+          <img id="kamilaPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/6290cbba-815e-4f12-8049-2223fd1c23f3/"/>
           <audio id="kamila-audio" crossOrigin="anonymous" src="https://ucarecdn.com/6e679228-b979-40af-927f-90a1b2d7ccd6/"></audio>
 
           <img id="barbaraPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/cfefb010-551e-4e3a-ab53-63c337d26de4/"/>
           <audio id="barbara-audio" crossOrigin="anonymous" src="https://ucarecdn.com/7895f72a-1fa7-4b7d-aedc-326bff5d30d3/"></audio>
 
+          <img id="anuradhaPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/3057fd6c-e2d4-4420-a5fd-ee8728953c79/"/>
           <audio id="anuradha-audio" crossOrigin="anonymous" src="https://ucarecdn.com/990a0c8d-a92f-4d2d-abe0-2d420738f64d/"></audio>
 
+          <img id="dorothyPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/389af52c-b72f-4c80-8035-86788fdfb4fb/"/>
           <audio id="dorothy-audio" crossOrigin="anonymous" src="https://ucarecdn.com/526762dc-99c0-4648-8287-f4383a52e83d/"></audio>
 
+          <img id="evelynPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/167f77a1-05f7-4764-95b3-d5bb30c2f2c4/"/>
           <audio id="evelyn-audio" crossOrigin="anonymous" src="https://ucarecdn.com/3dfffda0-dc6f-447d-a4ab-8e39b85046a8/"></audio>
 
+          <img id="hedyPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/05969829-061a-417c-b092-107f26663678/"/>
           <audio id="hedy-audio" crossOrigin="anonymous" src="https://ucarecdn.com/07cd06cc-4c07-4cd3-b209-37ccf06482f5/"></audio>
 
+          <img id="margaretPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/02555168-85ba-4920-9dbe-53155814cbe4/"/>
           <audio id="margaret-audio" crossOrigin="anonymous" src="https://ucarecdn.com/1dbf45fc-923f-4a81-a8e2-890c6fbf3f18/"></audio>
 
           <img id="chelseaPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/67bc265e-f5cd-4157-be63-85f43427d63e/"/>
