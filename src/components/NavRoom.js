@@ -125,7 +125,7 @@ class NavRoom extends React.Component {
         <PlayElement
           id="play-element"
           src={ "#play-icon" }
-          position= { "-0.002 1.362 -2.007" }
+          position= { "-0.002 1.3 -2.007" }
           events={{ click: () => this.welcomeClicked() }}
           cursor-listener
           />
