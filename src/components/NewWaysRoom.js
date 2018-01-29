@@ -29,7 +29,7 @@ class NewWaysRoom extends React.Component {
           src={ "#evelynPortrait" }
           position={ "0 2.366 -2.8" }
           rotation={ "0 0 0" }
-          scale={ "1 1 0" }
+          scale={ "1.2 1.2 0" }
           >
             <PlayElement
               id="evelyn-play-element"
@@ -50,7 +50,7 @@ class NewWaysRoom extends React.Component {
           src={ "#hedyPortrait" }
           position={ "-2 2.246 -2" }
           rotation={ "0 50 0" }
-          scale={ "1 1 0" }
+          scale={ "1.5 1.5 0" }
           >
             <PlayElement
               id="hedy-play-element"
@@ -71,7 +71,7 @@ class NewWaysRoom extends React.Component {
           src={ "#kamilaPortrait" }
           position={ "2 2.318 -2" }
           rotation={ "0 -50 0" }
-          scale={ "1 1 0" }
+          scale={ "1.5 1.5 0" }
         >
           <PlayElement
             id="kamila-play-element"
