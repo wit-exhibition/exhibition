@@ -26,18 +26,17 @@ class NewWaysRoom extends React.Component {
         <Lightbulb position="0 4 -2.8"/>
 
         <ExhibitionBox
-        src={ "#evelynPortrait" }
-        position={ "0 2.366 -2.8" }
-        rotation={ "0 0 0" }
-        scale={ "1 1 0" }/>
-
-        <PlayElement
-          id="evelyn-play-element"
-          soundID={"#evelyn-audio"}
-          position={ "-0.002 1.653 -2.8" }
-          cursor-listener/>
-
-        <Name position={"0.2 1.653 -2.8"} name={"Evelyn Boyd Granville"}/>
+          src={ "#evelynPortrait" }
+          position={ "0 2.366 -2.8" }
+          rotation={ "0 0 0" }
+          scale={ "1 1 0" }
+          >
+            <PlayElement
+              id="evelyn-play-element"
+              soundID={"#evelyn-audio"}
+              cursor-listener/>
+            <Name name="Evelyn Boyd Granville" />
+          </ExhibitionBox >
       </Entity>
     )
   }
@@ -48,21 +47,17 @@ class NewWaysRoom extends React.Component {
          <Lightbulb position="-2 4 -2" />
 
         <ExhibitionBox
-        src={ "#hedyPortrait" }
-        position={ "-2 2.246 -2" }
-        rotation={ "0 50 0" }
-        scale={ "1 1 0" }/>
-
-        <PlayElement
-          id="hedy-play-element"
-          soundID={"#hedy-audio"}
-          position={ "-2.221 1.560 -2" }
+          src={ "#hedyPortrait" }
+          position={ "-2 2.246 -2" }
           rotation={ "0 50 0" }
-          cursor-listener/>
-
-        <Name position={"-1.5 1.560 -2"}
-        name={"Hedy Lamarr"}
-        rotation={"0 50 0"}/>
+          scale={ "1 1 0" }
+          >
+            <PlayElement
+              id="hedy-play-element"
+              soundID={"#hedy-audio"}
+              cursor-listener/>
+            <Name name="Hedy Lamarr" />
+        </ExhibitionBox >
       </Entity>
     )
   }
@@ -73,21 +68,17 @@ class NewWaysRoom extends React.Component {
         <Lightbulb position="2 4 -2"/>
 
         <ExhibitionBox
-        src={ "#kamilaPortrait" }
-        position={ "2 2.318 -2" }
-        rotation={ "0 -50 0" }
-        scale={ "1 1 0" }/>
-
-        <PlayElement
-          id="kamila-play-element"
-          soundID={"#kamila-audio"}
-          position={ "2 1.631 -2" }
+          src={ "#kamilaPortrait" }
+          position={ "2 2.318 -2" }
           rotation={ "0 -50 0" }
-          cursor-listener/>
-
-        <Name position={"2.2 1.7 -2"}
-        name={"Kamila Sidor"}
-        rotation={"0 -50 0"}/>
+          scale={ "1 1 0" }
+        >
+          <PlayElement
+            id="kamila-play-element"
+            soundID={"#kamila-audio"}
+            cursor-listener/>
+          <Name name="Kamila Sidor" />
+      </ExhibitionBox >
       </Entity>
     )
   }
