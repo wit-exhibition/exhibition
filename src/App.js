@@ -74,8 +74,8 @@ class App extends React.Component {
         <a-assets>
           <img id="skyTexture" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/98a170d8-51a8-4f93-9696-11de62bd4ea9/"/>
           <img id="groundTexture" src="https://ucarecdn.com/3b01343e-b506-4dcf-8315-beee32e336da/"/>
-          <img id="play-icon" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/c31fd691-2b9c-4c8c-a9c3-533d12231093/"/>
-          <img id="stop-icon" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/3062e209-32e0-40e4-81eb-7f4945dea1f1/"/>
+          <img id="play-icon" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/013794b5-eee9-47d2-97bd-d5a8de4c411c/"/>
+          <img id="stop-icon" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/1bfc9c74-cdb0-40f5-b640-6eb756cd1891/"/>
 
           <img id="activist-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/ad8cdab7-b590-4e1e-8ba5-4766c98e1147/"/>
           <img id="space-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/a2710603-30a6-4672-8dce-bf83b3a4483e/"/>

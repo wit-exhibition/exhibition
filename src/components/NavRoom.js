@@ -7,6 +7,7 @@ import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
 import HoverAnimation from './HoverAnimation';
+import Name from './Name';
 
 class NavRoom extends React.Component {
 
@@ -104,12 +105,14 @@ class NavRoom extends React.Component {
           shader={"flat"}
           transparent={"true"}/>
 
+        <Name position={"0.8 1.3 -2"} name={"Ada Lovelace"}/>
+
         { this.renderNavElements() }
 
         <PlayElement
           id="nav-play-element"
           soundID={"#welcome-audio"}
-          position= { "-0.002 1.3 -2.007" }
+          position= { "-0.5 1.3 -2" }
           cursor-listener
           />
 

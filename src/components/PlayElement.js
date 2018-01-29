@@ -28,7 +28,7 @@ export default class PlayElement extends React.Component {
     return (
       <Entity
         primitive={ "a-box" }
-        scale={ "0.5 0.2 0" }
+        scale={ "0.2 0.2 0" }
         src={ "#play-icon" }
         {...this.props}
         events={{ click: () => this.playSound(this.props.soundID, this.props.id) }}>
