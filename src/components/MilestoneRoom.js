@@ -50,7 +50,7 @@ class MilestoneRoom extends React.Component {
         src={ "#gracePortrait" }
         position={ "2 2.5 -2" }
         rotation={ "0 -50 0" }
-        scale={ "1 1 0" }
+        scale={ "1.5 1.5 0" }
         >
           <PlayElement
             id="grace-play-element"
@@ -68,11 +68,11 @@ class MilestoneRoom extends React.Component {
         <Lightbulb position="-2 3.7 -2" />
 
         <ExhibitionBox
-        src={ "#audreyPortrait" }
-        position={ "-2 2.5 -2" }
-        rotation={ "0 50 0" }
-        scale={ "1.45 1.2 0" }
-        >
+          src={ "#audreyPortrait" }
+          position={ "-2 2.5 -2" }
+          rotation={ "0 50 0" }
+          scale={ "1.5 1.5 0" }
+          >
           <PlayElement
             id="audrey-play-element"
             soundID={"#audrey-audio"}
