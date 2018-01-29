@@ -72,7 +72,7 @@ class App extends React.Component {
     return (
       <Scene>
         <a-assets>
-          <img id="skyTexture" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/fa760fcf-d4eb-4dac-ae68-ef21c59b930c/"/>
+          <img id="skyTexture" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/98a170d8-51a8-4f93-9696-11de62bd4ea9/"/>
           <img id="groundTexture" src="https://ucarecdn.com/3b01343e-b506-4dcf-8315-beee32e336da/"/>
           <img id="play-icon" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/c31fd691-2b9c-4c8c-a9c3-533d12231093/"/>
           <img id="stop-icon" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/3062e209-32e0-40e4-81eb-7f4945dea1f1/"/>
