@@ -11,6 +11,7 @@ import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
+import Name from './Name';
 
 class MilestoneRoom extends React.Component {
 
@@ -28,13 +29,14 @@ class MilestoneRoom extends React.Component {
         src={ "#barbaraPortrait" }
         position={ "0 2.4 -2" }
         rotation={ "0 0 0" }
-        scale={ "1 1 0" }/>
-
-        <PlayElement
-          id="barbara-play-element"
-          soundID={"#barbara-audio"}
-          position={ "-0.002 1.726 -2.029" }
-          cursor-listener />
+        scale={ "1 1 0" }
+        >
+          <PlayElement
+            id="barbara-play-element"
+            soundID={"#barbara-audio"}
+            cursor-listener/>
+          <Name name="Barbara Liskow" />
+        </ExhibitionBox >
       </Entity>
     )
   }
@@ -48,14 +50,14 @@ class MilestoneRoom extends React.Component {
         src={ "#gracePortrait" }
         position={ "2 2.5 -2" }
         rotation={ "0 -50 0" }
-        scale={ "1 1 0" }/>
-
-      <PlayElement
-        id="grace-play-element"
-        soundID={"#grace-audio"}
-        position={ "2 1.55 -1.989" }
-        rotation={ "0 -50 0" }
-        cursor-listener />
+        scale={ "1 1 0" }
+        >
+          <PlayElement
+            id="grace-play-element"
+            soundID={"#grace-audio"}
+            cursor-listener/>
+          <Name name="Grace Hopper" />
+        </ExhibitionBox >
       </Entity>
     )
   }
@@ -69,14 +71,14 @@ class MilestoneRoom extends React.Component {
         src={ "#audreyPortrait" }
         position={ "-2 2.5 -2" }
         rotation={ "0 50 0" }
-        scale={ "1.45 1.2 0" }/>
-
-      <PlayElement
-        id="audrey-play-element"
-        soundID={"#audrey-audio"}
-        position={ "-1.900 1.570 -1.939" }
-        rotation={ "0 50 0" }
-        cursor-listener />
+        scale={ "1.45 1.2 0" }
+        >
+          <PlayElement
+            id="audrey-play-element"
+            soundID={"#audrey-audio"}
+            cursor-listener/>
+          <Name name="Audrey Tang" />
+        </ExhibitionBox >
       </Entity>
     )
   }
