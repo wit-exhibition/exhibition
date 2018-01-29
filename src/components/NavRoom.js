@@ -103,18 +103,20 @@ class NavRoom extends React.Component {
           rotation={"0 0 0"}
           scale={"1.3 1.3 0"}
           shader={"flat"}
-          transparent={"true"}/>
+          transparent={"true"}
+        >
+          <PlayElement
+            id="nav-play-element"
+            soundID={"#welcome-audio"}
+            cursor-listener/>
+          <Name name={"Ada Lovelace"}/>
+        </ExhibitionBox>
 
-        <Name position={"0.2 1.3 -2"} name={"Ada Lovelace"}/>
+
 
         { this.renderNavElements() }
 
-        <PlayElement
-          id="nav-play-element"
-          soundID={"#welcome-audio"}
-          position= { "-0.5 1.3 -2" }
-          cursor-listener
-          />
+
 
       </Entity>
     )
