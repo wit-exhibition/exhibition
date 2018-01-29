@@ -90,10 +90,10 @@ class App extends React.Component {
           <img id="space-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/dbd59dfe-4419-4ce7-a10f-d12ec0319100/"/>
           <img id="rails-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/04ec2fb2-6823-4e47-b895-da7b1b3aab40/"/>
 
-          <img id="gracePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/2e428e4f-98e9-4ee3-9a04-67362b4b36c4/"/>
+          <img id="gracePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/7755f6d5-cd3a-47a6-a743-40ff324800d3/"/>
           <audio id="grace-audio" crossOrigin="anonymous" src="https://ucarecdn.com/c3b085cd-e327-44ee-8e84-30c3472d7216/"></audio>
 
-          <img id="joanna" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/1944984a-1faf-4cea-840b-e0eb6a5761d5/"/>
+          <img id="joanna" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/da57be6d-0085-4ef5-a2a4-0f078fe17256/"/>
           <audio id="joanna-audio" crossOrigin="anonymous" src="https://ucarecdn.com/2966637f-adb8-441d-81b1-43952b4a4166/"></audio>
 
           <img id="kamilaPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/6290cbba-815e-4f12-8049-2223fd1c23f3/"/>
@@ -117,15 +117,13 @@ class App extends React.Component {
           <img id="margaretPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/02555168-85ba-4920-9dbe-53155814cbe4/"/>
           <audio id="margaret-audio" crossOrigin="anonymous" src="https://ucarecdn.com/1dbf45fc-923f-4a81-a8e2-890c6fbf3f18/"></audio>
 
-          <img id="chelseaPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/67bc265e-f5cd-4157-be63-85f43427d63e/"/>
+          <img id="chelseaPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/72030eb5-bca8-4163-a4c4-c76a3c23ca0c/"/>
           <audio id="chelsea-audio" crossOrigin="anonymous" src="https://ucarecdn.com/c39fe27e-a86a-46b0-95ca-76ea74e61c19/"></audio>
 
-          <img id="constanzePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/b8d41339-9269-4284-9cab-e0de06bb9e42/"/>
-          <img id="conNoLight" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/9a4da925-68ca-4122-96e9-34809754211b/"/>
-          <img id="conTrojaner" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/9583c74f-effa-4902-93fb-bff1243c36a9/"/>
+          <img id="constanzePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/24db52f0-bdff-4d5b-8445-442d08b7ba7f/"/>
           <audio id="constanze-audio" crossOrigin="anonymous" src="https://ucarecdn.com/93f9cb97-24be-4aa9-a1e6-dc6b35e46bd6/"></audio>
 
-          <img id="audreyPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/70ac4230-ca40-4c04-b097-2f9e87fb5e49/"/>
+          <img id="audreyPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/5ce3c32a-96a8-492e-b4ac-06e979c7d48a/"/>
           <audio id="audrey-audio" crossOrigin="anonymous" src="https://ucarecdn.com/c079662b-ba18-4908-8eca-e7c72dd92d6a/"></audio>
 
           <audio id="click-sound" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>

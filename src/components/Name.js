@@ -10,7 +10,7 @@ export default class Name extends React.Component {
   render() {
     return (
       <Entity
-        {...this.props}
+        position={ "0.35 -0.65 0" }
         text={{ value: this.props.name, align: 'left', wrapCount: 16 }}/>
     )
 

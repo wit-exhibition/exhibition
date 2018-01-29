@@ -48,7 +48,7 @@ class MilestoneRoom extends React.Component {
         src={ "#gracePortrait" }
         position={ "2 2.5 -2" }
         rotation={ "0 -50 0" }
-        scale={ "1.3 1.65 0" }/>
+        scale={ "1 1 0" }/>
 
       <PlayElement
         id="grace-play-element"

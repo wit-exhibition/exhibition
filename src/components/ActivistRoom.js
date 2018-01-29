@@ -10,6 +10,7 @@ import PlayElement from './PlayElement';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
+import Name from './Name';
 
 class ActivistRoom extends React.Component {
 
@@ -27,16 +28,14 @@ class ActivistRoom extends React.Component {
           src={ "#chelseaPortrait" }
           position={ "-2 2.5 -2" }
           rotation={ "0 50 0" }
-          scale={"1.3 1.6 0"}
-        />
-
-        <PlayElement
-          id="chelsea-play-element"
-          soundID={"#chelsea-audio"}
-          position={ "-1.900 1.570 -1.939" }
-          rotation={ "0 50 0" }
-          cursor-listener
-        />
+          scale={"1.5 1.5 0"}
+        >
+          <PlayElement
+            id="chelsea-play-element"
+            soundID={"#chelsea-audio"}
+            cursor-listener/>
+          <Name name="Chelsea Manning" />
+        </ExhibitionBox >
       </Entity>
     )
   }
@@ -51,15 +50,16 @@ class ActivistRoom extends React.Component {
           src={ "#constanzePortrait" }
           position={ "0 2.6 -2.8" }
           rotation={ "0 0 0" }
-          scale={ "1.3 1.65 0" }
-        />
-
+          scale={ "1.5 1.5 0" }
+        >
         <PlayElement
           id="constanze-play-element"
           soundID={"#constanze-audio"}
-          position={ "-0.002 1.6 -2.8" }
-          cursor-listener
-        />
+          cursor-listener/>
+        <Name name="Constanze Kurz" />
+        </ExhibitionBox >
+
+
       </Entity>
     )
   }
@@ -73,16 +73,14 @@ class ActivistRoom extends React.Component {
           src={ "#joanna" }
           position={ "2 2.5 -2" }
           rotation={ "0 -50 0" }
-          scale={ "1.6 1.3 0" }
-        />
-
-        <PlayElement
-          id="joanna-play-element"
-          soundID={"#joanna-audio"}
-          position={ "2 1.7 -1.989" }
-          rotation={ "0 -50 0" }
-          cursor-listener
-        />
+          scale={ "1.5 1.5 0" }
+        >
+          <PlayElement
+            id="joanna-play-element"
+            soundID={"#joanna-audio"}
+            cursor-listener/>
+          <Name name="Joanna Rutkowska" />
+        </ExhibitionBox >
       </Entity>
     )
   }

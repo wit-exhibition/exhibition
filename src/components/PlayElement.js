@@ -30,6 +30,7 @@ export default class PlayElement extends React.Component {
         primitive={ "a-box" }
         scale={ "0.2 0.2 0" }
         src={ "#play-icon" }
+        position={ "-0.3 -0.65 0" }
         {...this.props}
         events={{ click: () => this.playSound(this.props.soundID, this.props.id) }}>
       </Entity>
