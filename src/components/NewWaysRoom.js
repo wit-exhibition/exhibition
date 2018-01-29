@@ -11,6 +11,7 @@ import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
+import FloorTeleportation from './FloorTeleportation'
 
 class NewWaysRoom extends React.Component {
 
@@ -147,6 +148,20 @@ class NewWaysRoom extends React.Component {
         { this.props.kamilaElementVisible ? this.renderKamila() : <Lightbulb position="2 4 -2" off={true}/> }
 
         <FloorIndicator src={ "#rails-floor" }/>
+
+        <FloorTeleportation src={"#activist-floor"}
+          position={"-1.5 0.1 -1.5"}
+          teleportSound={true}
+          destination={"activistRoom"}
+          store={ this.store }
+          cursor-listener />
+
+        <FloorTeleportation src={"#milestone-floor"}
+          position={"1.5 0.1 -1.5"}
+          teleportSound={true}
+          destination={"milestoneRoom"}
+          store={ this.store }
+          cursor-listener />
 
         <HintText
           rotation={{ y: 50 }}

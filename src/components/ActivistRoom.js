@@ -10,6 +10,7 @@ import PlayElement from './PlayElement';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
+import FloorTeleportation from './FloorTeleportation'
 
 class ActivistRoom extends React.Component {
 
@@ -134,6 +135,21 @@ class ActivistRoom extends React.Component {
         { this.props.joannaElementVisible ? this.renderJoanna() : <Lightbulb position="2 4 -2" off={true}/> }
 
         <FloorIndicator src={ "#activist-floor" }/>
+
+        <FloorTeleportation src={"#space-floor"}
+          position={"-1.5 0.1 -1.5"}
+          teleportSound={true}
+          destination={"spaceRoom"}
+          store={ this.store }
+          cursor-listener />
+
+        <FloorTeleportation src={"#rails-floor"}
+          position={"1.5 0.1 -1.5"}
+          teleportSound={true}
+          destination={"newWaysRoom"}
+          store={ this.store }
+          cursor-listener />
+
 
         <HintText
           rotation={{ y: 50 }}

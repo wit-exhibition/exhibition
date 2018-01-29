@@ -11,6 +11,7 @@ import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
+import FloorTeleportation from './FloorTeleportation'
 
 class SpaceRoom extends React.Component {
 
@@ -129,6 +130,20 @@ class SpaceRoom extends React.Component {
         { this.props.anuradhaElementVisible ? this.renderAnuradha() : <Lightbulb position="1.6 3.5 -1.6" off={true}/> }
 
         <FloorIndicator src={ "#space-floor" }/>
+
+        <FloorTeleportation src={"#milestone-floor"}
+          position={"-1.5 0.1 -1.5"}
+          teleportSound={true}
+          destination={"milestoneRoom"}
+          store={ this.store }
+          cursor-listener />
+
+        <FloorTeleportation src={"#activist-floor"}
+          position={"1.5 0.1 -1.5"}
+          teleportSound={true}
+          destination={"activistRoom"}
+          store={ this.store }
+          cursor-listener />
 
         <HintText
           rotation={{ y: 50 }}
