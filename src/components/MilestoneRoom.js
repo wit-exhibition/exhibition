@@ -11,6 +11,7 @@ import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
+import FloorTeleportation from './FloorTeleportation';
 
 class MilestoneRoom extends React.Component {
 
@@ -130,32 +131,20 @@ class MilestoneRoom extends React.Component {
 
         <FloorIndicator src={ "#milestone-floor" }/>
 
-        <HintText
-          rotation={{ y: 50 }}
-          hint={"Exit"}
-          position={{ x: -2.8, y: 1, z: 0.6 }}
-          wrapCount={8}/>
-        <TeleportationElement
-          material={{ color: "#01ff26"}}
-          position={ "-3.000 0.500 0.634"}
-          scale={"0.5 0.5 1"}
-          destination="navRoom"
+        <FloorTeleportation src={"#rails-floor"}
+          position={"-1.5 0.1 -1.5"}
           teleportSound={true}
+          destination={"newWaysRoom"}
           store={ this.store }
           cursor-listener />
-        <HintText
-          rotation={{ y: -50 }}
-          hint={"Next room"}
-          position={{ x: 3, y: 1, z: 0.6 }}
-          wrapCount={8}/>
-        <TeleportationElement
-          material={{ color: "#d800f0"}}
-          position={ "3 0.5 0.631"}
-          scale={"0.5 0.5 1"}
-          destination="spaceRoom"
+
+        <FloorTeleportation src={"#space-floor"}
+          position={"1.5 0.1 -1.5"}
           teleportSound={true}
+          destination={"spaceRoom"}
           store={ this.store }
           cursor-listener />
+
       </Entity>
     )
   }

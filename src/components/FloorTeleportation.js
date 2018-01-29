@@ -1,7 +1,7 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
 
-export default class TeleportationElement extends React.Component {
+export default class FloorTeleportation extends React.Component {
 
   constructor(props) {
     super(props);
@@ -34,7 +34,11 @@ export default class TeleportationElement extends React.Component {
     return (
       <Entity
         class="teleport-box"
-        primitive="a-box"
+        primitive={ "a-box" }
+        shader={ "flat" }
+        transparent={ "true" }
+        scale={"1 1 0"}
+        rotation={"-90 0 0"}
         {...this.props}
         events={{ click: () => this.teleport(destination,
           this.props.teleportSound) }}
