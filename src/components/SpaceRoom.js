@@ -11,6 +11,7 @@ import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
+import Name from './Name';
 
 class SpaceRoom extends React.Component {
 
@@ -28,13 +29,14 @@ class SpaceRoom extends React.Component {
         src={ "#margaretPortrait" }
         position={ "0 2.25 -2" }
         rotation={ "0 0 0" }
-        scale={ "1 1 0" }/>
-
-        <PlayElement
-          id="margaret-play-element"
-          soundID={"#margaret-audio"}
-          position={ "0 1.58 -2" }
-          cursor-listener />
+        scale={ "1 1 0" }
+        >
+          <PlayElement
+            id="margaret-play-element"
+            soundID={"#margaret-audio"}
+            cursor-listener/>
+          <Name name="Margaret Hamilton" />
+        </ExhibitionBox >
       </Entity>
     )
   }
@@ -48,14 +50,14 @@ class SpaceRoom extends React.Component {
         src={ "#dorothyPortrait" }
         position={ "-1.6 2.3 -1.6" }
         rotation={ "0 50 0" }
-        scale={ "1 1 0" }/>
-
-        <PlayElement
-          id="dorothy-play-element"
-          soundID={"#dorothy-audio"}
-          position={ "-1.6 1.6 -1.6" }
-          rotation={ "0 50 0" }
-          cursor-listener />
+        scale={ "1 1 0" }
+        >
+          <PlayElement
+            id="dorothy-play-element"
+            soundID={"#dorothy-audio"}
+            cursor-listener/>
+          <Name name="Dorothy Vaughan" />
+        </ExhibitionBox >
       </Entity>
     )
   }
@@ -69,14 +71,14 @@ class SpaceRoom extends React.Component {
         src={ "#anuradhaPortrait" }
         position={ "1.6 2.3 -1.6" }
         rotation={ "0 -50 0" }
-        scale={ "1 1 0" }/>
-
-        <PlayElement
-          id="anuradha-play-element"
-          soundID={"#anuradha-audio"}
-          position={ "1.6 1.6 -1.6" }
-          rotation={ "0 -50 0" }
-          cursor-listener />
+        scale={ "1 1 0" }
+        >
+          <PlayElement
+            id="anuradha-play-element"
+            soundID={"#anuradha-audio"}
+            cursor-listener/>
+          <Name name="Anuradha TK" />
+        </ExhibitionBox >
       </Entity>
     )
   }
