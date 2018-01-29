@@ -59,15 +59,15 @@ class NewWaysRoom extends React.Component {
         <PlayElement
           id="hedy-play-element"
           soundID={"#hedy-audio"}
-          position={ "-1.998 1.580 -2.014" }
+          position={ "-2.296 1.560 -1.633" }
           rotation={ "0 50 0" }
           cursor-listener/>
 
         <Entity
           rotation={{x: "0", y: "50", z: "0" }}
-          position= {{x: "-2", y: "3", z: "-2"}}
-          text={{ value: "Hedy Lamarr", align: 'center',
-          wrapCount: 8 }}/>
+          position= {{x: "-1", y: "1.560", z: "-1.633"}}
+          text={{ value: "Hedy Lamarr", align: 'left',
+          wrapCount: 16 }}/>
       </Entity>
     )
   }
