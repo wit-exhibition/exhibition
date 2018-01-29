@@ -11,6 +11,7 @@ import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
+import Name from './Name';
 
 class NewWaysRoom extends React.Component {
 
@@ -36,11 +37,7 @@ class NewWaysRoom extends React.Component {
           position={ "-0.002 1.653 -2.8" }
           cursor-listener/>
 
-        <Entity
-          rotation={{x: "0", y: "0", z: "0" }}
-          position= {{x: "0", y: "3.3", z: "-2.8"}}
-          text={{ value: "Evelyn Boyd Granville", align: 'center',
-          wrapCount: 8 }}/>
+        <Name position={"0.2 1.653 -2.8"} name={"Evelyn Boyd Granville"}/>
       </Entity>
     )
   }
@@ -59,15 +56,13 @@ class NewWaysRoom extends React.Component {
         <PlayElement
           id="hedy-play-element"
           soundID={"#hedy-audio"}
-          position={ "-2.296 1.560 -1.633" }
+          position={ "-2.221 1.560 -2" }
           rotation={ "0 50 0" }
           cursor-listener/>
 
-        <Entity
-          rotation={{x: "0", y: "50", z: "0" }}
-          position= {{x: "-1", y: "1.560", z: "-1.633"}}
-          text={{ value: "Hedy Lamarr", align: 'left',
-          wrapCount: 16 }}/>
+        <Name position={"-1.5 1.560 -2"}
+        name={"Hedy Lamarr"}
+        rotation={"0 50 0"}/>
       </Entity>
     )
   }
@@ -86,15 +81,13 @@ class NewWaysRoom extends React.Component {
         <PlayElement
           id="kamila-play-element"
           soundID={"#kamila-audio"}
-          position={ "2 1.631 -1.989" }
+          position={ "2 1.631 -2" }
           rotation={ "0 -50 0" }
           cursor-listener/>
 
-        <Entity
-          rotation={{x: "0", y: "-50", z: "0" }}
-          position= {{x: "2", y: "3.1", z: "-2"}}
-          text={{ value: "Kamila Sidor", align: 'center',
-          wrapCount: 8 }}/>
+        <Name position={"2.2 1.7 -2"}
+        name={"Kamila Sidor"}
+        rotation={"0 -50 0"}/>
       </Entity>
     )
   }

@@ -105,7 +105,7 @@ class NavRoom extends React.Component {
           shader={"flat"}
           transparent={"true"}/>
 
-        <Name position={"0.8 1.3 -2"} name={"Ada Lovelace"}/>
+        <Name position={"0.2 1.3 -2"} name={"Ada Lovelace"}/>
 
         { this.renderNavElements() }
 
