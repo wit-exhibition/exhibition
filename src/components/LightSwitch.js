@@ -1,6 +1,5 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
-import LightSwitchAnimation from './LightSwitchAnimation';
 
 export default class LightSwitch extends React.Component {
 
@@ -14,6 +13,10 @@ export default class LightSwitch extends React.Component {
   }
 
   componentDidMount() {
+    if (this.props.personClicked) {
+      this.setState({"position":"0 -0.2 0.3"})
+      this.setState({"switchRotation":"25 0 0"})
+    }
     const switches = document.getElementsByClassName('light-switch')
     for (let i = 0; i < switches.length; i++) {
       switches[i].setAttribute('sound', 'on', 'click')

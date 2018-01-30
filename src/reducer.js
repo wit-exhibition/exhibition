@@ -5,9 +5,9 @@ const initialState = {
   anyLightSwitchClicked: false,
   graceElementVisible: false,
   adaElementVisible: false,
-  joannaElementVisible: false,
-  chelseaElementVisible: false,
-  constanzeElementVisible: false,
+  joannaVisible: false,
+  chelseaVisible: false,
+  constanzeVisible: false,
   audreyElementVisible: false,
   barbaraElementVisible: false,
   margaretElementVisible: false,
@@ -53,17 +53,17 @@ export default (state = initialState, action) => {
       }
       else if (action.person === "joanna") {
         return Object.assign({}, state, {
-            joannaElementVisible: true
+            joannaVisible: true
         })
       }
       else if (action.person === "chelsea") {
         return Object.assign({}, state, {
-            chelseaElementVisible: true
+            chelseaVisible: true
         })
       }
       else if (action.person === "constanze") {
         return Object.assign({}, state, {
-            constanzeElementVisible: true
+            constanzeVisible: true
         })
       }
       else if (action.person === "audrey") {

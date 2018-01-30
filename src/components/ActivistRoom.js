@@ -96,37 +96,51 @@ class ActivistRoom extends React.Component {
     )
   }
 
+  isVisible(personVisible) {
+    return personVisible ? true : false
+  }
+
   render() {
+    const {
+      anyLightSwitchClicked,
+      chelseaVisible,
+      constanzeVisible,
+      joannaVisible
+     } = this.props
+
     return (
       <Entity>
-        { !this.props.anyLightSwitchClicked && this.renderLightSwitchHint() }
+        { !anyLightSwitchClicked && this.renderLightSwitchHint() }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"chelsea"}
           store={ this.store }
+          personClicked= { this.isVisible(chelseaVisible) }
           cursor-listener />
 
         <Lamp position="-2 4.2 -2"/>
-        { this.props.chelseaElementVisible ? this.renderChelsea() : <Lightbulb position="-2 4 -2" off={true}/> }
+        { chelseaVisible ? this.renderChelsea() : <Lightbulb position="-2 4 -2" off={true}/> }
 
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"constanze"}
           store={ this.store }
+          personClicked= { this.isVisible(constanzeVisible) }
           cursor-listener />
 
         <Lamp position="0 4.2 -2.8"/>
-        { this.props.constanzeElementVisible ? this.renderConstanze() : <Lightbulb position="0 4 -2.8" off={true}/> }
+        { this.props.constanzeVisible ? this.renderConstanze() : <Lightbulb position="0 4 -2.8" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"joanna"}
           store={ this.store }
+          personClicked= { this.isVisible(constanzeVisible) }
           cursor-listener />
 
         <Lamp position="2 4.2 -2"/>
-        { this.props.joannaElementVisible ? this.renderJoanna() : <Lightbulb position="2 4 -2" off={true}/> }
+        { this.props.joannaVisible ? this.renderJoanna() : <Lightbulb position="2 4 -2" off={true}/> }
 
         <FloorIndicator src={ "#activist-floor" }/>
 
@@ -164,9 +178,9 @@ class ActivistRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    chelseaElementVisible: state.chelseaElementVisible,
-    constanzeElementVisible: state.constanzeElementVisible,
-    joannaElementVisible: state.joannaElementVisible,
+    chelseaVisible: state.chelseaVisible,
+    constanzeVisible: state.constanzeVisible,
+    joannaVisible: state.joannaVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked
   }
 }
