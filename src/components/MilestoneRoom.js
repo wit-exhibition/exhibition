@@ -94,38 +94,52 @@ class MilestoneRoom extends React.Component {
     )
   }
 
+  isVisible(personVisible) {
+    return personVisible ? true : false
+  }
+
   render() {
+    const {
+      anyLightSwitchClicked,
+      barbaraVisible,
+      graceVisible,
+      audreyVisible
+     } = this.props
+
     return (
       <Entity>
 
-      { !this.props.anyLightSwitchClicked && this.renderLightSwitchHint() }
+      { !anyLightSwitchClicked && this.renderLightSwitchHint() }
 
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"barbara"}
           store={ this.store }
+          personClicked= { this.isVisible(barbaraVisible) }
           cursor-listener />
 
         <Lamp position="0 3.9 -2"/>
-        { this.props.barbaraElementVisible ? this.renderBarbara() : <Lightbulb position="0 3.7 -2" off={true}/> }
+        { barbaraVisible ? this.renderBarbara() : <Lightbulb position="0 3.7 -2" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"grace"}
           store={ this.store }
+          personClicked= { this.isVisible(graceVisible) }
           cursor-listener />
 
         <Lamp position="2 3.9 -2"/>
-        { this.props.graceElementVisible ? this.renderGrace() : <Lightbulb position="2 3.7 -2" off={true}/> }
+        { graceVisible ? this.renderGrace() : <Lightbulb position="2 3.7 -2" off={true}/> }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"audrey"}
           store={ this.store }
+          personClicked= { this.isVisible(audreyVisible) }
           cursor-listener />
 
         <Lamp position="-2 3.9 -2"/>
-        { this.props.audreyElementVisible ? this.renderAudrey() : <Lightbulb position="-2 3.7 -2" off={true}/> }
+        { audreyVisible ? this.renderAudrey() : <Lightbulb position="-2 3.7 -2" off={true}/> }
 
         <FloorIndicator src={ "#milestone-floor" }/>
 
@@ -162,9 +176,9 @@ class MilestoneRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    barbaraElementVisible: state.barbaraElementVisible,
-    graceElementVisible: state.graceElementVisible,
-    audreyElementVisible: state.audreyElementVisible,
+    barbaraVisible: state.barbaraVisible,
+    graceVisible: state.graceVisible,
+    audreyVisible: state.audreyVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked
 
   }

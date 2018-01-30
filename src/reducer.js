@@ -3,13 +3,13 @@ const initialState = {
   currentRoom: "navRoom",
   welcomeClicked: false,
   anyLightSwitchClicked: false,
-  graceElementVisible: false,
+  graceVisible: false,
   adaElementVisible: false,
   joannaVisible: false,
   chelseaVisible: false,
   constanzeVisible: false,
-  audreyElementVisible: false,
-  barbaraElementVisible: false,
+  audreyVisible: false,
+  barbaraVisible: false,
   margaretElementVisible: false,
   dorothyElementVisible: false,
   anuradhaElementVisible: false,
@@ -43,7 +43,7 @@ export default (state = initialState, action) => {
     case 'SPOTLIGHT_ON':
       if (action.person === "grace") {
         return Object.assign({}, state, {
-            graceElementVisible: true
+            graceVisible: true
         })
       }
       else if (action.person === "ada") {
@@ -68,12 +68,12 @@ export default (state = initialState, action) => {
       }
       else if (action.person === "audrey") {
         return Object.assign({}, state, {
-            audreyElementVisible: true
+            audreyVisible: true
         })
       }
       else if (action.person === "barbara") {
         return Object.assign({}, state, {
-            barbaraElementVisible: true
+            barbaraVisible: true
         })
       }
       else if (action.person === "margaret") {
