@@ -103,7 +103,6 @@ class ActivistRoom extends React.Component {
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
           person={"chelsea"}
           store={ this.store }
           cursor-listener />
@@ -113,7 +112,6 @@ class ActivistRoom extends React.Component {
 
         <LightSwitch
           position={"0 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
           person={"constanze"}
           store={ this.store }
           cursor-listener />
@@ -123,7 +121,6 @@ class ActivistRoom extends React.Component {
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
           person={"joanna"}
           store={ this.store }
           cursor-listener />

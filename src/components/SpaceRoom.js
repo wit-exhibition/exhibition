@@ -102,7 +102,6 @@ class SpaceRoom extends React.Component {
 
         <LightSwitch
           position={"0 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
           person={"margaret"}
           store={ this.store }
           cursor-listener />
@@ -112,7 +111,6 @@ class SpaceRoom extends React.Component {
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
           person={"dorothy"}
           store={ this.store }
           cursor-listener />
@@ -122,7 +120,6 @@ class SpaceRoom extends React.Component {
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
           person={"anuradha"}
           store={ this.store }
           cursor-listener />

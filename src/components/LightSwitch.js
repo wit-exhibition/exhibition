@@ -6,7 +6,11 @@ export default class LightSwitch extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
+    this.store = this.props.store
+    this.state = {
+      "switchRotation":"-25 0 0",
+      "position": "0 0.2 0.3"
+    }
   }
 
   componentDidMount() {
@@ -18,6 +22,8 @@ export default class LightSwitch extends React.Component {
   }
 
   switchOn() {
+    this.setState({"position":"0 -0.2 0.3"})
+    this.setState({"switchRotation":"25 0 0"})
     this.store.dispatch({ type: "SPOTLIGHT_ON", person: this.props.person }),
     this.store.dispatch({ type: "SWITCH" })
   }
@@ -27,9 +33,16 @@ export default class LightSwitch extends React.Component {
       <Entity
         class="light-switch"
         primitive="a-box"
+        scale={"0.2 0.2 0.2"}
         {...this.props}
         events={{ click: () => this.switchOn() }}>
-        <LightSwitchAnimation scale={{ x: 0.2, y: 0.2, z: 0.2 }} />
+        <Entity
+          primitive="a-box"
+          scale={"1.002 0.2 1"}
+          position={ this.state.position }
+          rotation= { this.state.switchRotation }
+          material="color:#680ebb">
+        </Entity>
       </Entity>
 
     )
