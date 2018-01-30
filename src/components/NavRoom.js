@@ -112,11 +112,7 @@ class NavRoom extends React.Component {
           <Name name={"Ada Lovelace"}/>
         </ExhibitionBox>
 
-
-
         { this.renderNavElements() }
-
-
 
       </Entity>
     )
