@@ -10,9 +10,9 @@ const initialState = {
   constanzeVisible: false,
   audreyVisible: false,
   barbaraVisible: false,
-  margaretElementVisible: false,
-  dorothyElementVisible: false,
-  anuradhaElementVisible: false,
+  margaretVisible: false,
+  dorothyVisible: false,
+  anuradhaVisible: false,
   evelynElementVisible: false,
   hedyElementVisible: false,
   kamilaElementVisible: false
@@ -78,17 +78,17 @@ export default (state = initialState, action) => {
       }
       else if (action.person === "margaret") {
         return Object.assign({}, state, {
-            margaretElementVisible: true
+            margaretVisible: true
         })
       }
       else if (action.person === "dorothy") {
         return Object.assign({}, state, {
-            dorothyElementVisible: true
+            dorothyVisible: true
         })
       }
       else if (action.person === "anuradha") {
         return Object.assign({}, state, {
-            anuradhaElementVisible: true
+            anuradhaVisible: true
         })
       }
       else if (action.person === "evelyn") {
