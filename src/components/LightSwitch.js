@@ -6,6 +6,7 @@ export default class LightSwitch extends React.Component {
   constructor(props) {
     super(props);
     this.store = this.props.store
+    this.roomColor = this.props.roomColor
     this.state = {
       "switchRotation":"-25 0 0",
       "position": "0 0.2 0.3"
@@ -31,6 +32,10 @@ export default class LightSwitch extends React.Component {
     this.store.dispatch({ type: "SWITCH" })
   }
 
+  setRoomColor() {
+    return this.roomColor !== undefined ? this.roomColor : "#680ebb"
+  }
+
   render() {
     return (
       <Entity
@@ -44,7 +49,7 @@ export default class LightSwitch extends React.Component {
           scale={"1.002 0.2 1"}
           position={ this.state.position }
           rotation= { this.state.switchRotation }
-          material="color:#680ebb">
+          material={ "color:" + this.setRoomColor() }>
         </Entity>
       </Entity>
 

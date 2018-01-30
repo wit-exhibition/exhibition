@@ -106,15 +106,17 @@ class SpaceRoom extends React.Component {
       anuradhaVisible
      } = this.props
 
+     const ROOM_COLOR = "#00748B"
+
     return (
       <Entity>
-
       { !anyLightSwitchClicked && this.renderLightSwitchHint() }
 
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"margaret"}
           store={ this.store }
+          roomColor={ROOM_COLOR}
           personClicked= { this.isVisible(margaretVisible) }
           cursor-listener />
 
@@ -125,6 +127,7 @@ class SpaceRoom extends React.Component {
           position={"-0.5 1.35 -1.4"}
           person={"dorothy"}
           store={ this.store }
+          roomColor={ROOM_COLOR}
           personClicked= { this.isVisible(dorothyVisible) }
           cursor-listener />
 
@@ -135,6 +138,7 @@ class SpaceRoom extends React.Component {
           position={"0.5 1.35 -1.4"}
           person={"anuradha"}
           store={ this.store }
+          roomColor={ROOM_COLOR}
           personClicked= { this.isVisible(anuradhaVisible) }
           cursor-listener />
 
