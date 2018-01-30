@@ -94,38 +94,53 @@ class NewWaysRoom extends React.Component {
     )
   }
 
+  isVisible(personVisible) {
+    return personVisible ? true : false
+  }
+
   render() {
+
+    const {
+      anyLightSwitchClicked,
+      evelynVisible,
+      hedyVisible,
+      kamilaVisible
+     } = this.props
+
     return (
       <Entity>
 
-      { !this.props.anyLightSwitchClicked && this.renderLightSwitchHint() }
+      { !anyLightSwitchClicked && this.renderLightSwitchHint() }
 
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"evelyn"}
           store={ this.store }
+          personClicked= { this.isVisible(evelynVisible) }
           cursor-listener />
 
         <Lamp position="0 4.2 -2.8"/>
-        { this.props.evelynElementVisible ? this.renderEvelyn() : <Lightbulb position="0 4 -2.8" off={true}/> }
+        { evelynVisible ? this.renderEvelyn() : <Lightbulb position="0 4 -2.8" off={true}/> }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"hedy"}
           store={ this.store }
+          personClicked= { this.isVisible(hedyVisible) }
           cursor-listener />
 
         <Lamp position="-2 4.2 -2"/>
-        { this.props.hedyElementVisible ? this.renderHedy() : <Lightbulb position="-2 4 -2" off={true}/> }
+        { hedyVisible ? this.renderHedy() : <Lightbulb position="-2 4 -2" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"kamila"}
           store={ this.store }
+          personClicked= { this.isVisible(kamilaVisible) }
           cursor-listener />
 
         <Lamp position="2 4.2 -2"/>
-        { this.props.kamilaElementVisible ? this.renderKamila() : <Lightbulb position="2 4 -2" off={true}/> }
+        { kamilaVisible ? this.renderKamila() : <Lightbulb position="2 4 -2" off={true}/> }
 
         <FloorIndicator src={ "#rails-floor" }/>
 
@@ -160,9 +175,9 @@ class NewWaysRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    evelynElementVisible: state.evelynElementVisible,
-    hedyElementVisible: state.hedyElementVisible,
-    kamilaElementVisible: state.kamilaElementVisible,
+    evelynVisible: state.evelynVisible,
+    hedyVisible: state.hedyVisible,
+    kamilaVisible: state.kamilaVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked
   }
 }
