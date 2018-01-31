@@ -16,7 +16,7 @@ export default class HintText extends React.Component {
       if (this.store.getState().mode === "cardboard") {
         this.hint = `Fixiere ${clickHintAddition} mit dem Cursor`
       } else if (this.store.getState().mode === "desktop") {
-        this.hint = `Bewege den Cursor \n ${clickHintAddition} und klicke!`
+        this.hint = `Bewege den Cursor auf \n ${clickHintAddition} und klicke!`
       } else {
         this.hint = ""
       }
