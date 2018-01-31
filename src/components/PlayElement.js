@@ -5,6 +5,7 @@ export default class PlayElement extends React.Component {
 
   constructor(props) {
     super(props);
+    this.store = this.props.store;
     this.playing = false
   }
 
@@ -20,6 +21,10 @@ export default class PlayElement extends React.Component {
       box.components.sound.playSound()
       box.setAttribute('src', '#stop-icon')
       this.playing = true
+    }
+
+    if (this.props.welcomeClicked) {
+      this.store.dispatch({ type: "WELCOME_CLICK"})
     }
 
   }
