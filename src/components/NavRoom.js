@@ -8,6 +8,8 @@ import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
 import HoverAnimation from './HoverAnimation';
 import FloorTeleportation from './FloorTeleportation';
+import Name from './Name';
+
 
 class NavRoom extends React.Component {
 
@@ -17,20 +19,16 @@ class NavRoom extends React.Component {
   }
 
   showHintText() {
+
     return (
       <HintText
-        rotation={{ y: 0 }}
-        hint={"Click on play"}
-        position={{ x: -0.85, y: 1.4, z: -1.5 }}
-        wrapCount={16}
+        rotation={{ y: 20 }}
+        clickHintAddition={ "das Play-Zeichen" }
+        store={ this.store }
+        position={{ x: -1.1, y: 1.3, z: -2 }}
+        wrapCount={20}
       />
     )
-  }
-
-  welcomeClicked() {
-    if (!this.props.welcomeClicked) {
-      this.store.dispatch({ type: "WELCOME_CLICK"})
-    }
   }
 
   renderNavElements() {
@@ -80,15 +78,18 @@ class NavRoom extends React.Component {
           rotation={"0 0 0"}
           scale={"1.3 1.3 0"}
           shader={"flat"}
-          transparent={"true"}/>
+          transparent={"true"}
+        >
+          <PlayElement
+            id="nav-play-element"
+            soundID={"#welcome-audio"}
+            store={ this.store }
+            welcomeClicked={true}
+            cursor-listener/>
+          <Name name={"Ada Lovelace"}/>
+        </ExhibitionBox>
 
         { this.renderNavElements() }
-
-        <PlayElement
-          id="nav-play-element"
-          soundID={"#welcome-audio"}
-          position= { "-0.002 1.3 -2.007" }
-          cursor-listener/>
 
       </Entity>
     )
@@ -97,7 +98,8 @@ class NavRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    welcomeClicked: state.welcomeClicked
+    welcomeClicked: state.welcomeClicked,
+    mode: state.mode
   }
 }
 

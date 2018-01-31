@@ -5,6 +5,7 @@ export default class PlayElement extends React.Component {
 
   constructor(props) {
     super(props);
+    this.store = this.props.store;
     this.playing = false
   }
 
@@ -22,14 +23,19 @@ export default class PlayElement extends React.Component {
       this.playing = true
     }
 
+    if (this.props.welcomeClicked) {
+      this.store.dispatch({ type: "WELCOME_CLICK"})
+    }
+
   }
 
   render() {
     return (
       <Entity
         primitive={ "a-box" }
-        scale={ "0.5 0.2 0" }
+        scale={ "0.2 0.2 0" }
         src={ "#play-icon" }
+        position={ "-0.3 -0.65 0" }
         {...this.props}
         events={{ click: () => this.playSound(this.props.soundID, this.props.id) }}>
       </Entity>

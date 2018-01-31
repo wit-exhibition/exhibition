@@ -12,6 +12,8 @@ import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
 import FloorTeleportation from './FloorTeleportation';
+import Name from './Name';
+
 
 class MilestoneRoom extends React.Component {
 
@@ -29,13 +31,14 @@ class MilestoneRoom extends React.Component {
         src={ "#barbaraPortrait" }
         position={ "0 2.4 -2" }
         rotation={ "0 0 0" }
-        scale={ "1 1 0" }/>
-
-        <PlayElement
-          id="barbara-play-element"
-          soundID={"#barbara-audio"}
-          position={ "-0.002 1.726 -2.029" }
-          cursor-listener />
+        scale={ "1 1 0" }
+        >
+          <PlayElement
+            id="barbara-play-element"
+            soundID={"#barbara-audio"}
+            cursor-listener/>
+          <Name name="Barbara Liskow" />
+        </ExhibitionBox >
       </Entity>
     )
   }
@@ -49,14 +52,14 @@ class MilestoneRoom extends React.Component {
         src={ "#gracePortrait" }
         position={ "2 2.5 -2" }
         rotation={ "0 -50 0" }
-        scale={ "1.3 1.65 0" }/>
-
-      <PlayElement
-        id="grace-play-element"
-        soundID={"#grace-audio"}
-        position={ "2 1.55 -1.989" }
-        rotation={ "0 -50 0" }
-        cursor-listener />
+        scale={ "1.5 1.5 0" }
+        >
+          <PlayElement
+            id="grace-play-element"
+            soundID={"#grace-audio"}
+            cursor-listener/>
+          <Name name="Grace Hopper" />
+        </ExhibitionBox >
       </Entity>
     )
   }
@@ -67,17 +70,17 @@ class MilestoneRoom extends React.Component {
         <Lightbulb position="-2 3.7 -2" />
 
         <ExhibitionBox
-        src={ "#audreyPortrait" }
-        position={ "-2 2.5 -2" }
-        rotation={ "0 50 0" }
-        scale={ "1.45 1.2 0" }/>
-
-      <PlayElement
-        id="audrey-play-element"
-        soundID={"#audrey-audio"}
-        position={ "-1.900 1.570 -1.939" }
-        rotation={ "0 50 0" }
-        cursor-listener />
+          src={ "#audreyPortrait" }
+          position={ "-2 2.5 -2" }
+          rotation={ "0 50 0" }
+          scale={ "1.5 1.5 0" }
+          >
+          <PlayElement
+            id="audrey-play-element"
+            soundID={"#audrey-audio"}
+            cursor-listener/>
+          <Name name="Audrey Tang" />
+        </ExhibitionBox >
       </Entity>
     )
   }
@@ -85,49 +88,61 @@ class MilestoneRoom extends React.Component {
   renderLightSwitchHint() {
     return (
       <HintText
-        rotation={{ y: 20 }}
-        hint={"Klick auf die Lichtschalter!"}
+        rotation={{ y: 10 }}
+        store={ this.store }
+        clickHintAddition={"die Lichtschalter"}
         position={{ x: -0.5, y: 1.6, z: -1.4 }}
-        wrapCount={20}
+        wrapCount={25}
       />
     )
   }
 
+  isVisible(personVisible) {
+    return personVisible ? true : false
+  }
+
   render() {
+    const {
+      anyLightSwitchClicked,
+      barbaraVisible,
+      graceVisible,
+      audreyVisible
+     } = this.props
+
     return (
       <Entity>
 
-      { !this.props.anyLightSwitchClicked && this.renderLightSwitchHint() }
+      { !anyLightSwitchClicked && this.renderLightSwitchHint() }
 
         <LightSwitch
           position={"0 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
           person={"barbara"}
           store={ this.store }
+          personClicked= { this.isVisible(barbaraVisible) }
           cursor-listener />
 
         <Lamp position="0 3.9 -2"/>
-        { this.props.barbaraElementVisible ? this.renderBarbara() : <Lightbulb position="0 3.7 -2" off={true}/> }
+        { barbaraVisible ? this.renderBarbara() : <Lightbulb position="0 3.7 -2" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
           person={"grace"}
           store={ this.store }
+          personClicked= { this.isVisible(graceVisible) }
           cursor-listener />
 
         <Lamp position="2 3.9 -2"/>
-        { this.props.graceElementVisible ? this.renderGrace() : <Lightbulb position="2 3.7 -2" off={true}/> }
+        { graceVisible ? this.renderGrace() : <Lightbulb position="2 3.7 -2" off={true}/> }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
           person={"audrey"}
           store={ this.store }
+          personClicked= { this.isVisible(audreyVisible) }
           cursor-listener />
 
         <Lamp position="-2 3.9 -2"/>
-        { this.props.audreyElementVisible ? this.renderAudrey() : <Lightbulb position="-2 3.7 -2" off={true}/> }
+        { audreyVisible ? this.renderAudrey() : <Lightbulb position="-2 3.7 -2" off={true}/> }
 
         <FloorIndicator src={ "#milestone-floor" }/>
 
@@ -179,9 +194,9 @@ class MilestoneRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    barbaraElementVisible: state.barbaraElementVisible,
-    graceElementVisible: state.graceElementVisible,
-    audreyElementVisible: state.audreyElementVisible,
+    barbaraVisible: state.barbaraVisible,
+    graceVisible: state.graceVisible,
+    audreyVisible: state.audreyVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked
 
   }

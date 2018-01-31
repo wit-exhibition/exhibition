@@ -3,19 +3,19 @@ const initialState = {
   currentRoom: "navRoom",
   welcomeClicked: false,
   anyLightSwitchClicked: false,
-  graceElementVisible: false,
+  graceVisible: false,
   adaElementVisible: false,
-  joannaElementVisible: false,
-  chelseaElementVisible: false,
-  constanzeElementVisible: false,
-  audreyElementVisible: false,
-  barbaraElementVisible: false,
-  margaretElementVisible: false,
-  dorothyElementVisible: false,
-  anuradhaElementVisible: false,
-  evelynElementVisible: false,
-  hedyElementVisible: false,
-  kamilaElementVisible: false
+  joannaVisible: false,
+  chelseaVisible: false,
+  constanzeVisible: false,
+  audreyVisible: false,
+  barbaraVisible: false,
+  margaretVisible: false,
+  dorothyVisible: false,
+  anuradhaVisible: false,
+  evelynVisible: false,
+  hedyVisible: false,
+  kamilaVisible: false
 }
 
 export default (state = initialState, action) => {
@@ -43,7 +43,7 @@ export default (state = initialState, action) => {
     case 'SPOTLIGHT_ON':
       if (action.person === "grace") {
         return Object.assign({}, state, {
-            graceElementVisible: true
+            graceVisible: true
         })
       }
       else if (action.person === "ada") {
@@ -53,57 +53,57 @@ export default (state = initialState, action) => {
       }
       else if (action.person === "joanna") {
         return Object.assign({}, state, {
-            joannaElementVisible: true
+            joannaVisible: true
         })
       }
       else if (action.person === "chelsea") {
         return Object.assign({}, state, {
-            chelseaElementVisible: true
+            chelseaVisible: true
         })
       }
       else if (action.person === "constanze") {
         return Object.assign({}, state, {
-            constanzeElementVisible: true
+            constanzeVisible: true
         })
       }
       else if (action.person === "audrey") {
         return Object.assign({}, state, {
-            audreyElementVisible: true
+            audreyVisible: true
         })
       }
       else if (action.person === "barbara") {
         return Object.assign({}, state, {
-            barbaraElementVisible: true
+            barbaraVisible: true
         })
       }
       else if (action.person === "margaret") {
         return Object.assign({}, state, {
-            margaretElementVisible: true
+            margaretVisible: true
         })
       }
       else if (action.person === "dorothy") {
         return Object.assign({}, state, {
-            dorothyElementVisible: true
+            dorothyVisible: true
         })
       }
       else if (action.person === "anuradha") {
         return Object.assign({}, state, {
-            anuradhaElementVisible: true
+            anuradhaVisible: true
         })
       }
       else if (action.person === "evelyn") {
         return Object.assign({}, state, {
-            evelynElementVisible: true
+            evelynVisible: true
         })
       }
       else if (action.person === "hedy") {
         return Object.assign({}, state, {
-            hedyElementVisible: true
+            hedyVisible: true
         })
       }
       else if (action.person === "kamila") {
         return Object.assign({}, state, {
-            kamilaElementVisible: true
+            kamilaVisible: true
         })
       }
     default:

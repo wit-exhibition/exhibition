@@ -12,6 +12,8 @@ import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
 import FloorTeleportation from './FloorTeleportation'
+import Name from './Name';
+
 
 class NewWaysRoom extends React.Component {
 
@@ -26,22 +28,17 @@ class NewWaysRoom extends React.Component {
         <Lightbulb position="0 4 -2.8"/>
 
         <ExhibitionBox
-        src={ "#evelynPortrait" }
-        position={ "0 2.366 -2.8" }
-        rotation={ "0 0 0" }
-        scale={ "1 1 0" }/>
-
-        <PlayElement
-          id="evelyn-play-element"
-          soundID={"#evelyn-audio"}
-          position={ "-0.002 1.653 -2.8" }
-          cursor-listener/>
-
-        <Entity
-          rotation={{x: "0", y: "0", z: "0" }}
-          position= {{x: "0", y: "3.3", z: "-2.8"}}
-          text={{ value: "Evelyn Boyd Granville", align: 'center',
-          wrapCount: 8 }}/>
+          src={ "#evelynPortrait" }
+          position={ "0 2.366 -2.8" }
+          rotation={ "0 0 0" }
+          scale={ "1.2 1.2 0" }
+          >
+            <PlayElement
+              id="evelyn-play-element"
+              soundID={"#evelyn-audio"}
+              cursor-listener/>
+            <Name name="Evelyn Boyd Granville" />
+          </ExhibitionBox >
       </Entity>
     )
   }
@@ -52,23 +49,17 @@ class NewWaysRoom extends React.Component {
          <Lightbulb position="-2 4 -2" />
 
         <ExhibitionBox
-        src={ "#hedyPortrait" }
-        position={ "-2 2.246 -2" }
-        rotation={ "0 50 0" }
-        scale={ "1 1 0" }/>
-
-        <PlayElement
-          id="hedy-play-element"
-          soundID={"#hedy-audio"}
-          position={ "-1.998 1.580 -2.014" }
+          src={ "#hedyPortrait" }
+          position={ "-2 2.246 -2" }
           rotation={ "0 50 0" }
-          cursor-listener/>
-
-        <Entity
-          rotation={{x: "0", y: "50", z: "0" }}
-          position= {{x: "-2", y: "3", z: "-2"}}
-          text={{ value: "Hedy Lamarr", align: 'center',
-          wrapCount: 8 }}/>
+          scale={ "1.5 1.5 0" }
+          >
+            <PlayElement
+              id="hedy-play-element"
+              soundID={"#hedy-audio"}
+              cursor-listener/>
+            <Name name="Hedy Lamarr" />
+        </ExhibitionBox >
       </Entity>
     )
   }
@@ -79,23 +70,17 @@ class NewWaysRoom extends React.Component {
         <Lightbulb position="2 4 -2"/>
 
         <ExhibitionBox
-        src={ "#kamilaPortrait" }
-        position={ "2 2.318 -2" }
-        rotation={ "0 -50 0" }
-        scale={ "1 1 0" }/>
-
-        <PlayElement
-          id="kamila-play-element"
-          soundID={"#kamila-audio"}
-          position={ "2 1.631 -1.989" }
+          src={ "#kamilaPortrait" }
+          position={ "2 2.318 -2" }
           rotation={ "0 -50 0" }
-          cursor-listener/>
-
-        <Entity
-          rotation={{x: "0", y: "-50", z: "0" }}
-          position= {{x: "2", y: "3.1", z: "-2"}}
-          text={{ value: "Kamila Sidor", align: 'center',
-          wrapCount: 8 }}/>
+          scale={ "1.5 1.5 0" }
+        >
+          <PlayElement
+            id="kamila-play-element"
+            soundID={"#kamila-audio"}
+            cursor-listener/>
+          <Name name="Kamila Sidor" />
+      </ExhibitionBox >
       </Entity>
     )
   }
@@ -103,49 +88,62 @@ class NewWaysRoom extends React.Component {
   renderLightSwitchHint() {
     return (
       <HintText
-        rotation={{ y: 20 }}
-        hint={"Klick auf die Lichtschalter!"}
+        rotation={{ y: 10 }}
+        store={ this.store }
+        clickHintAddition={"die Lichtschalter"}
         position={{ x: -0.5, y: 1.6, z: -1.4 }}
-        wrapCount={20}
+        wrapCount={25}
       />
     )
   }
 
+  isVisible(personVisible) {
+    return personVisible ? true : false
+  }
+
   render() {
+
+    const {
+      anyLightSwitchClicked,
+      evelynVisible,
+      hedyVisible,
+      kamilaVisible
+     } = this.props
+
     return (
       <Entity>
 
-      { !this.props.anyLightSwitchClicked && this.renderLightSwitchHint() }
+      { !anyLightSwitchClicked && this.renderLightSwitchHint() }
 
         <LightSwitch
           position={"0 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
           person={"evelyn"}
           store={ this.store }
+          personClicked= { this.isVisible(evelynVisible) }
           cursor-listener />
 
         <Lamp position="0 4.2 -2.8"/>
-        { this.props.evelynElementVisible ? this.renderEvelyn() : <Lightbulb position="0 4 -2.8" off={true}/> }
+        { evelynVisible ? this.renderEvelyn() : <Lightbulb position="0 4 -2.8" off={true}/> }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
           person={"hedy"}
           store={ this.store }
+          personClicked= { this.isVisible(hedyVisible) }
           cursor-listener />
 
         <Lamp position="-2 4.2 -2"/>
-        { this.props.hedyElementVisible ? this.renderHedy() : <Lightbulb position="-2 4 -2" off={true}/> }
+        { hedyVisible ? this.renderHedy() : <Lightbulb position="-2 4 -2" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
-          scale={"0.2 0.2 0.2"}
           person={"kamila"}
           store={ this.store }
+          personClicked= { this.isVisible(kamilaVisible) }
           cursor-listener />
 
         <Lamp position="2 4.2 -2"/>
-        { this.props.kamilaElementVisible ? this.renderKamila() : <Lightbulb position="2 4 -2" off={true}/> }
+        { kamilaVisible ? this.renderKamila() : <Lightbulb position="2 4 -2" off={true}/> }
 
         <FloorIndicator src={ "#rails-floor" }/>
 
@@ -175,7 +173,7 @@ class NewWaysRoom extends React.Component {
           destination="navRoom"
           store={ this.store }
           cursor-listener />
-        
+
       </Entity>
     )
   }
@@ -183,9 +181,9 @@ class NewWaysRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    evelynElementVisible: state.evelynElementVisible,
-    hedyElementVisible: state.hedyElementVisible,
-    kamilaElementVisible: state.kamilaElementVisible,
+    evelynVisible: state.evelynVisible,
+    hedyVisible: state.hedyVisible,
+    kamilaVisible: state.kamilaVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked
   }
 }

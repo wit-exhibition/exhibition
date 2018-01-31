@@ -11,7 +11,7 @@ export default class StartScreen extends React.Component {
     if (device === "desktop") {
       this.store.dispatch({ type: "CHOOSE_DEVICE", mode: device })
     }
-    else if (device === "carboard") {
+    else if (device === "cardboard") {
       this.store.dispatch({ type: "CHOOSE_DEVICE", mode: device })
     }
   }
@@ -21,7 +21,7 @@ export default class StartScreen extends React.Component {
       <div className="ui inverted segment" style={{ height: '720px', textAlign: 'center'}}>
         <h1>Choose your device:</h1>
         <button onClick={this.handleClick('desktop')} className="ui violet inverted button" role="button">Desktop</button>
-        <button onClick={this.handleClick('carboard')} className="ui purple inverted button" role="button">CardBoard</button>
+        <button onClick={this.handleClick('cardboard')} className="ui purple inverted button" role="button">CardBoard</button>
       </div>
     )
   }
