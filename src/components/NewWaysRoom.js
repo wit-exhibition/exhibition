@@ -175,18 +175,7 @@ class NewWaysRoom extends React.Component {
           destination="navRoom"
           store={ this.store }
           cursor-listener />
-        <HintText
-          rotation={{ y: -50 }}
-          hint={"Next room"}
-          position={{ x: 3, y: 1, z: 0.6 }}
-          wrapCount={8}/>
-        <TeleportationElement
-          material={{ color: "#d800f0"}}
-          position={ "3 0.5 0.631"}
-          scale={"0.5 0.5 1"}
-          destination="milestoneRoom"
-          store={ this.store }
-          cursor-listener />
+        
       </Entity>
     )
   }

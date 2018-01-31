@@ -164,20 +164,7 @@ class ActivistRoom extends React.Component {
           destination="navRoom"
           store={ this.store }
           cursor-listener />
-        <HintText
-          rotation={{ y: -50 }}
-          hint={"Next room"}
-          position={{ x: 3, y: 1, z: -2 }}
-          wrapCount={8}/>
-        <TeleportationElement
-          teleportSound={true}
-          material={{ color: "#d800f0"}}
-          position={ "3 0.5 -2"}
-          scale={"0.5 0.5 1"}
-          destination="newWaysRoom"
-          time={ 2300 }
-          store={ this.store }
-          cursor-listener />
+      
       </Entity>
     )
   }
