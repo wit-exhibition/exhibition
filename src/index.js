@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import App from './App';
 import myReducer from './reducer';
+import './styles.css';
 import StartScreen from './components/StartScreen';
 
 let store = createStore(myReducer);

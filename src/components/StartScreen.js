@@ -5,6 +5,7 @@ export default class StartScreen extends React.Component {
   constructor(props) {
     super(props);
     this.store = this.props.store;
+    this.state = {hovered: false}
   }
 
   handleClick = (device) => (e) => {
@@ -16,13 +17,40 @@ export default class StartScreen extends React.Component {
     }
   }
 
+  style() {
+      if (this.hovered) {
+        return { color: "red" }
+      } else {
+        return { color: "grey" }
+      }
+    }
+
+  onMouseOver() {
+    console.log("mouse over");
+    //this.setState({ hovered:true });
+  }
+
+  onMouseOut() {
+    console.log("mouse out");
+    //this.setState({ hovered:false });
+  }
+
   render() {
     return (
-      <div className="ui inverted segment" style={{ height: '720px', textAlign: 'center'}}>
-        <h1>Choose your device:</h1>
-        <button onClick={this.handleClick('desktop')} className="ui violet inverted button" role="button">Desktop</button>
-        <button onClick={this.handleClick('cardboard')} className="ui purple inverted button" role="button">CardBoard</button>
-      </div>
+      <div className='start-screen'>
+        <h1>3D-Ausstellung</h1>
+        <h2>Wähle dein Gerät:</h2>
+
+          <a className='computer' onClick={this.handleClick('desktop')} role="button">
+            <img src="https://ucarecdn.com/a081ebd4-6e25-4527-aa21-7dae3e679b49/"/>
+            <div className='computer-label' onMouseOver={this.onMouseOver}>Desktop</div>
+          </a>
+          <button onClick={this.handleClick('cardboard')} role="button">CardBoard</button>
+
+            <span onMouseOver={this.onMouseOver}
+                  onMouseOut={this.onMouseOut}
+                  style={this.style()}>Hover me</span>
+        </div>
     )
   }
 

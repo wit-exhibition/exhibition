@@ -50,16 +50,12 @@ class App extends React.Component {
       case 'navRoom':
         return <NavRoom store={ this.store } />
       case 'milestoneRoom':
-        console.log(" called first room");
         return <MilestoneRoom store={ this.store } />
       case 'activistRoom':
-        console.log(" called first room");
         return <ActivistRoom store={ this.store } />
       case 'spaceRoom':
-        console.log(" called first room");
         return <SpaceRoom store={ this.store } />
       case 'newWaysRoom':
-        console.log(" called first room");
         return <NewWaysRoom store={ this.store } />
       default :
         console.log("default called");
@@ -130,7 +126,6 @@ class App extends React.Component {
           <audio id="teleport" crossOrigin="anonymous" src="https://freesound.org/data/previews/162/162479_311243-lq.mp3"></audio>
           //TODO Mention in Readme: Sound by jobro from https://freesound.org/people/jobro/sounds/75637/
           <audio id="switch-sound" crossOrigin="anonymous" src="https://freesound.org/data/previews/75/75637_35187-lq.mp3"></audio>
-
       </a-assets>
 
         { this.renderRoom(this.props.currentRoom) }
