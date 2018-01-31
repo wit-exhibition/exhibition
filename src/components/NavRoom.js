@@ -17,18 +17,12 @@ class NavRoom extends React.Component {
   }
 
   showHintText() {
-    console.log(this.props.mode);
-    let hintText = ""
-    if (this.props.mode === "cardboard") {
-      hintText = "Fixiere das Play-Zeichen mit dem Cursor"
-    } else {
-      hintText = "Bewege den Cursor \n auf Play und klicke!"
-    }
 
     return (
       <HintText
         rotation={{ y: 20 }}
-        hint={ hintText }
+        clickHintAddition={ "das Play-Zeichen" }
+        store={ this.store }
         position={{ x: -1.1, y: 1.3, z: -2 }}
         wrapCount={20}
       />

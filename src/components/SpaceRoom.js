@@ -86,10 +86,11 @@ class SpaceRoom extends React.Component {
   renderLightSwitchHint() {
     return (
       <HintText
-        rotation={{ y: 20 }}
-        hint={"Klick auf die Lichtschalter!"}
+        rotation={{ y: 10 }}
+        store={ this.store }
+        clickHintAddition={"die Lichtschalter"}
         position={{ x: -0.5, y: 1.6, z: -1.4 }}
-        wrapCount={20}
+        wrapCount={25}
       />
     )
   }
