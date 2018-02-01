@@ -60,8 +60,6 @@ class ActivistRoom extends React.Component {
           cursor-listener/>
         <Name name="Constanze Kurz" />
         </ExhibitionBox >
-
-
       </Entity>
     )
   }
@@ -162,7 +160,6 @@ class ActivistRoom extends React.Component {
           destination={"newWaysRoom"}
           store={ this.store }
           cursor-listener />
-
 
         <HintText
           rotation={{ y: 50 }}

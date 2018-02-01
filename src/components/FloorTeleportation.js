@@ -51,7 +51,6 @@ export default class FloorTeleportation extends React.Component {
           height={"0.1"}
           radius={"0.5"}
           color={"#f500c8"}/>
-
       </Entity>
     )
   }
