@@ -148,14 +148,16 @@ class ActivistRoom extends React.Component {
         <FloorIndicator src={ "#activist-floor" }/>
 
         <FloorTeleportation src={"#space-floor"}
-          position={"-1.5 0.1 -1.5"}
+          position={"-1.5 0.155 -1.5"}
+          positionCylinder={"-1.5 0.1 -1.5"}
           teleportSound={true}
           destination={"spaceRoom"}
           store={ this.store }
           cursor-listener />
 
         <FloorTeleportation src={"#rails-floor"}
-          position={"1.5 0.1 -1.5"}
+          position={"1.5 0.155 -1.5"}
+          positionCylinder={"1.5 0.1 -1.5"}
           teleportSound={true}
           destination={"newWaysRoom"}
           store={ this.store }
