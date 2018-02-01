@@ -59,8 +59,6 @@ class ActivistRoom extends React.Component {
           cursor-listener/>
         <Name name="Constanze Kurz" />
         </ExhibitionBox >
-
-
       </Entity>
     )
   }
@@ -143,17 +141,18 @@ class ActivistRoom extends React.Component {
         <FloorIndicator src={ "#activist-floor" }/>
 
         <FloorTeleportation src={"#space-floor"}
-          position={"-1.5 0.1 -1.5"}
+          position={"-1.5 0.155 -1.5"}
+          positionCylinder={"-1.5 0.1 -1.5"}
           teleportSound={true}
           destination={"spaceRoom"}
           cursor-listener />
 
         <FloorTeleportation src={"#rails-floor"}
-          position={"1.5 0.1 -1.5"}
+          position={"1.5 0.155 -1.5"}
+          positionCylinder={"1.5 0.1 -1.5"}
           teleportSound={true}
           destination={"newWaysRoom"}
           cursor-listener />
-
 
         <HintText
           rotation={{ y: 50 }}

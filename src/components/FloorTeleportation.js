@@ -30,19 +30,28 @@ class FloorTeleportation extends React.Component {
   }
 
   render() {
-    const { destination, handleClick, ...rest} = this.props
+    const { destination, handleClick, positionCylinder, ...rest} = this.props
     return (
-      <Entity
-        class="teleport-box"
-        primitive={ "a-box" }
-        shader={ "flat" }
-        transparent={ "true" }
-        scale={"1 1 0"}
-        rotation={"-90 0 0"}
-        {...this.props}
-        events={{ click: () => this.teleport(destination,
-          this.props.teleportSound) }}
-      />
+      <Entity>
+        <Entity
+          class="teleport-box"
+          primitive={ "a-box" }
+          shader={ "flat" }
+          transparent={ "true" }
+          scale={"1 1 0"}
+          rotation={"-90 0 0"}
+          {...this.props}
+          events={{ click: () => this.teleport(destination,
+            this.props.teleportSound) }}/>
+
+        <Entity
+          primitive={"a-cylinder"}
+          position={positionCylinder}
+          shader={"flat"}
+          height={"0.1"}
+          radius={"0.5"}
+          color={"#f500c8"}/>
+      </Entity>
     )
   }
 }

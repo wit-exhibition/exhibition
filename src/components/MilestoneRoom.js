@@ -142,13 +142,15 @@ class MilestoneRoom extends React.Component {
         <FloorIndicator src={ "#milestone-floor" }/>
 
         <FloorTeleportation src={"#rails-floor"}
-          position={"-1.5 0.1 -1.5"}
+          position={"-1.5 0.155 -1.5"}
+          positionCylinder={"-1.5 0.1 -1.5 "}
           teleportSound={true}
           destination={"newWaysRoom"}
           cursor-listener />
 
         <FloorTeleportation src={"#space-floor"}
-          position={"1.5 0.1 -1.5"}
+          position={"1.5 0.155 -1.5"}
+          positionCylinder={"1.5 0.1 -1.5"}
           teleportSound={true}
           destination={"spaceRoom"}
           cursor-listener />
