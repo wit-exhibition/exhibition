@@ -35,33 +35,63 @@ class NavRoom extends React.Component {
     return (
       <Entity>
 
-        <FloorTeleportation src={"#milestone-floor"}
-          position={"-1.8 0.1 -1.7"}
+        <FloorTeleportation
+          src={"#milestone-floor"}
+          position={"-1.8 0.155 -1.7"}
           teleportSound={true}
           destination={"milestoneRoom"}
           store={ this.store }
           cursor-listener/>
+        <Entity
+          primitive={"a-cylinder"}
+          position={"-1.8 0.1 -1.7"}
+          shader={"flat"}
+          height={"0.1"}
+          radius={"0.5"}
+          color={"#f500c8"}/>
 
         <FloorTeleportation src={"#space-floor"}
-          position={"-0.6 0.1 -1.7"}
+          position={"-0.6 0.155 -1.7"}
           teleportSound={true}
           destination={"spaceRoom"}
           store={ this.store }
           cursor-listener/>
+        <Entity
+          primitive={"a-cylinder"}
+          position={"-0.6 0.1 -1.7"}
+          shader={"flat"}
+          height={"0.1"}
+          radius={"0.5"}
+          color={"#f500c8"}/>
 
         <FloorTeleportation src={"#rails-floor"}
-          position={"0.6 0.1 -1.7"}
+          position={"0.6 0.155 -1.7"}
           teleportSound={true}
           destination={"newWaysRoom"}
           store={ this.store }
           cursor-listener/>
+        <Entity
+          primitive={"a-cylinder"}
+          position={"0.6 0.1 -1.7"}
+          shader={"flat"}
+          height={"0.1"}
+          radius={"0.5"}
+          color={"#f500c8"}/>
 
         <FloorTeleportation src={"#activist-floor"}
-          position={"1.8 0.1 -1.7"}
+          position={"1.8 0.155 -1.7"}
           teleportSound={true}
           destination={"activistRoom"}
           store={ this.store }
           cursor-listener/>
+        <Entity
+          primitive={"a-cylinder"}
+          position={"1.8 0.1 -1.7"}
+          shader={"flat"}
+          height={"0.1"}
+          radius={"0.5"}
+          color={"#f500c8"}/>
+
       </Entity>
     )
   }
