@@ -1,11 +1,11 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
+import { connect } from 'react-redux';
 
-export default class LightSwitch extends React.Component {
+class LightSwitch extends React.Component {
 
   constructor(props) {
-    super(props);
-    this.store = this.props.store
+    super(props)
     this.roomColor = this.props.roomColor
     this.state = {
       "switchRotation":"-25 0 0",
@@ -28,8 +28,8 @@ export default class LightSwitch extends React.Component {
   switchOn() {
     this.setState({"position":"0 -0.2 0.3"})
     this.setState({"switchRotation":"25 0 0"})
-    this.store.dispatch({ type: "SPOTLIGHT_ON", person: this.props.person }),
-    this.store.dispatch({ type: "SWITCH" })
+    this.props.dispatch({ type: "SPOTLIGHT_ON", person: this.props.person }),
+    this.props.dispatch({ type: "SWITCH" })
   }
 
   setRoomColor() {
@@ -52,7 +52,12 @@ export default class LightSwitch extends React.Component {
           material={ "color:" + this.setRoomColor() }>
         </Entity>
       </Entity>
-
     )
   }
 }
+
+const mapDispatchToProps = dispatch => ({ dispatch })
+
+const lightSwitch = connect( null, mapDispatchToProps )(LightSwitch)
+
+export default lightSwitch;

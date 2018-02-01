@@ -1,6 +1,7 @@
 const initialState = {
   mode: "start",
   currentRoom: "navRoom",
+  currentAudio: "",
   welcomeClicked: false,
   anyLightSwitchClicked: false,
   graceVisible: false,
@@ -20,6 +21,10 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    case 'PLAY_SOUND':
+      return Object.assign({}, state, {
+        currentAudio: action.soundID
+      })
     case 'CHOOSE_DEVICE':
       console.log("device chosen" )
       return Object.assign({}, state, {

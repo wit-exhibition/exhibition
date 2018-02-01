@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import App from './App';
 import myReducer from './reducer';
 import StartScreen from './components/StartScreen';
@@ -11,7 +12,11 @@ function modeDecision() {
    if (store.getState().mode === "start") {
      return <StartScreen store={store}/>
    } else {
-     return <App store={store}/>
+     return (
+       <Provider store={store}>
+         <App />
+       </Provider>
+     )
    }
 }
 

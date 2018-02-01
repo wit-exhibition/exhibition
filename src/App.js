@@ -2,7 +2,7 @@ import 'aframe';
 import aframe from 'aframe';
 import 'aframe-animation-component';
 import 'babel-polyfill';
-import { Scene } from 'aframe-react';
+import { Scene, Entity } from 'aframe-react';
 import React from 'react';
 import { connect } from 'react-redux';
 import 'aframe-htmltexture-component';
@@ -19,11 +19,11 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
+    this.audio = ""
   }
 
   componentDidMount() {
-    if (this.store.getState().mode === "cardboard") {
+    if (this.props.mode === "cardboard") {
       var scene = document.querySelector('a-scene')
       var camera = document.querySelector('a-camera')
       camera.setAttribute('camera', 'userHeight', 1);
@@ -45,25 +45,33 @@ class App extends React.Component {
     })
   }
 
+  componentWillReceiveProps(nextProps){
+      this.audio = nextProps.currentAudio;
+
+      const audioPlayer = document.getElementById('player')
+      audioPlayer.setAttribute('sound', 'src', nextProps.currentAudio)
+      audioPlayer.setAttribute('sound', 'autoplay', true)
+  }
+
   renderRoom(room) {
     switch(room) {
       case 'navRoom':
-        return <NavRoom store={ this.store } />
+        return <NavRoom />
       case 'milestoneRoom':
         console.log(" called first room");
-        return <MilestoneRoom store={ this.store } />
+        return <MilestoneRoom />
       case 'activistRoom':
         console.log(" called first room");
-        return <ActivistRoom store={ this.store } />
+        return <ActivistRoom />
       case 'spaceRoom':
         console.log(" called first room");
-        return <SpaceRoom store={ this.store } />
+        return <SpaceRoom />
       case 'newWaysRoom':
         console.log(" called first room");
-        return <NewWaysRoom store={ this.store } />
+        return <NewWaysRoom />
       default :
         console.log("default called");
-        return <NavRoom store={ this.store }/>
+        return <NavRoom />
    }
   }
 
@@ -130,10 +138,11 @@ class App extends React.Component {
           <audio id="teleport" crossOrigin="anonymous" src="https://freesound.org/data/previews/162/162479_311243-lq.mp3"></audio>
           //TODO Mention in Readme: Sound by jobro from https://freesound.org/people/jobro/sounds/75637/
           <audio id="switch-sound" crossOrigin="anonymous" src="https://freesound.org/data/previews/75/75637_35187-lq.mp3"></audio>
-
-      </a-assets>
+        </a-assets>
 
         { this.renderRoom(this.props.currentRoom) }
+
+        <Entity id="player"></Entity>
 
         <Environment />
         <Camera />
@@ -144,7 +153,9 @@ class App extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    currentRoom: state.currentRoom
+    currentRoom: state.currentRoom,
+    currentAudio: state.currentAudio,
+    mode: state.mode
   }
 }
 

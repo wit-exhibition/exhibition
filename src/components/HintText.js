@@ -1,21 +1,22 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
+import { connect } from 'react-redux';
 import UpDownAnimation from './UpDownAnimation';
 
-export default class HintText extends React.Component {
+class HintText extends React.Component {
   constructor(props) {
     super(props);
-    this.store = this.props.store;
     this.hint = this.props.hint
   }
 
   render() {
+
     const { hint, position, rotation, wrapCount, clickHintAddition } = this.props
 
     if (clickHintAddition) {
-      if (this.store.getState().mode === "cardboard") {
+      if (this.props.mode === "cardboard") {
         this.hint = `Fixiere ${clickHintAddition} mit dem Cursor`
-      } else if (this.store.getState().mode === "desktop") {
+      } else if (this.props.mode === "desktop") {
         this.hint = `Bewege den Cursor \n ${clickHintAddition} und klicke!`
       } else {
         this.hint = ""
@@ -31,3 +32,13 @@ export default class HintText extends React.Component {
     )
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    mode: state.mode
+  }
+}
+
+const hintText = connect( mapStateToProps )(HintText)
+
+export default hintText;

@@ -19,7 +19,6 @@ class SpaceRoom extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
   }
 
   renderMargaret() {
@@ -89,7 +88,6 @@ class SpaceRoom extends React.Component {
     return (
       <HintText
         rotation={{ y: 10 }}
-        store={ this.store }
         clickHintAddition={"die Lichtschalter"}
         position={{ x: -0.5, y: 1.6, z: -1.4 }}
         wrapCount={25}
@@ -118,7 +116,6 @@ class SpaceRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"margaret"}
-          store={ this.store }
           roomColor={ROOM_COLOR}
           personClicked= { this.isVisible(margaretVisible) }
           cursor-listener />
@@ -129,7 +126,6 @@ class SpaceRoom extends React.Component {
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"dorothy"}
-          store={ this.store }
           roomColor={ROOM_COLOR}
           personClicked= { this.isVisible(dorothyVisible) }
           cursor-listener />
@@ -140,7 +136,6 @@ class SpaceRoom extends React.Component {
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"anuradha"}
-          store={ this.store }
           roomColor={ROOM_COLOR}
           personClicked= { this.isVisible(anuradhaVisible) }
           cursor-listener />
@@ -154,14 +149,12 @@ class SpaceRoom extends React.Component {
           position={"-1.5 0.1 -1.5"}
           teleportSound={true}
           destination={"milestoneRoom"}
-          store={ this.store }
           cursor-listener />
 
         <FloorTeleportation src={"#activist-floor"}
           position={"1.5 0.1 -1.5"}
           teleportSound={true}
           destination={"activistRoom"}
-          store={ this.store }
           cursor-listener />
 
         <HintText
@@ -175,9 +168,7 @@ class SpaceRoom extends React.Component {
           scale={"0.5 0.5 1"}
           destination="navRoom"
           teleportSound={true}
-          store={ this.store }
           cursor-listener />
-
       </Entity>
     )
   }

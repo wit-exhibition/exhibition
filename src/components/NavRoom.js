@@ -15,7 +15,6 @@ class NavRoom extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
   }
 
   showHintText() {
@@ -24,7 +23,6 @@ class NavRoom extends React.Component {
       <HintText
         rotation={{ y: 20 }}
         clickHintAddition={ "das Play-Zeichen" }
-        store={ this.store }
         position={{ x: -1.1, y: 1.3, z: -2 }}
         wrapCount={20}
       />
@@ -39,28 +37,24 @@ class NavRoom extends React.Component {
           position={"-1.8 0.1 -1.7"}
           teleportSound={true}
           destination={"milestoneRoom"}
-          store={ this.store }
           cursor-listener/>
 
         <FloorTeleportation src={"#space-floor"}
           position={"-0.6 0.1 -1.7"}
           teleportSound={true}
           destination={"spaceRoom"}
-          store={ this.store }
           cursor-listener/>
 
         <FloorTeleportation src={"#rails-floor"}
           position={"0.6 0.1 -1.7"}
           teleportSound={true}
           destination={"newWaysRoom"}
-          store={ this.store }
           cursor-listener/>
 
         <FloorTeleportation src={"#activist-floor"}
           position={"1.8 0.1 -1.7"}
           teleportSound={true}
           destination={"activistRoom"}
-          store={ this.store }
           cursor-listener/>
       </Entity>
     )
@@ -83,7 +77,6 @@ class NavRoom extends React.Component {
           <PlayElement
             id="nav-play-element"
             soundID={"#welcome-audio"}
-            store={ this.store }
             welcomeClicked={true}
             cursor-listener/>
           <Name name={"Ada Lovelace"}/>

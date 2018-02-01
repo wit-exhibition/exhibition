@@ -19,7 +19,6 @@ class MilestoneRoom extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
   }
 
   renderBarbara() {
@@ -89,7 +88,6 @@ class MilestoneRoom extends React.Component {
     return (
       <HintText
         rotation={{ y: 10 }}
-        store={ this.store }
         clickHintAddition={"die Lichtschalter"}
         position={{ x: -0.5, y: 1.6, z: -1.4 }}
         wrapCount={25}
@@ -117,7 +115,6 @@ class MilestoneRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"barbara"}
-          store={ this.store }
           personClicked= { this.isVisible(barbaraVisible) }
           cursor-listener />
 
@@ -127,7 +124,6 @@ class MilestoneRoom extends React.Component {
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"grace"}
-          store={ this.store }
           personClicked= { this.isVisible(graceVisible) }
           cursor-listener />
 
@@ -137,7 +133,6 @@ class MilestoneRoom extends React.Component {
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"audrey"}
-          store={ this.store }
           personClicked= { this.isVisible(audreyVisible) }
           cursor-listener />
 
@@ -150,14 +145,12 @@ class MilestoneRoom extends React.Component {
           position={"-1.5 0.1 -1.5"}
           teleportSound={true}
           destination={"newWaysRoom"}
-          store={ this.store }
           cursor-listener />
 
         <FloorTeleportation src={"#space-floor"}
           position={"1.5 0.1 -1.5"}
           teleportSound={true}
           destination={"spaceRoom"}
-          store={ this.store }
           cursor-listener />
 
         <HintText
@@ -171,7 +164,6 @@ class MilestoneRoom extends React.Component {
           scale={"0.5 0.5 1"}
           destination="navRoom"
           teleportSound={true}
-          store={ this.store }
           cursor-listener />
         <HintText
           rotation={{ y: -50 }}
@@ -184,7 +176,6 @@ class MilestoneRoom extends React.Component {
           scale={"0.5 0.5 1"}
           destination="activistRoom"
           teleportSound={true}
-          store={ this.store }
           cursor-listener />
 
       </Entity>

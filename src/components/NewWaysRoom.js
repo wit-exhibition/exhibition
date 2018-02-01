@@ -19,7 +19,6 @@ class NewWaysRoom extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
   }
 
   renderEvelyn() {
@@ -89,7 +88,6 @@ class NewWaysRoom extends React.Component {
     return (
       <HintText
         rotation={{ y: 10 }}
-        store={ this.store }
         clickHintAddition={"die Lichtschalter"}
         position={{ x: -0.5, y: 1.6, z: -1.4 }}
         wrapCount={25}
@@ -118,7 +116,6 @@ class NewWaysRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"evelyn"}
-          store={ this.store }
           personClicked= { this.isVisible(evelynVisible) }
           cursor-listener />
 
@@ -128,7 +125,6 @@ class NewWaysRoom extends React.Component {
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"hedy"}
-          store={ this.store }
           personClicked= { this.isVisible(hedyVisible) }
           cursor-listener />
 
@@ -138,7 +134,6 @@ class NewWaysRoom extends React.Component {
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"kamila"}
-          store={ this.store }
           personClicked= { this.isVisible(kamilaVisible) }
           cursor-listener />
 
@@ -151,14 +146,12 @@ class NewWaysRoom extends React.Component {
           position={"-1.5 0.1 -1.5"}
           teleportSound={true}
           destination={"activistRoom"}
-          store={ this.store }
           cursor-listener />
 
         <FloorTeleportation src={"#milestone-floor"}
           position={"1.5 0.1 -1.5"}
           teleportSound={true}
           destination={"milestoneRoom"}
-          store={ this.store }
           cursor-listener />
 
         <HintText
@@ -171,7 +164,6 @@ class NewWaysRoom extends React.Component {
           position={ "-3.000 0.500 0.634"}
           scale={"0.5 0.5 1"}
           destination="navRoom"
-          store={ this.store }
           cursor-listener />
 
       </Entity>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
+import { connect } from 'react-redux';
 
-export default class TeleportationElement extends React.Component {
+class TeleportationElement extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
   }
 
   componentDidMount() {
@@ -20,11 +20,11 @@ export default class TeleportationElement extends React.Component {
     if (teleportSound) {
       setTimeout(
         () => {
-          this.store.dispatch({ type: "CHANGE_ROOM", room: destination })
+          this.props.dispatch({ type: "CHANGE_ROOM", room: destination })
         }, 2500
       )
     } else {
-      this.store.dispatch({ type: "CHANGE_ROOM", room: destination })
+      this.props.dispatch({ type: "CHANGE_ROOM", room: destination })
     }
 
   }
@@ -42,3 +42,9 @@ export default class TeleportationElement extends React.Component {
     )
   }
 }
+
+const mapDispatchToProps = dispatch => ({ dispatch })
+
+const teleportationElement = connect( null, mapDispatchToProps )(TeleportationElement)
+
+export default teleportationElement;

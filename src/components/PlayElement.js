@@ -1,30 +1,33 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
+import { connect } from 'react-redux';
 
-export default class PlayElement extends React.Component {
+class PlayElement extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
     this.playing = false
   }
 
   playSound(soundID, id) {
-    const box = document.getElementById(id)
-    box.setAttribute('sound', 'src', soundID)
 
-    if (this.playing) {
-      box.components.sound.stopSound()
-      box.setAttribute('src', '#play-icon')
-      this.playing = false
-    } else {
-      box.components.sound.playSound()
-      box.setAttribute('src', '#stop-icon')
-      this.playing = true
-    }
+    this.props.dispatch({ type: "PLAY_SOUND", soundID})
+
+    // const box = document.getElementById(id)
+    // box.setAttribute('sound', 'src', soundID)
+    //
+    // if (this.playing) {
+    //   box.components.sound.stopSound()
+    //   box.setAttribute('src', '#play-icon')
+    //   this.playing = false
+    // } else {
+    //   box.components.sound.playSound()
+    //   box.setAttribute('src', '#stop-icon')
+    //   this.playing = true
+    // }
 
     if (this.props.welcomeClicked) {
-      this.store.dispatch({ type: "WELCOME_CLICK"})
+      this.props.dispatch({ type: "WELCOME_CLICK"})
     }
 
   }
@@ -42,3 +45,12 @@ export default class PlayElement extends React.Component {
     )
   }
 }
+
+const mapStateToProps = state => ({})
+
+const mapDispatchToProps = dispatch => ({ dispatch })
+
+export default connect (
+  mapStateToProps,
+  mapDispatchToProps
+) (PlayElement)
