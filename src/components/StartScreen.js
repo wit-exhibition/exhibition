@@ -5,7 +5,10 @@ class StartScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {hovered: false}
+    this.state = {
+      hoveredComputer: false,
+      hoveredCardboard: false
+    }
   }
 
   handleClick = (device) => (e) => {
@@ -17,40 +20,57 @@ class StartScreen extends React.Component {
     }
   }
 
-  style() {
-      if (this.hovered) {
-        return { color: "red" }
-      } else {
-        return { color: "grey" }
-      }
-    }
-
-  onMouseOver() {
-    console.log("mouse over");
-    //this.setState({ hovered:true });
+  onMouseOverComputer = () => {
+    this.setState({ hoveredComputer:true });
   }
 
-  onMouseOut() {
-    console.log("mouse out");
-    //this.setState({ hovered:false });
+  onMouseOutComputer = () => {
+    this.setState({ hoveredComputer:false });
+  }
+
+  onMouseOverCardBoard = () => {
+    this.setState({ hoveredCardboard:true });
+  }
+
+  onMouseOutCardBoard = () => {
+    this.setState({ hoveredCardboard:false });
+  }
+
+  showCardboard() {
+    if (this.state.hoveredCardboard) {
+      return <img className="button" src="https://ucarecdn.com/5be235ca-371b-4797-b438-57869862019f/"/>
+    } else {
+      return <img className="button" src="https://ucarecdn.com/17711bb1-eba6-4ff3-942b-7ee9a9b4f38b/"/>
+    }
+  }
+
+  showComputer() {
+    if (this.state.hoveredComputer) {
+      return <img className="button" src="https://ucarecdn.com/4cd8203c-f4c5-4bad-8406-4d56602b0b42/"/>
+    } else {
+      return <img className="button" src="https://ucarecdn.com/7facddb6-ce90-4db1-b62f-88297d9cce05/"/>
+    }
   }
 
   render() {
     return (
       <div className='start-screen'>
-        <h1>3D-Ausstellung</h1>
-        <h2>Wähle dein Gerät:</h2>
-
-          <a className='computer' onClick={this.handleClick('desktop')} role="button">
-            <img src="https://ucarecdn.com/a081ebd4-6e25-4527-aa21-7dae3e679b49/"/>
-            <div className='computer-label' onMouseOver={this.onMouseOver}>Desktop</div>
+        <h3>Wähle dein Gerät:</h3>
+          <a className='device'
+             onClick={this.handleClick('cardboard')}
+             onMouseOver={this.onMouseOverCardBoard}
+             onMouseOut={this.onMouseOutCardBoard}
+             >
+             { this.showCardboard() }
           </a>
-          <button onClick={this.handleClick('cardboard')} role="button">CardBoard</button>
-
-            <span onMouseOver={this.onMouseOver}
-                  onMouseOut={this.onMouseOut}
-                  style={this.style()}>Hover me</span>
-        </div>
+          <a className='device'
+             onClick={this.handleClick('desktop')}
+             onMouseOver={this.onMouseOverComputer}
+             onMouseOut={this.onMouseOutComputer}
+             >
+             { this.showComputer() }
+          </a>
+      </div>
     )
   }
 }
