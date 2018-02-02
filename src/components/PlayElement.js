@@ -13,31 +13,27 @@ class PlayElement extends React.Component {
 
     this.props.dispatch({ type: "PLAY_SOUND", soundID})
 
-    // const box = document.getElementById(id)
-    // box.setAttribute('sound', 'src', soundID)
-    //
-    // if (this.playing) {
-    //   box.components.sound.stopSound()
-    //   box.setAttribute('src', '#play-icon')
-    //   this.playing = false
-    // } else {
-    //   box.components.sound.playSound()
-    //   box.setAttribute('src', '#stop-icon')
-    //   this.playing = true
-    // }
-
     if (this.props.welcomeClicked) {
       this.props.dispatch({ type: "WELCOME_CLICK"})
     }
-
   }
+
+  icon() {
+    if (this.props.currentAudio === this.props.soundID) {
+      console.log("Inside icon");
+      return "#stop-icon"
+    } else {
+      return "#play-icon"
+    }
+  }
+
 
   render() {
     return (
       <Entity
         primitive={ "a-box" }
         scale={ "0.2 0.2 0" }
-        src={ "#play-icon" }
+        src={ this.icon()  }
         position={ "-0.3 -0.65 0" }
         {...this.props}
         events={{ click: () => this.playSound(this.props.soundID, this.props.id) }}>
@@ -46,7 +42,11 @@ class PlayElement extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({})
+const mapStateToProps = state => {
+  return {
+    currentAudio: state.currentAudio
+  }
+}
 
 const mapDispatchToProps = dispatch => ({ dispatch })
 
