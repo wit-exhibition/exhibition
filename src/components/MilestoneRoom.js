@@ -11,13 +11,14 @@ import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
+import FloorTeleportation from './FloorTeleportation';
 import Name from './Name';
+
 
 class MilestoneRoom extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
   }
 
   renderBarbara() {
@@ -87,7 +88,6 @@ class MilestoneRoom extends React.Component {
     return (
       <HintText
         rotation={{ y: 10 }}
-        store={ this.store }
         clickHintAddition={"die Lichtschalter"}
         position={{ x: -0.5, y: 1.6, z: -1.4 }}
         wrapCount={25}
@@ -115,7 +115,6 @@ class MilestoneRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"barbara"}
-          store={ this.store }
           personClicked= { this.isVisible(barbaraVisible) }
           cursor-listener />
 
@@ -125,7 +124,6 @@ class MilestoneRoom extends React.Component {
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"grace"}
-          store={ this.store }
           personClicked= { this.isVisible(graceVisible) }
           cursor-listener />
 
@@ -135,7 +133,6 @@ class MilestoneRoom extends React.Component {
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"audrey"}
-          store={ this.store }
           personClicked= { this.isVisible(audreyVisible) }
           cursor-listener />
 
@@ -144,32 +141,45 @@ class MilestoneRoom extends React.Component {
 
         <FloorIndicator src={ "#milestone-floor" }/>
 
+        <FloorTeleportation src={"#rails-floor"}
+          position={"-1.5 0.155 -1.5"}
+          positionCylinder={"-1.5 0.1 -1.5 "}
+          teleportSound={true}
+          destination={"newWaysRoom"}
+          cursor-listener />
+
+        <FloorTeleportation src={"#space-floor"}
+          position={"1.5 0.155 -1.5"}
+          positionCylinder={"1.5 0.1 -1.5"}
+          teleportSound={true}
+          destination={"spaceRoom"}
+          cursor-listener />
+
         <HintText
           rotation={{ y: 50 }}
           hint={"Exit"}
-          position={{ x: -2.8, y: 1, z: 0.6 }}
+          position={{ x: -2.8, y: 1, z: -2 }}
           wrapCount={8}/>
         <TeleportationElement
           material={{ color: "#01ff26"}}
-          position={ "-3.000 0.500 0.634"}
+          position={ "-3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="navRoom"
           teleportSound={true}
-          store={ this.store }
           cursor-listener />
         <HintText
           rotation={{ y: -50 }}
           hint={"Next room"}
-          position={{ x: 3, y: 1, z: 0.6 }}
+          position={{ x: 3, y: 1, z: -2 }}
           wrapCount={8}/>
         <TeleportationElement
           material={{ color: "#d800f0"}}
-          position={ "3 0.5 0.631"}
+          position={ "3 0.5 -2"}
           scale={"0.5 0.5 1"}
-          destination="spaceRoom"
+          destination="activistRoom"
           teleportSound={true}
-          store={ this.store }
           cursor-listener />
+
       </Entity>
     )
   }

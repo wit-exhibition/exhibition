@@ -1,19 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default class StartScreen extends React.Component {
+class StartScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
     this.state = {hovered: false}
   }
 
   handleClick = (device) => (e) => {
     if (device === "desktop") {
-      this.store.dispatch({ type: "CHOOSE_DEVICE", mode: device })
+      this.props.dispatch({ type: "CHOOSE_DEVICE", mode: device })
     }
     else if (device === "cardboard") {
-      this.store.dispatch({ type: "CHOOSE_DEVICE", mode: device })
+      this.props.dispatch({ type: "CHOOSE_DEVICE", mode: device })
     }
   }
 
@@ -53,5 +53,10 @@ export default class StartScreen extends React.Component {
         </div>
     )
   }
-
 }
+
+const mapDispatchToProps = dispatch => ({ dispatch })
+
+const startScreen = connect( null, mapDispatchToProps )(StartScreen)
+
+export default startScreen;

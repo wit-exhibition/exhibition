@@ -7,13 +7,14 @@ import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
 import HoverAnimation from './HoverAnimation';
+import FloorTeleportation from './FloorTeleportation';
 import Name from './Name';
+
 
 class NavRoom extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
   }
 
   showHintText() {
@@ -22,7 +23,6 @@ class NavRoom extends React.Component {
       <HintText
         rotation={{ y: 20 }}
         clickHintAddition={ "das Play-Zeichen" }
-        store={ this.store }
         position={{ x: -1.1, y: 1.3, z: -2 }}
         wrapCount={20}
       />
@@ -32,57 +32,36 @@ class NavRoom extends React.Component {
   renderNavElements() {
     return (
       <Entity>
-        <TeleportationElement
-          src={ "#milestone-portal" }
-          material={{ color: "white"}}
-          position={"-0.9 0.85 -1.5"}
-          scale={"0.400 0.400 0"}
-          transparent={ "true" }
-          rotation={"-30 0 0"}
+
+        <FloorTeleportation
+          src={"#milestone-floor"}
+          position={"-1.8 0.155 -1.7"}
+          positionCylinder={"-1.8 0.1 -1.7"}
+          teleportSound={true}
           destination={"milestoneRoom"}
-          cursor-listener
-          store={ this.store }>
-          <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
-        </TeleportationElement>
+          cursor-listener/>
 
-        <TeleportationElement
-          src={ "#space-portal" }
-          material={{ color: "white"}}
-          position={"-0.3 0.85 -1.5"}
-          scale={"0.400 0.400 0"}
-          transparent={ "true" }
-          rotation={"-30 0 0"}
-          destination="spaceRoom"
-          cursor-listener
-          store={ this.store }>
-          <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
-        </TeleportationElement>
+        <FloorTeleportation src={"#space-floor"}
+          position={"-0.6 0.155 -1.7"}
+          positionCylinder={"-0.6 0.1 -1.7"}
+          teleportSound={true}
+          destination={"spaceRoom"}
+          cursor-listener/>
 
-        <TeleportationElement
-          src={ "#activist-portal" }
-          material={{ color: "white"}}
-          position={"0.3 0.85 -1.5"}
-          scale={"0.400 0.400 0"}
-          transparent={ "true" }
-          rotation={"-30 0 0"}
-          destination="activistRoom"
-          cursor-listener
-          store={ this.store }>
-          <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
-        </TeleportationElement>
+        <FloorTeleportation src={"#rails-floor"}
+          position={"0.6 0.155 -1.7"}
+          positionCylinder={"0.6 0.1 -1.7"}
+          teleportSound={true}
+          destination={"newWaysRoom"}
+          cursor-listener/>
 
-        <TeleportationElement
-          src={ "#rails-portal" }
-          material={{ color: "white"}}
-          position={"0.9 0.85 -1.5"}
-          scale={"0.400 0.400 0"}
-          transparent={ "true" }
-          rotation={"-30 0 0"}
-          destination="newWaysRoom"
-          cursor-listener
-          store={ this.store }>
-          <HoverAnimation scale={{ x: 0.4, y: 0.4, z: 0 }}/>
-        </TeleportationElement>
+        <FloorTeleportation src={"#activist-floor"}
+          position={"1.8 0.155 -1.7"}
+          positionCylinder={"1.8 0.1 -1.7"}
+          teleportSound={true}
+          destination={"activistRoom"}
+          cursor-listener/>
+
       </Entity>
     )
   }
@@ -104,7 +83,6 @@ class NavRoom extends React.Component {
           <PlayElement
             id="nav-play-element"
             soundID={"#welcome-audio"}
-            store={ this.store }
             welcomeClicked={true}
             cursor-listener/>
           <Name name={"Ada Lovelace"}/>

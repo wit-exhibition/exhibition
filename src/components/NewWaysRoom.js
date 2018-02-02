@@ -11,13 +11,14 @@ import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
+import FloorTeleportation from './FloorTeleportation'
 import Name from './Name';
+
 
 class NewWaysRoom extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
   }
 
   renderEvelyn() {
@@ -87,7 +88,6 @@ class NewWaysRoom extends React.Component {
     return (
       <HintText
         rotation={{ y: 10 }}
-        store={ this.store }
         clickHintAddition={"die Lichtschalter"}
         position={{ x: -0.5, y: 1.6, z: -1.4 }}
         wrapCount={25}
@@ -116,7 +116,6 @@ class NewWaysRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"evelyn"}
-          store={ this.store }
           personClicked= { this.isVisible(evelynVisible) }
           cursor-listener />
 
@@ -126,7 +125,6 @@ class NewWaysRoom extends React.Component {
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"hedy"}
-          store={ this.store }
           personClicked= { this.isVisible(hedyVisible) }
           cursor-listener />
 
@@ -136,7 +134,6 @@ class NewWaysRoom extends React.Component {
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"kamila"}
-          store={ this.store }
           personClicked= { this.isVisible(kamilaVisible) }
           cursor-listener />
 
@@ -144,6 +141,20 @@ class NewWaysRoom extends React.Component {
         { kamilaVisible ? this.renderKamila() : <Lightbulb position="2 4 -2" off={true}/> }
 
         <FloorIndicator src={ "#rails-floor" }/>
+
+        <FloorTeleportation src={"#activist-floor"}
+          position={"-1.5 0.155 -1.5"}
+          positionCylinder={"-1.5 0.1 -1.5"}
+          teleportSound={true}
+          destination={"activistRoom"}
+          cursor-listener />
+
+        <FloorTeleportation src={"#milestone-floor"}
+          position={"1.5 0.155 -1.5"}
+          positionCylinder={"1.5 0.1 -1.5"}
+          teleportSound={true}
+          destination={"milestoneRoom"}
+          cursor-listener />
 
         <HintText
           rotation={{ y: 50 }}
@@ -155,20 +166,8 @@ class NewWaysRoom extends React.Component {
           position={ "-3.000 0.500 0.634"}
           scale={"0.5 0.5 1"}
           destination="navRoom"
-          store={ this.store }
           cursor-listener />
-        <HintText
-          rotation={{ y: -50 }}
-          hint={"Next room"}
-          position={{ x: 3, y: 1, z: 0.6 }}
-          wrapCount={8}/>
-        <TeleportationElement
-          material={{ color: "#d800f0"}}
-          position={ "3 0.5 0.631"}
-          scale={"0.5 0.5 1"}
-          destination="milestoneRoom"
-          store={ this.store }
-          cursor-listener />
+
       </Entity>
     )
   }

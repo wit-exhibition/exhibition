@@ -10,13 +10,14 @@ import PlayElement from './PlayElement';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
+import FloorTeleportation from './FloorTeleportation'
 import Name from './Name';
+
 
 class ActivistRoom extends React.Component {
 
   constructor(props) {
     super(props);
-    this.store = this.props.store;
   }
 
   renderChelsea() {
@@ -32,7 +33,7 @@ class ActivistRoom extends React.Component {
         >
           <PlayElement
             id="chelsea-play-element"
-            soundID={"#chelsea-audio"}
+            soundID={"https://ucarecdn.com/c39fe27e-a86a-46b0-95ca-76ea74e61c19/"}
             cursor-listener/>
           <Name name="Chelsea Manning" />
         </ExhibitionBox >
@@ -58,8 +59,6 @@ class ActivistRoom extends React.Component {
           cursor-listener/>
         <Name name="Constanze Kurz" />
         </ExhibitionBox >
-
-
       </Entity>
     )
   }
@@ -89,7 +88,6 @@ class ActivistRoom extends React.Component {
     return (
       <HintText
         rotation={{ y: 10 }}
-        store={ this.store }
         clickHintAddition={"die Lichtschalter"}
         position={{ x: -0.5, y: 1.6, z: -1.4 }}
         wrapCount={25}
@@ -116,7 +114,6 @@ class ActivistRoom extends React.Component {
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"chelsea"}
-          store={ this.store }
           personClicked= { this.isVisible(chelseaVisible) }
           cursor-listener />
 
@@ -126,7 +123,6 @@ class ActivistRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"constanze"}
-          store={ this.store }
           personClicked= { this.isVisible(constanzeVisible) }
           cursor-listener />
 
@@ -136,7 +132,6 @@ class ActivistRoom extends React.Component {
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"joanna"}
-          store={ this.store }
           personClicked= { this.isVisible(constanzeVisible) }
           cursor-listener />
 
@@ -144,6 +139,20 @@ class ActivistRoom extends React.Component {
         { this.props.joannaVisible ? this.renderJoanna() : <Lightbulb position="2 4 -2" off={true}/> }
 
         <FloorIndicator src={ "#activist-floor" }/>
+
+        <FloorTeleportation src={"#space-floor"}
+          position={"-1.5 0.155 -1.5"}
+          positionCylinder={"-1.5 0.1 -1.5"}
+          teleportSound={true}
+          destination={"spaceRoom"}
+          cursor-listener />
+
+        <FloorTeleportation src={"#rails-floor"}
+          position={"1.5 0.155 -1.5"}
+          positionCylinder={"1.5 0.1 -1.5"}
+          teleportSound={true}
+          destination={"newWaysRoom"}
+          cursor-listener />
 
         <HintText
           rotation={{ y: 50 }}
@@ -156,22 +165,8 @@ class ActivistRoom extends React.Component {
           position={ "-3 0.5 -2"}
           scale={"0.5 0.5 1"}
           destination="navRoom"
-          store={ this.store }
           cursor-listener />
-        <HintText
-          rotation={{ y: -50 }}
-          hint={"Next room"}
-          position={{ x: 3, y: 1, z: -2 }}
-          wrapCount={8}/>
-        <TeleportationElement
-          teleportSound={true}
-          material={{ color: "#d800f0"}}
-          position={ "3 0.5 -2"}
-          scale={"0.5 0.5 1"}
-          destination="newWaysRoom"
-          time={ 2300 }
-          store={ this.store }
-          cursor-listener />
+
       </Entity>
     )
   }
@@ -185,7 +180,8 @@ const mapStateToProps = state => {
     anyLightSwitchClicked: state.anyLightSwitchClicked
   }
 }
+const mapDispatchToProps = dispatch => ({ dispatch })
 
-const activistRoom = connect( mapStateToProps )(ActivistRoom)
+const activistRoom = connect( mapStateToProps, mapDispatchToProps )(ActivistRoom)
 
 export default activistRoom;

@@ -20,6 +20,6 @@ export default class Environment extends React.Component {
           position="0 15.686 9.615"/>
         <Entity primitive="a-sky" height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"/>
       </Entity>
-    );
+    )
   }
 }

@@ -13,6 +13,5 @@ export default class Name extends React.Component {
         position={ "0.35 -0.65 0" }
         text={{ value: this.props.name, align: 'left', wrapCount: 16 }}/>
     )
-
   }
 }

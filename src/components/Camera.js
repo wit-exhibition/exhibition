@@ -12,6 +12,6 @@ export default class Camera extends React.Component {
           geometry={{ primitive: 'ring', radiusInner: '0.02', radiusOuter: '0.03' }}
           material={{ color: 'white', shader: 'flat' }}/>
       </Entity>
-    );
+    )
   }
 }
