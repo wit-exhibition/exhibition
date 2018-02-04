@@ -108,6 +108,8 @@ class NewWaysRoom extends React.Component {
       kamilaVisible
      } = this.props
 
+     const ROOM_COLOR = "#69ED11"
+
     return (
       <Entity>
 
@@ -116,6 +118,7 @@ class NewWaysRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"evelyn"}
+          roomColor={ROOM_COLOR}
           personClicked= { this.isVisible(evelynVisible) }
           cursor-listener />
 
@@ -125,6 +128,7 @@ class NewWaysRoom extends React.Component {
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"hedy"}
+          roomColor={ROOM_COLOR}
           personClicked= { this.isVisible(hedyVisible) }
           cursor-listener />
 
@@ -134,6 +138,7 @@ class NewWaysRoom extends React.Component {
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"kamila"}
+          roomColor={ROOM_COLOR}
           personClicked= { this.isVisible(kamilaVisible) }
           cursor-listener />
 

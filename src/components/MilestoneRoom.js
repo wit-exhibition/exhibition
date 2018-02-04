@@ -107,6 +107,8 @@ class MilestoneRoom extends React.Component {
       audreyVisible
      } = this.props
 
+    const ROOM_COLOR = "#C025CE"
+
     return (
       <Entity>
 
@@ -115,6 +117,7 @@ class MilestoneRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"barbara"}
+          roomColor={ROOM_COLOR}
           personClicked= { this.isVisible(barbaraVisible) }
           cursor-listener />
 
@@ -124,6 +127,7 @@ class MilestoneRoom extends React.Component {
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"grace"}
+          roomColor={ROOM_COLOR}
           personClicked= { this.isVisible(graceVisible) }
           cursor-listener />
 
@@ -133,6 +137,7 @@ class MilestoneRoom extends React.Component {
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"audrey"}
+          roomColor={ROOM_COLOR}
           personClicked= { this.isVisible(audreyVisible) }
           cursor-listener />
 
