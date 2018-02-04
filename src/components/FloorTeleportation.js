@@ -21,7 +21,7 @@ class FloorTeleportation extends React.Component {
       setTimeout(
         () => {
           this.props.dispatch({ type: "CHANGE_ROOM", room: destination })
-        }, 2500
+        }, 2000
       )
     } else {
       this.props.dispatch({ type: "CHANGE_ROOM", room: destination })

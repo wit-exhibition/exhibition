@@ -84,19 +84,21 @@ class App extends React.Component {
           <img id="groundTexture" src="https://ucarecdn.com/3b01343e-b506-4dcf-8315-beee32e336da/"/>
           <img id="play-icon" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/013794b5-eee9-47d2-97bd-d5a8de4c411c/"/>
           <img id="stop-icon" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/1bfc9c74-cdb0-40f5-b640-6eb756cd1891/"/>
+          <audio id="teleport" crossOrigin="anonymous" src="https://ucarecdn.com/910262c8-02a7-4ce8-a53f-0f2de5b88619/"></audio>
+          <audio id="switch-sound" crossOrigin="anonymous" src="https://ucarecdn.com/9835bc9d-5e7b-40fa-9010-c3385a255459/"></audio>
 
           <img id="activist-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/ad8cdab7-b590-4e1e-8ba5-4766c98e1147/"/>
           <img id="space-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/a2710603-30a6-4672-8dce-bf83b3a4483e/"/>
           <img id="milestone-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/616e813e-cd5c-4332-a703-752a4b27072a/"/>
           <img id="rails-floor" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/a2290a00-23bf-484c-8235-8b2b0915f85d/"/>
 
-          <img id="welcome" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/cfd99b54-93c6-4067-9205-de46d54f0973/"/>
-          <audio id="welcome-audio" crossOrigin="anonymous" src="https://ucarecdn.com/04180e1f-3ab1-4586-bac1-8e7862368571/"></audio>
-
           <img id="milestone-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/2716c01f-3ce1-43bb-a1a8-a2a727744274/"/>
           <img id="activist-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/674bca06-10f9-4c39-b358-8e8953da31a8/"/>
           <img id="space-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/dbd59dfe-4419-4ce7-a10f-d12ec0319100/"/>
           <img id="rails-portal" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/04ec2fb2-6823-4e47-b895-da7b1b3aab40/"/>
+
+          <img id="welcome" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/cfd99b54-93c6-4067-9205-de46d54f0973/"/>
+          <audio id="welcome-audio" crossOrigin="anonymous" src="https://ucarecdn.com/04180e1f-3ab1-4586-bac1-8e7862368571/"></audio>
 
           <img id="gracePortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/7755f6d5-cd3a-47a6-a743-40ff324800d3/"/>
           <audio id="grace-audio" crossOrigin="anonymous" src="https://ucarecdn.com/c3b085cd-e327-44ee-8e84-30c3472d7216/"></audio>
@@ -133,11 +135,6 @@ class App extends React.Component {
 
           <img id="audreyPortrait" alt="" crossOrigin="anonymous" src="https://ucarecdn.com/5ce3c32a-96a8-492e-b4ac-06e979c7d48a/"/>
           <audio id="audrey-audio" crossOrigin="anonymous" src="https://ucarecdn.com/c079662b-ba18-4908-8eca-e7c72dd92d6a/"></audio>
-
-          <audio id="click-sound" crossOrigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-          <audio id="teleport" crossOrigin="anonymous" src="https://freesound.org/data/previews/162/162479_311243-lq.mp3"></audio>
-          //TODO Mention in Readme: Sound by jobro from https://freesound.org/people/jobro/sounds/75637/
-          <audio id="switch-sound" crossOrigin="anonymous" src="https://freesound.org/data/previews/75/75637_35187-lq.mp3"></audio>
         </a-assets>
 
         { this.renderRoom(this.props.currentRoom) }
