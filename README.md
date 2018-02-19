@@ -1,28 +1,11 @@
-# WIT Exhibition
+# Ada's Salon
 
-First clone the repository and `cd` into it.
+`Ada's Salon` is a VR exhibition aiming to give visibility to women and non-binary people in computer science. Very often their contributions are overlooked or forgotten.
 
-### Before instalation
+A group of students from the [HTW Berlin](https://fiw.htw-berlin.de/) build this exhibition to explore possibilities in VR and in-browser 3D to tell stories about the life, work, struggles and successes of these women and non-binary people. 
 
-You need to have [npm installed](https://docs.npmjs.com/getting-started/installing-node).
+## How to contribute?
+The project is open source. But this is not the development repository. Head over to [wit-exhibtion](https://github.com/wit-exhibition/exhibition) to start contributing.
 
-### Installation
+### Thank you ♥︎
 
-If you have npm you can start installing all required packages.
-```
-npm install
-```
-
-To start the app you type the following command.
-```
-npm start
-```
-
-Then you can access the app in the browser with localhost:3000.
-
-To build the project:
-
-```bash
-npm run deploy
-```
-Then it gets deployed to [https://wit-exhibition.github.io/exhibition/](https://wit-exhibition.github.io/exhibition/)
