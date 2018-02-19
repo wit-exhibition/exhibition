@@ -27,10 +27,10 @@ class MilestoneRoom extends React.Component {
         <Lightbulb position="0 3.7 -2"/>
 
         <ExhibitionBox
-        src={ "#barbaraPortrait" }
-        position={ "0 2.4 -2" }
-        rotation={ "0 0 0" }
-        scale={ "1 1 0" }
+          src={ "#barbaraPortrait" }
+          position={ "0 2.4 -2" }
+          rotation={ "0 0 0" }
+          scale={ "1 1 0" }
         >
           <PlayElement
             id="barbara-play-element"
