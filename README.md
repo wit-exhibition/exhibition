@@ -5,7 +5,7 @@
 A group of students from the [HTW Berlin](https://fiw.htw-berlin.de/) build this exhibition to explore possibilities in VR and in-browser 3D to tell stories about the life, work, struggles and successes of these women and non-binary people. 
 
 ## How to contribute?
-The project is open source. But this is not the development repository. Head over to [wit-exhibtion](https://github.com/wit-exhibition/exhibition) to start contributing.
+The project is open source. But this is not the development repository. Head over to the repository [wit-exhibtion](https://github.com/wit-exhibition/exhibition) to start contributing.
 
 ### Thank you ♥︎
 
