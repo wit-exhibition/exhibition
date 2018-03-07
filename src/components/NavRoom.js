@@ -67,25 +67,26 @@ class NavRoom extends React.Component {
   }
 
   render() {
+    const ada = this.props.ada
+
     return (
       <Entity>
 
         { !this.props.welcomeClicked && this.showHintText() }
 
         <ExhibitionBox
-          src={ "#welcome" }
-          position={ "0 2.1 -2"}
-          rotation={"0 0 0"}
+          src={ ada.picture }
+          position={ ada.position }
+          rotation={ ada.rotation }
           scale={"1.3 1.3 0"}
-          shader={"flat"}
           transparent={"true"}
         >
           <PlayElement
             id="nav-play-element"
-            soundID={"#welcome-audio"}
+            soundID={ ada.sound }
             welcomeClicked={true}
             cursor-listener/>
-          <Name name={"Ada Lovelace"}/>
+          <Name name={ ada.name }/>
         </ExhibitionBox>
 
         { this.renderNavElements() }
@@ -98,7 +99,8 @@ class NavRoom extends React.Component {
 const mapStateToProps = state => {
   return {
     welcomeClicked: state.welcomeClicked,
-    mode: state.mode
+    mode: state.mode,
+    ada: state.ada
   }
 }
 

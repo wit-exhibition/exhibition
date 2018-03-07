@@ -1,9 +1,22 @@
+const POSITION_MIDDLE = "0 2.1 -2"
+const NO_ROTATION = "0 0 0"
+const ROTATION_X = ""
+
 const initialState = {
   mode: "start",
   currentRoom: "navRoom",
   currentAudio: "",
   welcomeClicked: false,
   anyLightSwitchClicked: false,
+  ada: {
+    id: "ada",
+    name: "Ada Lovelace",
+    picture: "#welcome",
+    sound: "#welcome-audio",
+    position: POSITION_MIDDLE,
+    rotation: NO_ROTATION,
+    visible: true
+  },
   graceVisible: false,
   adaElementVisible: false,
   joannaVisible: false,
