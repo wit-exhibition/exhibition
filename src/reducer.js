@@ -17,6 +17,16 @@ const initialState = {
     rotation: NO_ROTATION,
     visible: true
   },
+  chelsea: {
+    id: "chelsea",
+    name: "Chelsea Manning",
+    picture: "#chelseaPortrait",
+    sound: "#chelsea-audio",
+    position: "-2 2.5 -2",
+    rotation: "0 50 0",
+    lightbulbPosition: "-2 4 -2",
+    visible: false
+  },
   graceVisible: false,
   adaElementVisible: false,
   joannaVisible: false,
@@ -30,6 +40,11 @@ const initialState = {
   evelynVisible: false,
   hedyVisible: false,
   kamilaVisible: false
+}
+
+const setVisible = (personObject, person) => {
+  personObject['visible'] = true
+  return personObject
 }
 
 export default (state = initialState, action) => {
@@ -59,71 +74,9 @@ export default (state = initialState, action) => {
           anyLightSwitchClicked: true
       })
     case 'SPOTLIGHT_ON':
-      if (action.person === "grace") {
-        return Object.assign({}, state, {
-            graceVisible: true
-        })
-      }
-      else if (action.person === "ada") {
-        return Object.assign({}, state, {
-            adaElementVisible: true
-        })
-      }
-      else if (action.person === "joanna") {
-        return Object.assign({}, state, {
-            joannaVisible: true
-        })
-      }
-      else if (action.person === "chelsea") {
-        return Object.assign({}, state, {
-            chelseaVisible: true
-        })
-      }
-      else if (action.person === "constanze") {
-        return Object.assign({}, state, {
-            constanzeVisible: true
-        })
-      }
-      else if (action.person === "audrey") {
-        return Object.assign({}, state, {
-            audreyVisible: true
-        })
-      }
-      else if (action.person === "barbara") {
-        return Object.assign({}, state, {
-            barbaraVisible: true
-        })
-      }
-      else if (action.person === "margaret") {
-        return Object.assign({}, state, {
-            margaretVisible: true
-        })
-      }
-      else if (action.person === "dorothy") {
-        return Object.assign({}, state, {
-            dorothyVisible: true
-        })
-      }
-      else if (action.person === "anuradha") {
-        return Object.assign({}, state, {
-            anuradhaVisible: true
-        })
-      }
-      else if (action.person === "evelyn") {
-        return Object.assign({}, state, {
-            evelynVisible: true
-        })
-      }
-      else if (action.person === "hedy") {
-        return Object.assign({}, state, {
-            hedyVisible: true
-        })
-      }
-      else if (action.person === "kamila") {
-        return Object.assign({}, state, {
-            kamilaVisible: true
-        })
-      }
+      return Object.assign({}, state,
+        setVisible(state[action.person], action.person)
+      )
     default:
       return state
   }

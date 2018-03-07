@@ -20,22 +20,21 @@ class ActivistRoom extends React.Component {
     super(props);
   }
 
-  renderChelsea() {
+  renderPerson(person) {
+    console.log(person.name);
     return (
       <Entity>
         <Lightbulb position="-2 4 -2"/>
 
         <ExhibitionBox
-          src={ "#chelseaPortrait" }
-          position={ "-2 2.5 -2" }
-          rotation={ "0 50 0" }
-          scale={"1.5 1.5 0"}
+          src={ person.picture }
+          position={ person.position }
+          rotation={ person.rotation }
         >
           <PlayElement
-            id="chelsea-play-element"
-            soundID={"https://ucarecdn.com/c39fe27e-a86a-46b0-95ca-76ea74e61c19/"}
+            soundID={ person.sound }
             cursor-listener/>
-          <Name name="Chelsea Manning" />
+          <Name name={ person.name } />
         </ExhibitionBox >
       </Entity>
     )
@@ -104,10 +103,12 @@ class ActivistRoom extends React.Component {
       anyLightSwitchClicked,
       chelseaVisible,
       constanzeVisible,
-      joannaVisible
+      joannaVisible,
+      chelsea
      } = this.props
 
     return (
+
       <Entity>
         { !anyLightSwitchClicked && this.renderLightSwitchHint() }
 
@@ -118,7 +119,7 @@ class ActivistRoom extends React.Component {
           cursor-listener />
 
         <Lamp position="-2 4.2 -2"/>
-        { chelseaVisible ? this.renderChelsea() : <Lightbulb position="-2 4 -2" off={true}/> }
+        { chelsea.visible ? this.renderPerson(chelsea) : <Lightbulb position="-2 4 -2" off={true}/> }
 
         <LightSwitch
           position={"0 1.35 -1.4"}
@@ -176,7 +177,8 @@ const mapStateToProps = state => {
     chelseaVisible: state.chelseaVisible,
     constanzeVisible: state.constanzeVisible,
     joannaVisible: state.joannaVisible,
-    anyLightSwitchClicked: state.anyLightSwitchClicked
+    anyLightSwitchClicked: state.anyLightSwitchClicked,
+    chelsea: state.chelsea
   }
 }
 const mapDispatchToProps = dispatch => ({ dispatch })

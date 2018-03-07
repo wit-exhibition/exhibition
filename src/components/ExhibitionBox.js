@@ -9,6 +9,7 @@ export default class ExhibitionBox extends React.Component {
         primitive={ "a-box" }
         shader={ "flat" }
         transparent={ "true" }
+        scale={"1.5 1.5 0"}
         {...this.props}
       />
     )
