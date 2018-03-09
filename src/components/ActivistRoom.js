@@ -44,7 +44,7 @@ class ActivistRoom extends React.Component {
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"chelsea"}
-          personClicked= { chelsea.visible }
+          personClicked={ chelsea.visible }
           cursor-listener />
 
         <Lamp position="-2 4.2 -2"/>
@@ -53,7 +53,7 @@ class ActivistRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"constanze"}
-          personClicked= { constanze.visible }
+          personClicked={ constanze.visible }
           cursor-listener />
 
         <Lamp position="0 4.2 -2.8"/>
@@ -62,7 +62,7 @@ class ActivistRoom extends React.Component {
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"joanna"}
-          personClicked= { joanna.visible }
+          personClicked={ joanna.visible }
           cursor-listener />
 
         <Lamp position="2 4.2 -2"/>

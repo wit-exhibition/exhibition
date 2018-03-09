@@ -80,6 +80,16 @@ const initialState = {
     lightbulbPosition: "-1.6 3.5 -1.6",
     visible: false
   },
+  evelyn: {
+    id: "evelyn",
+    name: "Evelyn Boyd Granville",
+    picture: "#evelynPortrait",
+    sound: "#evelyn-audio",
+    position: "0 2.366 -2.8",
+    rotation: NO_ROTATION,
+    lightbulbPosition: "0 4 -2.8",
+    visible: false
+  },
   grace: {
     id: "grace",
     name: "Grace Hopper",
@@ -90,12 +100,32 @@ const initialState = {
     lightbulbPosition: "2 3.7 -2",
     visible: false
   },
+  hedy: {
+    id: "hedy",
+    name: "Grace Hopper",
+    picture: "#hedyPortrait",
+    sound: "#hedy-audio",
+    position: "-2 2.246 -2",
+    rotation: "0 50 0",
+    lightbulbPosition: "2 4 -2",
+    visible: false
+  },
   joanna: {
     id: "joanna",
     name: "Joanna Rutkowska",
     picture: "#joanna",
     sound: "#joanna-audio",
     position: "2 2.5 -2",
+    rotation: "0 -50 0",
+    lightbulbPosition: "2 4 -2",
+    visible: false
+  },
+  kamila: {
+    id: "kamila",
+    name: "Kamila Sidor",
+    picture: "#kamilaPortrait",
+    sound: "#kamila-audio",
+    position: "2 2.318 -2",
     rotation: "0 -50 0",
     lightbulbPosition: "2 4 -2",
     visible: false
@@ -110,8 +140,6 @@ const initialState = {
     lightbulbPosition: "0 3.5 -2",
     visible: false
   },
-  dorothyVisible: false,
-  anuradhaVisible: false,
   evelynVisible: false,
   hedyVisible: false,
   kamilaVisible: false

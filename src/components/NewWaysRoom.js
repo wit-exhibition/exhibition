@@ -2,87 +2,16 @@ import React from 'react';
 import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
 
-import ExhibitionBox from './ExhibitionBox';
 import LightSwitch from './LightSwitch';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
-import PlayElement from './PlayElement';
-import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
 import FloorTeleportation from './FloorTeleportation'
-import Name from './Name';
-
+import Person from './Person';
 
 class NewWaysRoom extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-  renderEvelyn() {
-    return (
-      <Entity>
-        <Lightbulb position="0 4 -2.8"/>
-
-        <ExhibitionBox
-          src={ "#evelynPortrait" }
-          position={ "0 2.366 -2.8" }
-          rotation={ "0 0 0" }
-          scale={ "1.2 1.2 0" }
-          >
-            <PlayElement
-              id="evelyn-play-element"
-              soundID={"#evelyn-audio"}
-              cursor-listener/>
-            <Name name="Evelyn Boyd Granville" />
-          </ExhibitionBox >
-      </Entity>
-    )
-  }
-
-  renderHedy() {
-    return (
-      <Entity>
-         <Lightbulb position="-2 4 -2" />
-
-        <ExhibitionBox
-          src={ "#hedyPortrait" }
-          position={ "-2 2.246 -2" }
-          rotation={ "0 50 0" }
-          scale={ "1.5 1.5 0" }
-          >
-            <PlayElement
-              id="hedy-play-element"
-              soundID={"#hedy-audio"}
-              cursor-listener/>
-            <Name name="Hedy Lamarr" />
-        </ExhibitionBox >
-      </Entity>
-    )
-  }
-
-  renderKamila() {
-    return (
-      <Entity>
-        <Lightbulb position="2 4 -2"/>
-
-        <ExhibitionBox
-          src={ "#kamilaPortrait" }
-          position={ "2 2.318 -2" }
-          rotation={ "0 -50 0" }
-          scale={ "1.5 1.5 0" }
-        >
-          <PlayElement
-            id="kamila-play-element"
-            soundID={"#kamila-audio"}
-            cursor-listener/>
-          <Name name="Kamila Sidor" />
-      </ExhibitionBox >
-      </Entity>
-    )
-  }
 
   renderLightSwitchHint() {
     return (
@@ -103,9 +32,9 @@ class NewWaysRoom extends React.Component {
 
     const {
       anyLightSwitchClicked,
-      evelynVisible,
-      hedyVisible,
-      kamilaVisible
+      evelyn,
+      hedy,
+      kamila
      } = this.props
 
      const ROOM_COLOR = "#69ED11"
@@ -119,31 +48,31 @@ class NewWaysRoom extends React.Component {
           position={"0 1.35 -1.4"}
           person={"evelyn"}
           roomColor={ROOM_COLOR}
-          personClicked= { this.isVisible(evelynVisible) }
+          personClicked={ evelyn.visible }
           cursor-listener />
 
         <Lamp position="0 4.2 -2.8"/>
-        { evelynVisible ? this.renderEvelyn() : <Lightbulb position="0 4 -2.8" off={true}/> }
+        { evelyn.visible ? <Person person={ evelyn } /> : <Lightbulb position="0 4 -2.8" off={true}/> }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"hedy"}
           roomColor={ROOM_COLOR}
-          personClicked= { this.isVisible(hedyVisible) }
+          personClicked={ hedy.visible }
           cursor-listener />
 
         <Lamp position="-2 4.2 -2"/>
-        { hedyVisible ? this.renderHedy() : <Lightbulb position="-2 4 -2" off={true}/> }
+        { hedy.visible ? <Person person={ hedy } /> : <Lightbulb position="-2 4 -2" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"kamila"}
           roomColor={ROOM_COLOR}
-          personClicked= { this.isVisible(kamilaVisible) }
+          personClicked={ kamila.visible }
           cursor-listener />
 
         <Lamp position="2 4.2 -2"/>
-        { kamilaVisible ? this.renderKamila() : <Lightbulb position="2 4 -2" off={true}/> }
+        { kamila.visible ? <Person person={ kamila } /> : <Lightbulb position="2 4 -2" off={true}/> }
 
         <FloorIndicator src={ "#rails-floor" }/>
 
@@ -180,9 +109,9 @@ class NewWaysRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    evelynVisible: state.evelynVisible,
-    hedyVisible: state.hedyVisible,
-    kamilaVisible: state.kamilaVisible,
+    evelyn: state.evelyn,
+    hedy: state.hedy,
+    kamila: state.kamila,
     anyLightSwitchClicked: state.anyLightSwitchClicked
   }
 }
