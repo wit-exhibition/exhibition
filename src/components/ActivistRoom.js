@@ -21,12 +21,12 @@ class ActivistRoom extends React.Component {
   }
 
   renderPerson(person) {
-    console.log(person.name);
     return (
       <Entity>
-        <Lightbulb position="-2 4 -2"/>
+        <Lightbulb position={ person.lightbulbPosition }/>
 
         <ExhibitionBox
+          id={ person.id }
           src={ person.picture }
           position={ person.position }
           rotation={ person.rotation }
@@ -35,49 +35,6 @@ class ActivistRoom extends React.Component {
             soundID={ person.sound }
             cursor-listener/>
           <Name name={ person.name } />
-        </ExhibitionBox >
-      </Entity>
-    )
-  }
-
-  renderConstanze() {
-    return (
-      <Entity>
-        <Lightbulb position="0 4 -2.8"/>
-
-        <ExhibitionBox
-          id="constanze"
-          src={ "#constanzePortrait" }
-          position={ "0 2.6 -2.8" }
-          rotation={ "0 0 0" }
-          scale={ "1.5 1.5 0" }
-        >
-        <PlayElement
-          id="constanze-play-element"
-          soundID={"#constanze-audio"}
-          cursor-listener/>
-        <Name name="Constanze Kurz" />
-        </ExhibitionBox >
-      </Entity>
-    )
-  }
-
-  renderJoanna() {
-    return (
-      <Entity>
-        <Lightbulb position="2 4 -2"/>
-
-        <ExhibitionBox
-          src={ "#joanna" }
-          position={ "2 2.5 -2" }
-          rotation={ "0 -50 0" }
-          scale={ "1.5 1.5 0" }
-        >
-          <PlayElement
-            id="joanna-play-element"
-            soundID={"#joanna-audio"}
-            cursor-listener/>
-          <Name name="Joanna Rutkowska" />
         </ExhibitionBox >
       </Entity>
     )
@@ -94,17 +51,12 @@ class ActivistRoom extends React.Component {
     )
   }
 
-  isVisible(personVisible) {
-    return personVisible ? true : false
-  }
-
   render() {
     const {
       anyLightSwitchClicked,
-      chelseaVisible,
-      constanzeVisible,
-      joannaVisible,
-      chelsea
+      chelsea,
+      constanze,
+      joanna
      } = this.props
 
     return (
@@ -115,7 +67,7 @@ class ActivistRoom extends React.Component {
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"chelsea"}
-          personClicked= { this.isVisible(chelseaVisible) }
+          personClicked= { chelsea.visible }
           cursor-listener />
 
         <Lamp position="-2 4.2 -2"/>
@@ -124,20 +76,20 @@ class ActivistRoom extends React.Component {
         <LightSwitch
           position={"0 1.35 -1.4"}
           person={"constanze"}
-          personClicked= { this.isVisible(constanzeVisible) }
+          personClicked= { constanze.visible }
           cursor-listener />
 
         <Lamp position="0 4.2 -2.8"/>
-        { this.props.constanzeVisible ? this.renderConstanze() : <Lightbulb position="0 4 -2.8" off={true}/> }
+        { constanze.visible ? this.renderPerson(constanze) : <Lightbulb position="0 4 -2.8" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"joanna"}
-          personClicked= { this.isVisible(constanzeVisible) }
+          personClicked= { joanna.visible }
           cursor-listener />
 
         <Lamp position="2 4.2 -2"/>
-        { this.props.joannaVisible ? this.renderJoanna() : <Lightbulb position="2 4 -2" off={true}/> }
+        { joanna.visible ? this.renderPerson(joanna) : <Lightbulb position="2 4 -2" off={true}/> }
 
         <FloorIndicator src={ "#activist-floor" }/>
 
@@ -174,11 +126,10 @@ class ActivistRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    chelseaVisible: state.chelseaVisible,
-    constanzeVisible: state.constanzeVisible,
-    joannaVisible: state.joannaVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked,
-    chelsea: state.chelsea
+    chelsea: state.chelsea,
+    constanze: state.constanze,
+    joanna: state.joanna
   }
 }
 const mapDispatchToProps = dispatch => ({ dispatch })

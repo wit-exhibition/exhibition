@@ -7,7 +7,10 @@ import myReducer from './reducer';
 import './styles.css';
 import StartScreen from './components/StartScreen';
 
-let store = createStore(myReducer);
+let store = createStore(
+  myReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 function modeDecision() {
    if (store.getState().mode === "start") {
