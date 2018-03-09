@@ -2,26 +2,18 @@ import React from 'react';
 import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
 
-import ExhibitionBox from './ExhibitionBox';
 import LightSwitch from './LightSwitch';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
-import PlayElement from './PlayElement';
-import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
 import FloorTeleportation from './FloorTeleportation';
-import Name from './Name';
 import Person from './Person';
 
 
 
 class MilestoneRoom extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
 
   renderLightSwitchHint() {
     return (

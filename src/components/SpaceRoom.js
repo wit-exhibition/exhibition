@@ -2,87 +2,16 @@ import React from 'react';
 import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
 
-import ExhibitionBox from './ExhibitionBox';
 import LightSwitch from './LightSwitch';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
-import PlayElement from './PlayElement';
-import HoverAnimation from './HoverAnimation';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
 import FloorTeleportation from './FloorTeleportation'
-import Name from './Name';
-
+import Person from './Person';
 
 class SpaceRoom extends React.Component {
-
-  constructor(props) {
-    super(props);
-  }
-
-  renderMargaret() {
-    return (
-      <Entity>
-        <Lightbulb position="0 3.5 -2"/>
-
-        <ExhibitionBox
-        src={ "#margaretPortrait" }
-        position={ "0 2.25 -2" }
-        rotation={ "0 0 0" }
-        scale={ "1 1 0" }
-        >
-          <PlayElement
-            id="margaret-play-element"
-            soundID={"#margaret-audio"}
-            cursor-listener/>
-          <Name name="Margaret Hamilton" />
-        </ExhibitionBox >
-      </Entity>
-    )
-  }
-
-  renderDorothy() {
-    return (
-      <Entity>
-        <Lightbulb position="-1.6 3.5 -1.6"/>
-
-        <ExhibitionBox
-        src={ "#dorothyPortrait" }
-        position={ "-1.6 2.3 -1.6" }
-        rotation={ "0 50 0" }
-        scale={ "1 1 0" }
-        >
-          <PlayElement
-            id="dorothy-play-element"
-            soundID={"#dorothy-audio"}
-            cursor-listener/>
-          <Name name="Dorothy Vaughan" />
-        </ExhibitionBox >
-      </Entity>
-    )
-  }
-
-  renderAnuradha() {
-    return (
-      <Entity>
-        <Lightbulb position="1.6 3.5 -1.6"/>
-
-        <ExhibitionBox
-        src={ "#anuradhaPortrait" }
-        position={ "1.6 2.3 -1.6" }
-        rotation={ "0 -50 0" }
-        scale={ "1 1 0" }
-        >
-          <PlayElement
-            id="anuradha-play-element"
-            soundID={"#anuradha-audio"}
-            cursor-listener/>
-          <Name name="Anuradha TK" />
-        </ExhibitionBox >
-      </Entity>
-    )
-  }
 
   renderLightSwitchHint() {
     return (
@@ -102,9 +31,9 @@ class SpaceRoom extends React.Component {
   render() {
     const {
       anyLightSwitchClicked,
-      margaretVisible,
-      dorothyVisible,
-      anuradhaVisible
+      margaret,
+      dorothy,
+      anuradha
      } = this.props
 
      const ROOM_COLOR = "#00748B"
@@ -117,31 +46,31 @@ class SpaceRoom extends React.Component {
           position={"0 1.35 -1.4"}
           person={"margaret"}
           roomColor={ROOM_COLOR}
-          personClicked= { this.isVisible(margaretVisible) }
+          personClicked= { margaret.visible }
           cursor-listener />
 
         <Lamp position="0 3.7 -2"/>
-        { margaretVisible ? this.renderMargaret() : <Lightbulb position="0 3.5 -2" off={true}/> }
+        { margaret.visible ? <Person person={ margaret } /> : <Lightbulb position="0 3.5 -2" off={true}/> }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"dorothy"}
           roomColor={ROOM_COLOR}
-          personClicked= { this.isVisible(dorothyVisible) }
+          personClicked= { dorothy.visible }
           cursor-listener />
 
         <Lamp position="-1.6 3.7 -1.6"/>
-        { dorothyVisible ? this.renderDorothy() : <Lightbulb position="-1.6 3.5 -1.6" off={true}/> }
+        { dorothy.visible ? <Person person={ dorothy } /> : <Lightbulb position="-1.6 3.5 -1.6" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"anuradha"}
           roomColor={ROOM_COLOR}
-          personClicked= { this.isVisible(anuradhaVisible) }
+          personClicked= { anuradha.visible }
           cursor-listener />
 
         <Lamp position="1.6 3.7 -1.6"/>
-        { anuradhaVisible ? this.renderAnuradha() : <Lightbulb position="1.6 3.5 -1.6" off={true}/> }
+        { anuradha.visible ? <Person person={ anuradha } /> : <Lightbulb position="1.6 3.5 -1.6" off={true}/> }
 
         <FloorIndicator src={ "#space-floor" }/>
 
@@ -178,9 +107,9 @@ class SpaceRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    margaretVisible: state.margaretVisible,
-    dorothyVisible: state.dorothyVisible,
-    anuradhaVisible: state.anuradhaVisible,
+    margaret: state.margaret,
+    dorothy: state.dorothy,
+    anuradha: state.anuradha,
     anyLightSwitchClicked: state.anyLightSwitchClicked
   }
 }

@@ -20,6 +20,16 @@ const initialState = {
     rotation: NO_ROTATION,
     visible: true
   },
+  anuradha: {
+    id: "anuradha",
+    name: "Anuradha TK",
+    picture: "#anuradhaPortrait",
+    sound: "#anuradha-audio",
+    position: "1.6 2.3 -1.6",
+    rotation: "0 -50 0",
+    lightbulbPosition: "1.6 3.5 -1.6",
+    visible: false
+  },
   audrey: {
     id: "audrey",
     name: "Audrey Tang",
@@ -60,6 +70,16 @@ const initialState = {
     lightbulbPosition: "0 4 -2.8",
     visible: false
   },
+  dorothy: {
+    id: "dorothy",
+    name: "Dorothy Vaughan",
+    picture: "#dorothyPortrait",
+    sound: "#dorothy-audio",
+    position: "-1.6 2.3 -1.6",
+    rotation: "0 50 0",
+    lightbulbPosition: "-1.6 3.5 -1.6",
+    visible: false
+  },
   grace: {
     id: "grace",
     name: "Grace Hopper",
@@ -80,10 +100,16 @@ const initialState = {
     lightbulbPosition: "2 4 -2",
     visible: false
   },
-  graceVisible: false,
-  audreyVisible: false,
-  barbaraVisible: false,
-  margaretVisible: false,
+  margaret: {
+    id: "margaret",
+    name: "Margaret Hamilton",
+    picture: "#margaretPortrait",
+    sound: "#margaret-audio",
+    position: "0 2.25 -2",
+    rotation: NO_ROTATION,
+    lightbulbPosition: "0 3.5 -2",
+    visible: false
+  },
   dorothyVisible: false,
   anuradhaVisible: false,
   evelynVisible: false,
