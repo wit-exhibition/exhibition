@@ -1,9 +1,11 @@
 const POSITION_WELCOME = "0 2.1 -2"
 const POSITION_MIDDLE = "0 2.6 -2.8"
 const POSITION_LEFT = "-2 2.5 -2"
+const POSITION_RIGHT = "2 2.5 -2"
 
 const NO_ROTATION = "0 0 0"
 const ROTATION_LEFT = "0 50 0"
+const ROTATION_RIGHT = "0 -50 0"
 
 const initialState = {
   mode: "start",
@@ -25,8 +27,8 @@ const initialState = {
     name: "Anuradha TK",
     picture: "#anuradhaPortrait",
     sound: "#anuradha-audio",
-    position: "1.6 2.3 -1.6",
-    rotation: "0 -50 0",
+    position: POSITION_RIGHT,
+    rotation: ROTATION_RIGHT,
     lightbulbPosition: "1.6 3.5 -1.6",
     visible: false
   },
@@ -45,7 +47,7 @@ const initialState = {
     name: "Barbara Liskov",
     picture: "#barbaraPortrait",
     sound: "#barbara-audio",
-    position: "0 2.4 -2",
+    position: POSITION_MIDDLE,
     rotation: NO_ROTATION,
     lightbulbPosition: "0 3.7 -2",
     visible: false
@@ -75,7 +77,7 @@ const initialState = {
     name: "Dorothy Vaughan",
     picture: "#dorothyPortrait",
     sound: "#dorothy-audio",
-    position: "-1.6 2.3 -1.6",
+    position: POSITION_LEFT,
     rotation: "0 50 0",
     lightbulbPosition: "-1.6 3.5 -1.6",
     visible: false
@@ -95,14 +97,14 @@ const initialState = {
     name: "Grace Hopper",
     picture: "#gracePortrait",
     sound: "#grace-audio",
-    position: "2 2.5 -2",
-    rotation: "0 -50 0",
+    position: POSITION_RIGHT,
+    rotation: ROTATION_RIGHT,
     lightbulbPosition: "2 3.7 -2",
     visible: false
   },
   hedy: {
     id: "hedy",
-    name: "Grace Hopper",
+    name: "Hedy Lamarr",
     picture: "#hedyPortrait",
     sound: "#hedy-audio",
     position: "-2 2.246 -2",
@@ -116,7 +118,7 @@ const initialState = {
     picture: "#joanna",
     sound: "#joanna-audio",
     position: "2 2.5 -2",
-    rotation: "0 -50 0",
+    rotation: ROTATION_RIGHT,
     lightbulbPosition: "2 4 -2",
     visible: false
   },
@@ -125,8 +127,8 @@ const initialState = {
     name: "Kamila Sidor",
     picture: "#kamilaPortrait",
     sound: "#kamila-audio",
-    position: "2 2.318 -2",
-    rotation: "0 -50 0",
+    position: POSITION_RIGHT,
+    rotation: ROTATION_RIGHT,
     lightbulbPosition: "2 4 -2",
     visible: false
   },
@@ -135,14 +137,11 @@ const initialState = {
     name: "Margaret Hamilton",
     picture: "#margaretPortrait",
     sound: "#margaret-audio",
-    position: "0 2.25 -2",
+    position: POSITION_MIDDLE,
     rotation: NO_ROTATION,
     lightbulbPosition: "0 3.5 -2",
     visible: false
-  },
-  evelynVisible: false,
-  hedyVisible: false,
-  kamilaVisible: false
+  }
 }
 
 const setVisible = (personObject, person) => {
