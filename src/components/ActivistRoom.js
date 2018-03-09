@@ -2,42 +2,19 @@ import React from 'react';
 import { Entity } from 'aframe-react';
 import { connect } from 'react-redux';
 
-import ExhibitionBox from './ExhibitionBox';
 import LightSwitch from './LightSwitch';
 import HintText from './HintText';
 import TeleportationElement from './TeleportationElement';
-import PlayElement from './PlayElement';
 import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
 import FloorTeleportation from './FloorTeleportation'
-import Name from './Name';
-
+import Person from './Person';
 
 class ActivistRoom extends React.Component {
 
   constructor(props) {
     super(props);
-  }
-
-  renderPerson(person) {
-    return (
-      <Entity>
-        <Lightbulb position={ person.lightbulbPosition }/>
-
-        <ExhibitionBox
-          id={ person.id }
-          src={ person.picture }
-          position={ person.position }
-          rotation={ person.rotation }
-        >
-          <PlayElement
-            soundID={ person.sound }
-            cursor-listener/>
-          <Name name={ person.name } />
-        </ExhibitionBox >
-      </Entity>
-    )
   }
 
   renderLightSwitchHint() {
@@ -71,7 +48,7 @@ class ActivistRoom extends React.Component {
           cursor-listener />
 
         <Lamp position="-2 4.2 -2"/>
-        { chelsea.visible ? this.renderPerson(chelsea) : <Lightbulb position="-2 4 -2" off={true}/> }
+        { chelsea.visible ? <Person person={ chelsea } /> : <Lightbulb position="-2 4 -2" off={true}/> }
 
         <LightSwitch
           position={"0 1.35 -1.4"}
@@ -80,7 +57,7 @@ class ActivistRoom extends React.Component {
           cursor-listener />
 
         <Lamp position="0 4.2 -2.8"/>
-        { constanze.visible ? this.renderPerson(constanze) : <Lightbulb position="0 4 -2.8" off={true}/> }
+        { constanze.visible ? <Person person={ constanze } /> : <Lightbulb position="0 4 -2.8" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
@@ -89,7 +66,7 @@ class ActivistRoom extends React.Component {
           cursor-listener />
 
         <Lamp position="2 4.2 -2"/>
-        { joanna.visible ? this.renderPerson(joanna) : <Lightbulb position="2 4 -2" off={true}/> }
+        { joanna.visible ? <Person person={ joanna } /> : <Lightbulb position="2 4 -2" off={true}/> }
 
         <FloorIndicator src={ "#activist-floor" }/>
 
