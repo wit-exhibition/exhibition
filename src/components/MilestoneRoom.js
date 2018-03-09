@@ -13,75 +13,14 @@ import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
 import FloorTeleportation from './FloorTeleportation';
 import Name from './Name';
+import Person from './Person';
+
 
 
 class MilestoneRoom extends React.Component {
 
   constructor(props) {
     super(props);
-  }
-
-  renderBarbara() {
-    return (
-      <Entity>
-        <Lightbulb position="0 3.7 -2"/>
-
-        <ExhibitionBox
-          src={ "#barbaraPortrait" }
-          position={ "0 2.4 -2" }
-          rotation={ "0 0 0" }
-          scale={ "1 1 0" }
-        >
-          <PlayElement
-            id="barbara-play-element"
-            soundID={"#barbara-audio"}
-            cursor-listener/>
-          <Name name="Barbara Liskow" />
-        </ExhibitionBox >
-      </Entity>
-    )
-  }
-
-  renderGrace() {
-    return (
-      <Entity>
-        <Lightbulb position="2 3.7 -2" />
-
-        <ExhibitionBox
-        src={ "#gracePortrait" }
-        position={ "2 2.5 -2" }
-        rotation={ "0 -50 0" }
-        scale={ "1.5 1.5 0" }
-        >
-          <PlayElement
-            id="grace-play-element"
-            soundID={"#grace-audio"}
-            cursor-listener/>
-          <Name name="Grace Hopper" />
-        </ExhibitionBox >
-      </Entity>
-    )
-  }
-
-  renderAudrey() {
-    return (
-      <Entity>
-        <Lightbulb position="-2 3.7 -2" />
-
-        <ExhibitionBox
-          src={ "#audreyPortrait" }
-          position={ "-2 2.5 -2" }
-          rotation={ "0 50 0" }
-          scale={ "1.5 1.5 0" }
-          >
-          <PlayElement
-            id="audrey-play-element"
-            soundID={"#audrey-audio"}
-            cursor-listener/>
-          <Name name="Audrey Tang" />
-        </ExhibitionBox >
-      </Entity>
-    )
   }
 
   renderLightSwitchHint() {
@@ -102,9 +41,9 @@ class MilestoneRoom extends React.Component {
   render() {
     const {
       anyLightSwitchClicked,
-      barbaraVisible,
-      graceVisible,
-      audreyVisible
+      barbara,
+      grace,
+      audrey
      } = this.props
 
     const ROOM_COLOR = "#C025CE"
@@ -118,31 +57,31 @@ class MilestoneRoom extends React.Component {
           position={"0 1.35 -1.4"}
           person={"barbara"}
           roomColor={ROOM_COLOR}
-          personClicked= { this.isVisible(barbaraVisible) }
+          personClicked= { barbara.visible }
           cursor-listener />
 
         <Lamp position="0 3.9 -2"/>
-        { barbaraVisible ? this.renderBarbara() : <Lightbulb position="0 3.7 -2" off={true}/> }
+        { barbara.visible ? <Person person={ barbara } /> : <Lightbulb position="0 3.7 -2" off={true}/> }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
           person={"grace"}
           roomColor={ROOM_COLOR}
-          personClicked= { this.isVisible(graceVisible) }
+          personClicked= { grace.visible }
           cursor-listener />
 
         <Lamp position="2 3.9 -2"/>
-        { graceVisible ? this.renderGrace() : <Lightbulb position="2 3.7 -2" off={true}/> }
+        { grace.visible ? <Person person={ grace } /> : <Lightbulb position="2 3.7 -2" off={true}/> }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
           person={"audrey"}
           roomColor={ROOM_COLOR}
-          personClicked= { this.isVisible(audreyVisible) }
+          personClicked= { audrey.visible }
           cursor-listener />
 
         <Lamp position="-2 3.9 -2"/>
-        { audreyVisible ? this.renderAudrey() : <Lightbulb position="-2 3.7 -2" off={true}/> }
+        { audrey.visible ? <Person person={ audrey } /> : <Lightbulb position="-2 3.7 -2" off={true}/> }
 
         <FloorIndicator src={ "#milestone-floor" }/>
 
@@ -179,11 +118,12 @@ class MilestoneRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    barbaraVisible: state.barbaraVisible,
     graceVisible: state.graceVisible,
     audreyVisible: state.audreyVisible,
-    anyLightSwitchClicked: state.anyLightSwitchClicked
-
+    anyLightSwitchClicked: state.anyLightSwitchClicked,
+    audrey: state.audrey,
+    barbara: state.barbara,
+    grace: state.grace
   }
 }
 

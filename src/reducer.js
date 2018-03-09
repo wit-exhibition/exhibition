@@ -20,6 +20,26 @@ const initialState = {
     rotation: NO_ROTATION,
     visible: true
   },
+  audrey: {
+    id: "audrey",
+    name: "Audrey Tang",
+    picture: "#audreyPortrait",
+    sound: "#audrey-audio",
+    position: "-2 2.5 -2",
+    rotation: "0 50 0",
+    lightbulbPosition: "-2 3.7 -2",
+    visible: false
+  },
+  barbara: {
+    id: "barbara",
+    name: "Barbara Liskov",
+    picture: "#barbaraPortrait",
+    sound: "#barbara-audio",
+    position: "0 2.4 -2",
+    rotation: NO_ROTATION,
+    lightbulbPosition: "0 3.7 -2",
+    visible: false
+  },
   chelsea: {
     id: "chelsea",
     name: "Chelsea Manning",
@@ -38,6 +58,16 @@ const initialState = {
     position: POSITION_MIDDLE,
     rotation: NO_ROTATION,
     lightbulbPosition: "0 4 -2.8",
+    visible: false
+  },
+  grace: {
+    id: "grace",
+    name: "Grace Hopper",
+    picture: "#gracePortrait",
+    sound: "#grace-audio",
+    position: "2 2.5 -2",
+    rotation: "0 -50 0",
+    lightbulbPosition: "2 3.7 -2",
     visible: false
   },
   joanna: {
