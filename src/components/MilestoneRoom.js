@@ -4,13 +4,12 @@ import { connect } from 'react-redux';
 
 import LightSwitch from './LightSwitch';
 import HintText from './HintText';
-import TeleportationElement from './TeleportationElement';
-import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
-import FloorTeleportation from './FloorTeleportation';
 import Person from './Person';
 import Exit from './Exit';
+import FloorNavigation from './FloorNavigation';
+
 
 class MilestoneRoom extends React.Component {
 
@@ -48,7 +47,7 @@ class MilestoneRoom extends React.Component {
           position={"0 1.35 -1.4"}
           person={"barbara"}
           roomColor={ROOM_COLOR}
-          personClicked= { barbara.visible }
+          personClicked={ barbara.visible }
           cursor-listener />
 
         <Lamp position="0 3.9 -2.8"/>
@@ -59,7 +58,7 @@ class MilestoneRoom extends React.Component {
           position={"0.5 1.35 -1.4"}
           person={"grace"}
           roomColor={ROOM_COLOR}
-          personClicked= { grace.visible }
+          personClicked={ grace.visible }
           cursor-listener />
 
         <Lamp position="2 3.9 -2"/>
@@ -70,29 +69,18 @@ class MilestoneRoom extends React.Component {
           position={"-0.5 1.35 -1.4"}
           person={"audrey"}
           roomColor={ROOM_COLOR}
-          personClicked= { audrey.visible }
+          personClicked={ audrey.visible }
           cursor-listener />
 
         <Lamp position="-2 3.9 -2"/>
         { audrey.visible && <Person person={ audrey }/> }
         { !audrey.visible && this.renderLightOff(audrey.lightbulbPosition) }
 
-        <FloorIndicator src={ "#milestone-floor" }/>
-
-        <FloorTeleportation src={"#rails-floor"}
-          position={"-1.5 0.155 -1.5"}
-          positionCylinder={"-1.5 0.1 -1.5 "}
-          teleportSound={true}
-          destination={"newWaysRoom"}
-          cursor-listener />
-
-        <FloorTeleportation src={"#space-floor"}
-          position={"1.5 0.155 -1.5"}
-          positionCylinder={"1.5 0.1 -1.5"}
-          teleportSound={true}
-          destination={"spaceRoom"}
-          cursor-listener />
-
+        <FloorNavigation
+          roomIndicator={ "#milestone-floor" }
+          leftIndicator={"#rails-floor"} leftDestination={"newWaysRoom"}
+          rightIndicator={"#space-floor"} rightDestination={"spaceRoom"}
+        />
         <Exit />
       </Entity>
     )

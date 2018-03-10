@@ -4,13 +4,11 @@ import { connect } from 'react-redux';
 
 import LightSwitch from './LightSwitch';
 import HintText from './HintText';
-import TeleportationElement from './TeleportationElement';
-import FloorIndicator from './FloorIndicator';
 import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
-import FloorTeleportation from './FloorTeleportation'
 import Person from './Person';
 import Exit from './Exit';
+import FloorNavigation from './FloorNavigation';
 
 class SpaceRoom extends React.Component {
 
@@ -69,21 +67,11 @@ class SpaceRoom extends React.Component {
         <Lamp position="1.6 3.7 -1.6"/>
         { anuradha.visible ? <Person person={ anuradha } /> : <Lightbulb position="1.6 3.5 -1.6" off={true}/> }
 
-        <FloorIndicator src={ "#space-floor" }/>
-
-        <FloorTeleportation src={"#milestone-floor"}
-          position={"-1.5 0.155 -1.5"}
-          positionCylinder={"-1.5 0.1 -1.5 "}
-          teleportSound={true}
-          destination={"milestoneRoom"}
-          cursor-listener />
-
-        <FloorTeleportation src={"#activist-floor"}
-          position={"1.5 0.155 -1.5"}
-          positionCylinder={"1.5 0.1 -1.5"}
-          teleportSound={true}
-          destination={"activistRoom"}
-          cursor-listener />
+        <FloorNavigation
+          roomIndicator={ "#space-floor" }
+          leftIndicator={"#milestone-floor"} leftDestination={"milestoneRoom"}
+          rightIndicator={"#activist-floor"} rightDestination={"activistRoom"}
+        />
 
         <Exit />
       </Entity>
