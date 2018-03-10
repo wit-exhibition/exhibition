@@ -10,6 +10,7 @@ import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
 import FloorTeleportation from './FloorTeleportation'
 import Person from './Person';
+import Exit from './Exit';
 
 class SpaceRoom extends React.Component {
 
@@ -22,10 +23,6 @@ class SpaceRoom extends React.Component {
         wrapCount={25}
       />
     )
-  }
-
-  isVisible(personVisible) {
-    return personVisible ? true : false
   }
 
   render() {
@@ -88,18 +85,7 @@ class SpaceRoom extends React.Component {
           destination={"activistRoom"}
           cursor-listener />
 
-        <HintText
-          rotation={{ y: 100 }}
-          hint={"Exit zum Navigationsraum"}
-          position={{ x: -2.8, y: 1, z: 0.5}}
-          wrapCount={16}/>
-        <TeleportationElement
-          material={{ color: "#01ff26"}}
-          position={ "-3 0.5 0.5"}
-          scale={"0.5 0.5 1"}
-          destination="navRoom"
-          teleportSound={true}
-          cursor-listener />
+        <Exit />
       </Entity>
     )
   }

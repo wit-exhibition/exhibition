@@ -10,8 +10,7 @@ import Lamp from './Lamp';
 import Lightbulb from './Lightbulb';
 import FloorTeleportation from './FloorTeleportation';
 import Person from './Person';
-
-
+import Exit from './Exit';
 
 class MilestoneRoom extends React.Component {
 
@@ -26,8 +25,8 @@ class MilestoneRoom extends React.Component {
     )
   }
 
-  isVisible(personVisible) {
-    return personVisible ? true : false
+  renderLightOff(position) {
+    return <Lightbulb position={ position } off={true}/>
   }
 
   render() {
@@ -52,8 +51,9 @@ class MilestoneRoom extends React.Component {
           personClicked= { barbara.visible }
           cursor-listener />
 
-        <Lamp position="0 3.9 -2"/>
-        { barbara.visible ? <Person person={ barbara } /> : <Lightbulb position="0 3.7 -2" off={true}/> }
+        <Lamp position="0 3.9 -2.8"/>
+        { barbara.visible && <Person person={ barbara }/> }
+        { !barbara.visible && this.renderLightOff(barbara.lightbulbPosition) }
 
         <LightSwitch
           position={"0.5 1.35 -1.4"}
@@ -63,7 +63,8 @@ class MilestoneRoom extends React.Component {
           cursor-listener />
 
         <Lamp position="2 3.9 -2"/>
-        { grace.visible ? <Person person={ grace } /> : <Lightbulb position="2 3.7 -2" off={true}/> }
+        { grace.visible && <Person person={ grace }/> }
+        { !grace.visible && this.renderLightOff(grace.lightbulbPosition) }
 
         <LightSwitch
           position={"-0.5 1.35 -1.4"}
@@ -73,7 +74,8 @@ class MilestoneRoom extends React.Component {
           cursor-listener />
 
         <Lamp position="-2 3.9 -2"/>
-        { audrey.visible ? <Person person={ audrey } /> : <Lightbulb position="-2 3.7 -2" off={true}/> }
+        { audrey.visible && <Person person={ audrey }/> }
+        { !audrey.visible && this.renderLightOff(audrey.lightbulbPosition) }
 
         <FloorIndicator src={ "#milestone-floor" }/>
 
@@ -91,18 +93,7 @@ class MilestoneRoom extends React.Component {
           destination={"spaceRoom"}
           cursor-listener />
 
-        <HintText
-          rotation={{ y: 100 }}
-          hint={"Exit zum Navigationsraum"}
-          position={{ x: -2.8, y: 1, z: 0.5}}
-          wrapCount={16}/>
-        <TeleportationElement
-          material={{ color: "#01ff26"}}
-          position={ "-3 0.5 0.5"}
-          scale={"0.5 0.5 1"}
-          destination="navRoom"
-          teleportSound={true}
-          cursor-listener />
+        <Exit />
       </Entity>
     )
   }
@@ -110,8 +101,6 @@ class MilestoneRoom extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    graceVisible: state.graceVisible,
-    audreyVisible: state.audreyVisible,
     anyLightSwitchClicked: state.anyLightSwitchClicked,
     audrey: state.audrey,
     barbara: state.barbara,

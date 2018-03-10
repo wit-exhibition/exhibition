@@ -49,7 +49,7 @@ const initialState = {
     sound: "#barbara-audio",
     position: POSITION_MIDDLE,
     rotation: NO_ROTATION,
-    lightbulbPosition: "0 3.7 -2",
+    lightbulbPosition: "0 3.7 -2.8",
     visible: false
   },
   chelsea: {
@@ -109,7 +109,7 @@ const initialState = {
     sound: "#hedy-audio",
     position: "-2 2.246 -2",
     rotation: "0 50 0",
-    lightbulbPosition: "2 4 -2",
+    lightbulbPosition: "-2 4 -2",
     visible: false
   },
   joanna: {
