@@ -37,8 +37,8 @@ const initialState = {
     name: "Audrey Tang",
     picture: "#audreyPortrait",
     sound: "#audrey-audio",
-    position: "-2 2.5 -2",
-    rotation: "0 50 0",
+    position: POSITION_LEFT,
+    rotation: ROTATION_LEFT,
     lightbulbPosition: "-2 3.7 -2",
     visible: false
   },
@@ -78,7 +78,7 @@ const initialState = {
     picture: "#dorothyPortrait",
     sound: "#dorothy-audio",
     position: POSITION_LEFT,
-    rotation: "0 50 0",
+    rotation: ROTATION_LEFT,
     lightbulbPosition: "-1.6 3.5 -1.6",
     visible: false
   },
@@ -87,7 +87,7 @@ const initialState = {
     name: "Evelyn Boyd Granville",
     picture: "#evelynPortrait",
     sound: "#evelyn-audio",
-    position: "0 2.366 -2.8",
+    position: POSITION_MIDDLE,
     rotation: NO_ROTATION,
     lightbulbPosition: "0 4 -2.8",
     visible: false
@@ -107,8 +107,8 @@ const initialState = {
     name: "Hedy Lamarr",
     picture: "#hedyPortrait",
     sound: "#hedy-audio",
-    position: "-2 2.246 -2",
-    rotation: "0 50 0",
+    position: POSITION_LEFT,
+    rotation: ROTATION_LEFT,
     lightbulbPosition: "-2 4 -2",
     visible: false
   },
