@@ -15,6 +15,11 @@ The name "wit-exhibition" was the first working title. The students later decide
 
 The exhibition was build with [A-Frame](https://aframe.io/) combined with [aframe-react](https://github.com/ngokevin/aframe-react) and [Redux](https://redux.js.org/). The assets e.g. pictures, audio files etc. are hosted on the [A-Frame CDN](https://cdn.aframe.io/).
 
+## Devices
+This VR experience works best in Chrome on modern Android devices (e.g. Samsung S8/S9, Pixel). On older devices you may experience problems such as slow frame rates, long loading times or no display of any content. The experience should work in Firefox but note that audio loading time is much longer! (Up to several minutes.)
+
+Sound is not working on iPhone. [Bug fixing](https://github.com/wit-exhibition/exhibition/issues/2) contributions welcome.
+
 ##  Contributions
 
 The project is now ready to accept contributions. Head over to the [issues](https://github.com/wit-exhibition/exhibition/issues) to see what you can contribute.
