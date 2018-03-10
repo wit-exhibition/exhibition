@@ -4,21 +4,13 @@ import { connect } from 'react-redux';
 
 import ExhibitionBox from './ExhibitionBox';
 import HintText from './HintText';
-import TeleportationElement from './TeleportationElement';
 import PlayElement from './PlayElement';
-import HoverAnimation from './HoverAnimation';
 import FloorTeleportation from './FloorTeleportation';
 import Name from './Name';
 
-
 class NavRoom extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   showHintText() {
-
     return (
       <HintText
         rotation={{ y: 20 }}

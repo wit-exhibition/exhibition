@@ -4,10 +4,6 @@ import { connect } from 'react-redux';
 
 class FloorTeleportation extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     const boxes = document.getElementsByClassName('teleport-box')
     for (let i = 0; i < boxes.length; i++) {
@@ -30,7 +26,7 @@ class FloorTeleportation extends React.Component {
   }
 
   render() {
-    const { destination, handleClick, positionCylinder, ...rest} = this.props
+    const { destination, handleClick, positionCylinder } = this.props
     return (
       <Entity>
         <Entity

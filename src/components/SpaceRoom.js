@@ -41,7 +41,7 @@ class SpaceRoom extends React.Component {
           position={"0 1.35 -1.4"}
           person={"margaret"}
           roomColor={ROOM_COLOR}
-          personClicked= { margaret.visible }
+          personClicked={ margaret.visible }
           cursor-listener />
 
         <Lamp position="0 3.7 -2"/>
@@ -51,7 +51,7 @@ class SpaceRoom extends React.Component {
           position={"-0.5 1.35 -1.4"}
           person={"dorothy"}
           roomColor={ROOM_COLOR}
-          personClicked= { dorothy.visible }
+          personClicked={ dorothy.visible }
           cursor-listener />
 
         <Lamp position="-1.6 3.7 -1.6"/>
@@ -61,7 +61,7 @@ class SpaceRoom extends React.Component {
           position={"0.5 1.35 -1.4"}
           person={"anuradha"}
           roomColor={ROOM_COLOR}
-          personClicked= { anuradha.visible }
+          personClicked={ anuradha.visible }
           cursor-listener />
 
         <Lamp position="1.6 3.7 -1.6"/>

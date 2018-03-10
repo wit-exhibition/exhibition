@@ -12,10 +12,6 @@ import FloorNavigation from './FloorNavigation';
 
 class ActivistRoom extends React.Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   renderLightSwitchHint() {
     return (
       <HintText

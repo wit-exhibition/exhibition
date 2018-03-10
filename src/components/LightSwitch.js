@@ -48,7 +48,7 @@ class LightSwitch extends React.Component {
           primitive="a-box"
           scale={"1.002 0.2 1"}
           position={ this.state.position }
-          rotation= { this.state.switchRotation }
+          rotation={ this.state.switchRotation }
           material={ "color:" + this.setRoomColor() }>
         </Entity>
       </Entity>
